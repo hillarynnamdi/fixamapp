@@ -1,0 +1,13 @@
+GET https://api.rubygems.org/latest_specs.4.8.gz
+302 Moved Temporarily
+GET https://rubygems.global.ssl.fastly.net/latest_specs.4.8.gz
+200 OK
+GET https://api.rubygems.org/prerelease_specs.4.8.gz
+302 Moved Temporarily
+GET https://rubygems.global.ssl.fastly.net/prerelease_specs.4.8.gz
+200 OK
+GET https://api.rubygems.org/specs.4.8.gz
+302 Moved Temporarily
+GET https://rubygems.global.ssl.fastly.net/specs.4.8.gz
+200 OK
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 
