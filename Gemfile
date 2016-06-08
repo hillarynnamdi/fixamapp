@@ -33,6 +33,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'will_paginate-bootstrap'
+gem 'devise_invitable'
 
 
 # Use Capistrano for deployment
@@ -41,6 +42,7 @@ gem 'will_paginate-bootstrap'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'better_errors'
 end
 
 group :development do

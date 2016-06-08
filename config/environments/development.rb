@@ -6,6 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -14,7 +15,26 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  
+  config.action_mailer.default_url_options={host: "localhost:3000"}
+
+
+  config.action_mailer.smtp_settings = {
+
+    :address => "smtp.mailgun.org",
+    :port => "587",
+    :domain => "sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org",
+     user_name: "postmaster@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org" ,
+     password:  "92d3aae47277c9d1b36468e53cde7777",
+    :authentication => "plain",
+   :enable_starttls_auto => true
+
+  } 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
