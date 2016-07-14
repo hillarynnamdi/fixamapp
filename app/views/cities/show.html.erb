@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @city.city %>
+</p>
+
+
+
+
+<h1>Listing Areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Areas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= area.area %></td>
+        <td><%= link_to 'Edit', edit_area_path(area) %></td>
+        <td>
+        	<%= link_to 'Destroy City', area,method: :delete,data: { confirm: 'Are you sure?' } %>
+
+        </td>
+
+        <td><%= link_to 'Show', area %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+
+
+<h2>Add an area:</h2>
+<%= form_for([@city.state,@city, @city.areas.build]) do |f|
+%>
+<p>
+<%= f.label :area %><br />
+<%= f.text_field :area %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', state_path(@city.state) %>
+
+
+

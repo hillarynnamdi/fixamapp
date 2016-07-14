@@ -1,0 +1,125 @@
+
+
+<%=form_tag(first_form_orders_path,remote:'true' ,class:'first_form') do %>
+
+
+<p>
+<%=collection_select :state,:id,State.order(:state),:state, :state,include_blank: "select state"%>
+
+
+
+
+
+</p>
+<p>
+<%=grouped_collection_select :city, :id, State.order(:state),:cities,:state,:city,:city,include_blank: "select city" %>
+</p> 
+
+<p>
+<%=grouped_collection_select :area, :id, City.order(:city),:areas,:city,:area,:area,include_blank: "select area" %>
+</p>
+
+
+<p>
+<%=grouped_collection_select :place, :id, Area.order(:area),:places,:area,:place,:place,include_blank: "select place" %>
+</p> 
+
+
+<p style='display:none'>
+<%= text_field_tag(:address,"",placeholder:"Pickup Street Address",class: "form-control",id:'address_street')%>
+
+<p>
+
+ <%= submit_tag("Next") %>
+</p>
+
+<% end %>
+
+
+
+
+<%=form_tag(second_form_orders_path,remote:'true' ,class:'second_form') do %>
+<div class="row">
+  <div class="col-sm-6">
+<div class="form-group">
+
+ <%= select_tag(:device_type, options_for_select([
+ 	['Select Device Type', ''],
+ 	['Television', 'Television'],
+ 	['Radio', 'Radio'],
+	['Laptop', 'Laptop'],
+	['Refrigerator', 'Refrigerator'],
+	['Electri Oven', 'Electric Oven'],
+	['Electric Fan', 'Electric Fan'],
+	['Electric Iron', 'Electric Iron'],
+	['Electric Cooker', 'Electric Cooker'],
+	['Mobile Phone', 'Mobile Phone'],
+	['Air Conditioner', 'Air Conditioner'],
+	['Others', 'Others']
+    ]) ,id:'device_type',class: "form-control",style:'width:100% !important')
+ %>
+
+<div class="input-group" id='device_type2_div2' style="display:none">
+ <%= text_field_tag(:device_type,"",id:'device_type2',placeholder:"Enter Device Type",class: "form-control")
+  %><span class="input-group-addon" ><span class="glyphicon glyphicon-remove" id='change_field2'></span></span>
+</div>
+
+
+
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<%= text_field_tag(:device_model,"",id:'device_model',placeholder:"Enter Device Model",class: "form-control") %>
+</div>
+</div>
+</div>
+
+<div class="form-group"><%= text_area_tag(:device_problem,"",id:'device_problem',placeholder:"Enter Device Problem",class: "form-control") %></div>
+<div class="form-group">
+<button type='button' class='previous' position='second_form'>Previous</button> <%= submit_tag("Next") %>
+</div>
+<% end %>
+
+
+<div class="information_div">
+
+<h4 style="border-bottom:1px dotted #eeeeee;font-size:25px !important">Information</h4>
+
+<div>
+
+
+</div>
+<%=form_tag(third_form_orders_path,remote:'true' ,class:'third_form') do %>
+
+<p><button type='button' class='previous' position='third_form'>Previous</button> <%= submit_tag("Submit") %></p>
+
+<%end%>
+
+</div>
+
+
+
+<%=form_tag(fourth_form_orders_path,remote:'true' ,class:'fourth_form') do %>
+
+<div style='background-color:#eeeeee;padding:3px'>Sign up and Get <i><u>GoFixam</u></i> LITE plan for free:
+<%= radio_button_tag(:credential,"sign_up",class:'sign_up') %></div>
+
+
+<div>I Have a <i><u>GoFixam</u></i> Account:
+<%= radio_button_tag(:credential,"sign_in",class:'sign_in') %></div>
+
+<p>
+<button type='button' class='previous' position='fourth_form'>Previous</button>
+
+<%=link_to "Log in to continue",user_session_path,class:'login_complete' %>
+
+<%=link_to "Sign up to continue", new_user_registration_path,class:'sign_up_complete' %>
+
+</p>
+<% end %>
+
+
+
+
+

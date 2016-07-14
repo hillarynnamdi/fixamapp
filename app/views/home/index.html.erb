@@ -1,0 +1,321 @@
+<div id="container">
+
+
+<div id='body'>
+
+
+
+
+<div class='wrapper'>
+<nav class="navbar navbar-default navbar-static-top" id='navigatn' >
+<div class='credentials'>
+
+<%=link_to user_session_path do  %>
+<span class="glyphicon glyphicon-log-in"></span> Log in
+<%end%>
+
+<%=link_to new_user_registration_path do  %>
+<span class="glyphicon glyphicon-user"></span> Register
+<%end%>
+
+
+
+</div>
+  <div class="container" id='section_content'>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+
+<%=link_to  home_index_path do  %>
+  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+<%end%>
+    
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" class="scroll-top2"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="#plan_divider"><span class="glyphicon glyphicon-list"></span> Our Plans</a></li>
+        <li><a href="#track_divider"><span class="glyphicon glyphicon-map-marker"></span> Track</a></li>
+        <li><a href="#contact_divider"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+        <li style="margin-right:-15px"> <a href="#">
+        <%=image_tag 'fb.png', class:"img-rounded", width:"30", height:"30"%></a> </li>
+        <li style="margin-right:-15px"> <a href="#">
+        <%=image_tag 'twit.png', class:"img-rounded", width:"30", height:"30"%></a> </li>
+        <li style="margin-right:-15px"> <a href="#">
+        <%=image_tag 'ins.png', class:"img-rounded", width:"30", height:"30"%>
+        </a> </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid" style="background-color:#66b3ff">
+  <div class="jumbotron" id='jumbotron-index'>
+  <div class="container" >
+<div class="row" id='index_jumb_track'>
+
+    <div class="col-sm-6">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox" style="background-color:#66b3ff">
+    <div class="item active">
+      <%=image_tag 'go2.jpg', alt:'slider1'%>
+    </div>
+
+    <div class="item">
+      <%=image_tag '22.png', alt:'slider1'%>
+    </div>
+
+    <div class="item">
+      <%=image_tag '33.png', alt:'slider1'%>
+    </div>
+
+    <div class="item">
+      <%=image_tag '44.png', alt:'slider1'%>
+    </div>
+
+    <div class="item">
+      <%=image_tag '55.png', alt:'slider1'%>
+    </div>
+
+    <div class="item">
+     <%=image_tag '66.png', alt:'slider1'%>
+    </div>
+
+    <div class="item">
+      <%=image_tag 'KK.png', alt:'slider1'%>
+    </div>
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+<div class="col-sm-6">
+
+
+      <div class='book_form'>
+      <div class='easy_to_use'>Easy To Use & Reliable.</div>
+      <div class='easy_to_use2'><span>Place An Order Now!</span></div>
+      
+
+    <%= render "forms" %>
+
+
+      </div>
+</div>
+</div>
+
+  </div>
+  </div>
+  </div>
+
+
+    <div class="container" id='section_content3'>
+
+  <div class="row" >
+    <div class="col-sm-12">
+      <h2 class='sect1' >Get your device fixed & delivered</h2>
+
+    </div>
+  </div>
+</div>
+
+  <div class="container" id='section_content2'>
+
+  <div class="row" >
+    <div class="col-sm-4" >
+      <h3>1.Place an Order</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>2.Repair & Services</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>3.Delivery & Payment</h3> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="divider" id="plan_divider"></div>
+  </div>
+
+</div>
+
+
+<div class='section3'>
+    <div class="container" id='section_content3'>
+
+  <div class="row" >
+    <div class="col-sm-12">
+      <h3 class='sect2'>Our Protection Plans</h3>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container" id='section_content4' >
+
+  <div class="row" >
+    <div class="col-sm-4" >
+      <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>LITE</p>
+      <p><i class="glyphicon glyphicon-remove"></i> No Discount on Bills</p>
+      <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> Free ($0.00)</p>
+       <p><i class="glyphicon glyphicon-ok"></i></i> 30 Days Repair Warranty</p>
+       <p><input type="button" value="Get Started"></p>
+    </div>
+    <div class="col-sm-4">
+      <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>PREMIUM</p>
+      <p><i class="glyphicon glyphicon-ok"></i> 10% Discount on Bills</p>
+      <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> &#8358;3,000 ($7.2)</p>
+      <p> <i class="glyphicon glyphicon-ok"></i> 60 Days Repair Warranty</p>
+      <p><a href='#' class='unavailable'>Get Started</a></p>
+    </div>
+    <div class="col-sm-4">
+      <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>BUSINESS</p>
+      <p> <i class="glyphicon glyphicon-ok"></i> 20% Discount on Bills</p>
+      <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> &#8358;4,500 ($10.4)</p>
+       <p> <i class="glyphicon glyphicon-ok"></i> 90 Days Repair Warranty</p>
+       <p><a href='#'  class='unavailable'>Get Started</a></p>
+    </div>
+<span class="divider" id="track_divider"></span>
+  </div>
+
+</div>
+
+
+
+</div>
+
+    <div class="container" id='section_content3'>
+  <div class="row" >
+    <div class="col-sm-12">
+      <h3 class='sect_track2'><span class="glyphicon glyphicon-map-marker" style='color:#66b5ff'></span> Track Order</h3>
+    </div>
+</div>
+
+
+<div class="container" id="section_content5">
+  <div class="row" >
+    <div class="col-sm-12" >
+<form role="form" id='track_form'>
+  <div class="form-group">
+    <div class="input-group input-group-lg">
+  <input type="text" class="form-control" placeholder="Enter your unique order ID">
+  <span class="input-group-btn">
+        <button class="btn btn-info" type="submit">Track</button>
+      </span>
+</div>
+  </div>
+
+  
+</form>
+  
+  </div>
+
+</div>
+<div class="divider" id="contact_divider"></div>
+</div>
+</div>
+
+<div class="divider" id="contact_divider"></div>
+<div class='contact_us'>
+    <div class="container" id='section_content3'>
+  <div class="row" >
+    <div class="col-sm-12">
+      <h3 class='sect_track2'><i class="glyphicon glyphicon-envelope" style='color:#66b5ff'></i> Contact Us</h3>
+
+    </div>
+</div>
+</div>
+
+
+  <div class="container" id='section_content6' >
+
+  <div class="row" >
+    <div class="col-sm-7" id='reach_us' >
+      <h3> <i class="glyphicon glyphicon-thumbs-up" style='color:#66b5ff'></i> We'd love to hear from you. Drop us a line any time!</h3>
+      <form role="form">
+  <div class="form-group">
+    <label for="name">Enter Your Name:</label>
+    <input type="textfield" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="name">Enter Your E-mail Address:</label>
+    <input type="textfield" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="number">Enter Your Mobile Number:</label>
+    <input type="textfield" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="message">Type Your Message</label>
+    <textarea class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-info">Send</button>
+</form>
+    </div>
+    <div class="col-sm-5" id='contact_phone'>
+      <h3><i class="glyphicon glyphicon-pushpin"></i> Gofixam&trade; </i></h3>
+      <p><i class="glyphicon glyphicon-road"></i> Lekki phase 1,Lekki Lagos Island,Nigeria.</p>
+      <p><i class="glyphicon glyphicon-phone-alt"></i> +2348000000000</p>
+      <p><i class="glyphicon glyphicon-hourglass"></i> 9.00am-5pm</p>
+      <p></p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul>
+
+
+
+
+
+
+</div>
+
+
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
+  </div>
+</div>
+
+</div>

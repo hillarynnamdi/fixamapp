@@ -1,0 +1,225 @@
+<div class="table-responsive">
+              <table class='table'>
+              <% @all_order.each do |item| %>
+                <thead>
+                    <tr class="order_header">
+                    <th>Order Number<div class="order_time"><%= item.order_number %></div></th>
+                    <th>Order Placed <div class="order_time"><%= item.created_at.strftime("%d %B %Y") %></div></th>
+                    <th>Repair Cost
+                     <div class="order_time"> 
+                     <% if item.repair_cost.blank? %>
+                      &#8358;?
+                      <%else%>
+                      <%= item.repair_cost.blank? %>
+                      <% end -%>
+                    </div>
+
+                    </th>
+
+                    <th>
+                    <% if item.order_status=="pending" %>
+                    <%=link_to cancel_order_path(item), data: { confirm: "Are you sure?" }, method: :patch,class:"btn btn-danger"  do%>
+                          <i class="glyphicon glyphicon-remove"></i> Cancel
+                    <% end -%>
+                    <%elsif item.order_status=="cancelled" %>
+                      <%=link_to "Re-Order",reorder_order_path(item), method: :patch,class:"btn btn-success" %>
+                    <% end -%>
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                  <tr><td colspan="4">
+
+          <div class="order_content_wrapper">
+                    
+                        <% if item.order_status=="pending" %>
+                          <div class="order_status">
+<button type="button" class="btn btn-primary"><span class="badge">NEW</span></button>
+</div>
+                        <% elsif item.order_status=="delivered" %>
+                            <div class="order_status">
+<button type="button" class="btn btn-success"><span class="badge">DELIVERED</span></button>
+</div>
+                        <% else -%>
+                          <div class="order_status">
+<button type="button" class="btn btn-danger"><span class="badge">CANCELLED</span></button>
+</div>
+                        <% end -%>
+                    
+
+                    <div class="row">
+                        <% if item.order_status=="pending" %>
+                                                <div class="col-sm-2">
+
+
+                    <% if item.device_type=="Television" %>
+<%=image_tag 'tv.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                    <% elsif item.device_type=="Radio" %>
+<%=image_tag 'radio.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Laptop" %>
+<%=image_tag 'laptop.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Refrigerator" %>
+<%=image_tag 'fridge.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electri Oven" %>
+<%=image_tag 'oven.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electric Fan" %>
+<%=image_tag 'fan.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electric Iron" %>
+<%=image_tag 'iron.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electric Cooker" %>
+<%=image_tag 'cooker.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Mobile Phone" %>
+<%=image_tag 'phone.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+
+                      <%elsif item.device_type=="Air Conditioner" %>
+<%=image_tag 'ac.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%else%>
+
+                      <%=image_tag 'repair.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+
+                    <% end -%>
+                      
+
+
+
+                      </div>
+                      <div class="col-sm-3">
+                      <div class="device_content">
+                      <div><div><u>Device Type:</u></div>
+                        <div><div class='span_tags'><%= item.device_type %></div></div>
+
+                        <div><u>Device Model:</u></div>
+                        <div><div class='span_tags'><%= item.device_model %></div></div>
+     
+                        <div><u>Device Problem:</u> </div>
+                        <div><div class='span_tags'><%= item.device_problem %></div></div>
+
+                      </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-3">
+                      <div class="device_content">
+                      <div><u>State:</u></div><div> <div class='span_tags'><%= item.state %></div></div>
+                      <div><u>City/Area:</u></div><div><div class='span_tags'><%= item.city %>/<%= item.area %></div></div>
+                        <% if !item.place.blank? %> 
+                        <div><u>Place:</u></div><div> <div class='span_tags'><%= item.place %></div></div>
+                         <%end%>
+                        <div><u>Address:</u></div><div> <div class='span_tags'><%= item.pickup_address %></div></div>
+             
+
+                      </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="device_content">
+                          <div class="row">
+                            <div class="col-sm-4" id='order_time_constraint'>
+                            <div id='main_time'>
+                              <%=((DateTime.now.to_time-item.updated_at.to_time)/1.hour).round %>
+                            </div>
+                              <% @hour=((DateTime.now.to_time-item.updated_at.to_time)/1.hour).round %>
+
+                              <%if @hour>1 %>
+                            <span>HOURS</span>
+                            <%else%>
+                              <span>HOUR</span>
+                            <%end%>
+
+
+                            </div>
+                            <div class="col-sm-8" id="order_time_response">
+                            <p><i class="glyphicon glyphicon-earphone"></i> WAITING FOR OUR CALL</p>
+                            <div>                             
+                                If this order is still unscheduled in 48 HOURS, it will be cancelled.
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                        <% else -%>
+
+                      <div class="col-sm-2">
+
+
+                    <% if item.device_type=="Television" %>
+<%=image_tag 'tv.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                    <% elsif item.device_type=="Radio" %>
+<%=image_tag 'radio.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Laptop" %>
+<%=image_tag 'laptop.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Refrigerator" %>
+<%=image_tag 'fridge.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electri Oven" %>
+<%=image_tag 'oven.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electric Fan" %>
+<%=image_tag 'fan.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electric Iron" %>
+<%=image_tag 'iron.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Electric Cooker" %>
+<%=image_tag 'cooker.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Mobile Phone" %>
+<%=image_tag 'phone.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%elsif item.device_type=="Air Conditioner" %>
+<%=image_tag 'ac.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+                      <%else%>
+
+                      <%=image_tag 'repair.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
+
+                    <% end -%>
+                      
+
+
+
+                      </div>
+                      <div class="col-sm-3">
+                      <div class="device_content">
+                      <div><div><u>Device Type:</u></div>
+                        <div><div class='span_tags'><%= item.device_type %></div></div>
+
+                        <div><u>Device Model:</u></div>
+                        <div><div class='span_tags'><%= item.device_model %></div></div>
+     
+                        <div><u>Device Problem:</u> </div>
+                        <div><div class='span_tags'><%= item.device_problem %></div></div>
+
+                      </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-3">
+                      <div class="device_content">
+                      <div><u>State:</u></div><div> <div class='span_tags'><%= item.state %></div></div>
+                      <div><u>City/Area:</u></div><div><div class='span_tags'><%= item.city %>/<%= item.area %></div></div>
+                        <% if !item.place.blank? %> 
+                        <div><u>Place:</u></div><div> <div class='span_tags'><%= item.place %></div></div>
+                         <%end%>
+                        <div><u>Address:</u></div><div> <div class='span_tags'><%= item.pickup_address %></div></div>
+             
+
+                      </div>
+                      </div>
+
+                                          <div class="col-sm-4">
+
+                      </div>
+                        <% end -%>
+
+
+                    </div>
+</div>
+                  </td></tr>
+
+                </tbody>
+
+              <% end -%>
+
+              </table>
+</div>
+
+
+<div id='pagination_div'>
+  <%=will_paginate @all_order,renderer: BootstrapPagination::Rails %>
+</div>
+
+
+<div id="delete-modal" class="modal fade"></div>

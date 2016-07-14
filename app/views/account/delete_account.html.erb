@@ -1,0 +1,73 @@
+<div class='account_wrapper'>
+		<div class="account_header">
+
+			<%= render "account_navbar" %>
+
+		</div>
+
+		<div class="account_body">
+
+				<div class="account_sub_body3">
+
+		<div class="row">
+  			<div class="col-sm-3" id='account_left'>
+  			<div id='myaccount_body_left'>
+  				<p><%=link_to "Basic Information",account_index_path,class:'inactive_account_link' %></p>
+  				<p><%=link_to "Change Password", change_password_account_index_path,class:'inactive_account_link'%></p>
+  				<p><%=link_to "Delete Account", delete_account_account_index_path,class:'active_account_link' , id:'active_para'%></p>
+
+  			</div>
+
+
+  			</div>
+
+
+
+  			<div class="col-sm-9" id=' account_right'>
+<%= render "error_success" %>
+  				<div id="myaccount_body">
+<%= simple_form_for(:user, url: remove_user_account_path(current_user.first_name), :html=>{class:"form-update"},method: :delete) do |f| %>
+<div id="myaccount_body">
+              <div class="order_tag">
+                <span>Delete Account</span>
+              </div>
+              <div class="items_count">
+  <%= f.error_notification %>
+<div class="form-group">
+  		You may delete your account at any time. However, this action is irreversible.
+ </div>
+  <div class="form-actions">
+
+    <%= button_to "I UNDERSTAND,DELETE MY ACCOUNT",  account_path(current_user.first_name), data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-danger"  %>
+  </div>
+
+
+
+
+</div>
+
+<% end %>
+
+
+
+
+
+
+  				</div>
+
+  			</div>
+
+  		</div>
+  		</div>
+
+
+
+		</div>
+
+
+
+    <div id="footer">
+  <div class="container">
+    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
+  </div>
+</div>

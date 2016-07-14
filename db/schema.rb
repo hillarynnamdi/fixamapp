@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607072310) do
+ActiveRecord::Schema.define(version: 20160708184402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160607072310) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.string   "unconfirmed_email"
   end
 
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true, using: :btree
@@ -53,4 +54,102 @@ ActiveRecord::Schema.define(version: 20160607072310) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   add_index "admins", ["unlock_token"], name: "index_admins_on_unlock_token", unique: true, using: :btree
 
+  create_table "areas", force: :cascade do |t|
+    t.string   "area"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "areas", ["city_id"], name: "index_areas_on_city_id", using: :btree
+  add_index "areas", ["state_id"], name: "index_areas_on_state_id", using: :btree
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "city"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "state"
+    t.string   "city"
+    t.string   "area"
+    t.string   "place"
+    t.string   "pickup_address"
+    t.string   "device_type"
+    t.string   "device_model"
+    t.text     "device_problem"
+    t.integer  "user_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "order_status",   default: "pending"
+    t.string   "order_number"
+    t.string   "repair_cost"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "places", force: :cascade do |t|
+    t.string   "place"
+    t.integer  "area_id"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "places", ["area_id"], name: "index_places_on_area_id", using: :btree
+  add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree
+  add_index "places", ["state_id"], name: "index_places_on_state_id", using: :btree
+
+  create_table "states", force: :cascade do |t|
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "",   null: false
+    t.string   "encrypted_password",     default: "",   null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,    null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "phone_number"
+    t.string   "unconfirmed_email"
+    t.string   "preferred_language"
+    t.string   "location"
+    t.string   "profile_icon"
+    t.boolean  "has_password",           default: true
+  end
+
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "areas", "cities"
+  add_foreign_key "areas", "states"
+  add_foreign_key "cities", "states"
+  add_foreign_key "orders", "users"
+  add_foreign_key "places", "areas"
+  add_foreign_key "places", "cities"
+  add_foreign_key "places", "states"
 end

@@ -1,0 +1,133 @@
+<div class='account_wrapper'>
+		<div class="account_header">
+
+			<%= render "account_navbar" %>
+
+		</div>
+
+		<div class="account_body">
+
+				<div class="account_sub_body">
+
+		<div class="row">
+  			<div class="col-sm-3" id='account_left'>
+
+  			<div id='myaccount_body_left'>
+  				<p><%=link_to "Basic Information",account_index_path,class:'active_account_link', id:'active_para' %></p>
+  				<p><%=link_to "Change Password", change_password_account_index_path,class:'inactive_account_link' %></p>
+  				<p><%=link_to "Delete Account", delete_account_account_index_path,class:'inactive_account_link' %></p>
+
+  			</div>
+
+
+  			</div>
+
+
+
+  			<div class="col-sm-9" id=' account_right'>
+
+<%= render "error_success" %>
+
+  				<div id="myaccount_body">
+<%= simple_form_for(:user, url: account_path(current_user.first_name), method: :patch,:html=>{class:"form-update"}) do |f| %>
+<div class="order_tag">
+                <span>Basic Information</span>
+              </div>
+  <%= f.error_notification %>
+
+
+<div class="form-group">
+<div class="bio_label">First Name:</div>
+  		 <%= f.text_field :first_name, required: true, class:"form-control",placeholder:"First Name" %>
+ </div>
+
+<div class="form-group">
+<div class="bio_label">Last Name:</div>
+	  <%= f.text_field :last_name, required: true,class:"form-control",placeholder:"Last Name" %> 
+	</div>
+
+         <div class="form-group">
+<div class="row">
+  <div class="col-sm-6">
+        <%= f.radio_button :gender, "male" %> Male</div>
+         <div class="col-sm-6"><%= f.radio_button :gender, "female" %> Female</div>
+
+</div>
+</div>
+
+<div class="form-group">
+<div class="bio_label">Email Address:</div>
+    <%= f.email_field :email, required: true,class:"form-control",placeholder:"Email Address", disabled:'disabled'%>
+ </div>
+
+<div class="form-group">
+<div class="bio_label">Phone Number:</div>
+    <%= f.input :phone_number, required: true,label: false,class:"form-control",placeholder:"Phone Number",hint:"A number we can reach you on"%>
+ </div>
+
+
+<div class="form-group">
+<div class="bio_label">Location:</div>
+    <%= f.text_area :location, required: true,class:"form-control",placeholder:"Location"%>
+</div>
+
+
+
+
+ <div class="form-group">
+<div class="bio_label">Preferred Language:</div>
+      <%= f.select(:preferred_language, options_for_select([
+      	 ['Preferred Language',''],
+         ['English', 'English']
+		],@user.preferred_language),
+        class: "form-control") %>    
+ </div>
+
+<div class="form-group">
+ <div class="row">
+  <div class="col-sm-4">
+        <%= f.radio_button :profile_icon, "white" %>
+        <span class="glyphicon glyphicon-user" id='profile_icon1'></span>
+        </div>
+         <div class="col-sm-4" class='profile_icon'><%= f.radio_button :profile_icon, "pink" %>
+         <span class="glyphicon glyphicon-user" id='profile_icon2'></span></div>
+         <div class="col-sm-4"><%= f.radio_button :profile_icon, "blue" %>
+         <span class="glyphicon glyphicon-user" id='profile_icon3'></span></div>
+</div>
+</div>
+
+
+  <div class="form-actions">
+    <%= f.submit  "Update Profile",class:"btn btn-primary" %>
+  </div>
+
+
+
+
+</div>
+
+<% end %>
+
+
+
+
+
+
+  				</div>
+
+  			</div>
+
+  		</div>
+  		</div>
+
+
+		</div>
+
+		<div id="footer">
+  <div class="container">
+    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
+  </div>
+</div>
+
+</div>
+

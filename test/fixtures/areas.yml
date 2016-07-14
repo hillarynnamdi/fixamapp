@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area: MyString
+  city_id: 
+  state_id: 
+
+two:
+  area: MyString
+  city_id: 
+  state_id: 

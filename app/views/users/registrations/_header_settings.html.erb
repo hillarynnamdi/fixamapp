@@ -1,0 +1,9 @@
+<% if session[:state].present? && session[:city].present? && session[:address].present? && session[:area].present? && session[:device_model].present? && (session[:device_type].present? || session[:device_type2].present?) && session[:device_problem].present? %>
+
+<h3 class='form-signin-heading'>Please sign up to continue.</h3>
+
+<% else %>
+
+<h2 class='form-signin-heading'>Sign Up</h2>
+
+<% end -%>

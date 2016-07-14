@@ -1,0 +1,207 @@
+<div class='account_wrapper'>
+    <div class="account_header">
+
+      <%= render "account/account_navbar" %>
+
+    </div>
+
+    <div class="account_body">
+
+        <div class="account_sub_body">
+
+    <div class="row">
+        <div class="col-sm-3" id='account_left'>
+
+        <div id='myaccount_body_left'>
+          <p>
+          <%=link_to orders_path,class:'inactive_account_link' do %>
+            <i class="glyphicon glyphicon-list"></i> All Orders
+          <% end -%>
+          </p>
+          <p>
+          <%=link_to pending_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-transfer"></i> Sent Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to delivered_orders_path, class:'inactive_account_link' do %>
+            <i class="glyphicon glyphicon-check"></i> Delivered Orders
+          <% end -%>
+          </p>
+          <p>
+          <%=link_to cancelled_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-trash"></i> Cancelled Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to new_order_path, class:'active_account_link' ,id:'active_para'  do %>
+            <i class="glyphicon glyphicon-send"></i> Place Order
+          <% end -%>
+          </p>
+        </div>
+
+
+        </div>
+
+
+
+        <div class="col-sm-9" id=' account_right'>
+
+<ul class="errors">
+  <%=image_tag 'ajax.gif', class:"img-thumbnail", width:'30px',height:'30px', style:'display:none;border:0px solid grey !important;',id:'ajaxcall' %> 
+
+</ul>
+
+          <div id="myaccount_body">
+          <div class="order_tag">
+                <span>New Order</span>
+              </div>
+<%= form_for(@order,:html=>{class:"form-book"},remote:true) do |f| %>
+
+<div class="form-group">
+
+<%= f.select(:device_type, options_for_select([
+      ['Select Device Type', ''],
+      ['Television', 'Television'],
+      ['Radio', 'Radio'],
+      ['Laptop', 'Laptop'],
+      ['Refrigerator', 'Refrigerator'],
+      ['Electri Oven', 'Electric Oven'],
+      ['Electric Fan', 'Electric Fan'],
+      ['Electric Iron', 'Electric Iron'],
+      ['Electric Cooker', 'Electric Cooker'],
+      ['Mobile Phone', 'Mobile Phone'],
+      ['Air Conditioner', 'Air Conditioner'],
+      ['Others', 'Others']
+    ]) ,class: "form-control",style:'width:100% !important')
+ %>
+
+
+    <div class="input-group" style='display:none' id='device_type2_div'>
+        <%= f.text_field(:device_type,id:'device_type2',placeholder:"Enter Device Type",class: "form-control")
+  %><span class="input-group-addon" ><span class="glyphicon glyphicon-remove" id='change_field'></span></span>
+    </div>
+
+
+
+ </div>
+
+<div class="form-group">
+
+<%= f.text_field(:device_model,id:'device_model',placeholder:"Enter Device Model",class: "form-control") %>
+</div>
+
+<div class="form-group">
+<%= f.text_area(:device_problem,id:'device_problem',placeholder:"Enter Device Problem",class: "form-control") %>
+</div>
+
+<% if @old_orders.count>0 %>
+
+<div class="old_address_div">
+
+<% @old_orders.each_with_index do |item,index| %>
+<div class="form-group"> Address <%= index=index+1 %> -
+<%= radio_button_tag :address, item.id,class:'address'%>
+
+<%= item.state %> - <%= item.city %> - <%= item.area %> 
+<% if !item.place.blank? %>
+- <%= item.place %> 
+<% end %>
+- <%= item.pickup_address %>
+</div> 
+<% end -%>
+
+</div>
+
+<% end -%>
+
+
+<div class="new_address_div">
+<p>
+<%=f.collection_select :state,State.order(:state),:state, :state,include_blank: "select state"%>
+</p>
+
+<p>
+<%=f.grouped_collection_select :city,State.order(:state),:cities,:state,:city,:city,include_blank: "select city" %>
+</p> 
+
+<p>
+<%=f.grouped_collection_select :area, City.order(:city),:areas,:city,:area,:area,include_blank: "select area" %>
+</p>
+
+
+<p>
+<%=f.grouped_collection_select :place, Area.order(:area),:places,:area,:place,:place,include_blank: "select place" %>
+</p> 
+
+
+<p style='display:none'>
+<%= f.text_field :pickup_address,placeholder:"Pickup Street Address",class: "form-control"%>
+
+</p>
+
+</div>
+
+
+
+<div class="form-group">
+
+<% if @old_orders.count>=0 %>
+<button type="button" class="btn btn-info" id="new_address">+New Address</button>
+<% end -%>
+
+<% if @old_orders.count>0 %>
+
+<button type="button" class="btn btn-info" id="old_address">+Old Address</button>
+
+<% end -%>
+
+</div>
+
+
+
+
+
+
+
+  <div class="form-actions">
+   <%= f.submit  "Place Order",class:"btn btn-primary" %> <%=link_to "Cancel", orders_path, class:"btn btn-danger", style:"margin-left:30px"%>
+  </div>
+
+
+
+
+</div>
+
+<% end %>
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+
+
+    </div>
+
+    <div id="footer">
+  <div class="container">
+    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
+  </div>
+</div>
+
+

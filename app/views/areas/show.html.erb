@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @area.area %>
+</p>
+
+
+
+
+<h1>Listing Places</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Places</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @places.each do |place| %>
+      <tr>
+        <td><%= place.place %></td>
+        <td><%= link_to 'Edit', edit_place_path(place) %></td>
+        <td>
+        	<%= link_to 'Destroy Place', place,method: :delete,data: { confirm: 'Are you sure?' } %>
+
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+
+
+<h2>Add a place:</h2>
+<%= form_for([@area.state,@area.city,@area, @area.places.build]) do |f|%>
+<p>
+<%= f.label :place %><br />
+<%= f.text_field :place %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', city_path(@area.city) %>
+
+
+

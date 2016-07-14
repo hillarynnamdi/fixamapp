@@ -1,0 +1,116 @@
+
+
+if ($("#area_id").is(':hidden') && $("#place_id").is(':hidden'))
+{
+
+
+
+
+<% if session[:state].present? && session[:city].present? && session[:address].present?%>	
+	
+	$('.first_form').hide();
+	$('.second_form').show();
+
+<% elsif  !session[:state].present? %>
+
+$('#state_id').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:city].present? %>
+	
+$('#city_id').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:address].present? %>
+	
+$('#address_street').css({border:'2px solid #ff9999'})
+
+<%end%>
+
+}
+else if(!$("#area_id").is(':hidden') && $("#place_id").is(':hidden')){
+
+
+<% if session[:state].present? && session[:city].present? && session[:area].present? && session[:address].present?%>	
+	
+
+	$('.first_form').hide();
+	$('.second_form').show();
+
+<% elsif  !session[:state].present? %>
+
+$('#state_id').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:city].present? %>
+	
+$('#city_id').css({border:'2px solid #ff9999'})
+
+
+<% elsif  !session[:area].present? %>
+	
+$('#area_id').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:address].present? %>
+	
+$('#address_street').css({border:'2px solid #ff9999'})
+
+
+<%end%>
+
+
+}
+
+else if(!$("#place_id").is(':hidden')){
+
+
+<% if session[:state].present? && session[:city].present? && session[:area].present?  && session[:place].present? && session[:address].present?%>	
+
+
+	$('.first_form').hide();
+	$('.second_form').show();
+
+
+<% elsif  !session[:state].present? %>
+
+$('#state_id').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:city].present? %>
+	
+$('#city_id').css({border:'2px solid #ff9999'})
+
+
+<% elsif  !session[:area].present? %>
+	
+$('#area_id').css({border:'2px solid #ff9999'})
+
+
+<% elsif  !session[:place].present? %>
+	
+$('#place_id').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:address].present? %>
+	
+$('#address_street').css({border:'2px solid #ff9999'})
+
+<%end%>
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
