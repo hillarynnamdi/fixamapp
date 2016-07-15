@@ -1,11 +1,18 @@
-<h2><%= t "devise.invitations.new.header" %></h2>
+<h2 class='form-inputs'><%= t "devise.invitations.new.header" %></h2>
 
 <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post} do |f| %>
-  <%= devise_error_messages! %>
+  <div class="form-inputs">
+  	<%if alert.present? || notice.present?%>
+	  	<div class="alert alert-danger">
+	  		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  		<%= alert %> <%= notice %>
+		</div>
+	<%end%>
+
 
 <% resource.class.invite_key_fields.each do |field| -%>
-  <%= f.input field %>
+  <%= f.input field  %>
 <% end -%>
 
-<%= f.button :submit, t("devise.invitations.new.submit_button") %>
+<%= f.button :submit, t("devise.invitations.new.submit_button") ,class:'btn btn-primary'%>
 <% end %>
