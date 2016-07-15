@@ -11,6 +11,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+
+gem 'will_paginate-bootstrap'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -23,9 +26,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'gravatar_image_tag'
-
-gem 'gravatarify', '~> 3.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -38,6 +38,10 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'will_paginate-bootstrap'
 gem 'devise_invitable'
+
+gem 'omniauth-facebook'
+
+gem 'figaro'
 
 
 # Use Capistrano for deployment

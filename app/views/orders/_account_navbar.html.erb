@@ -1,0 +1,76 @@
+		<div class="visible-lg visible-md visible-sm">
+			<div class="account_subheader4">
+
+				<div class='header-left'>
+						<%=link_to  home_index_path do  %>
+						  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+						<%end%>
+				</div>
+
+				<div class='header-right'>
+
+
+<% render_content="<div class='popover_wrapper'>
+
+	<div class='popover_photo'>
+
+	<div>#{@user.first_name.each_char.first} <sub>#{@user.last_name.each_char.first} </sub> </div>
+
+	</div>
+	<div class='popover_name'>
+	#{@user.first_name} #{@user.last_name}<br>
+	<div class='popover_email'>#{@user.email}</div>
+
+	<div class='popover_profilelink'> <a href='/account'>My Profile</a></div>
+
+	</div>
+
+	</div>
+
+	<div class='popover_seperator'>
+
+	</div>
+	<div class='popover_wrapper2'>
+	<div> <a href='/account'><i class='glyphicon glyphicon-user'></i> My account</a> </div>
+	<div> <a href='/orders'><i class='glyphicon glyphicon-list'></i> My Orders</a> </div>
+	<div><a href='/users/sign_out'><i class='glyphicon glyphicon-log-out'></i> Log out </a> </div>
+
+	</div>" %>
+
+	<span data-toggle="popover" data-placement="bottom" 
+	data-content="<%=render_content%>" id='popover' >
+		<i class='glyphicon glyphicon-user' style="color:<%=current_user.profile_icon%> !important" ></i>
+
+	</span>
+					
+				</div>
+
+			</div>
+	</div>
+
+<div class="visible-xs">
+<nav class="navbar navbar-inverse" id='mobile_header'>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <%=link_to  home_index_path do  %>
+						  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+	<%end%>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-list"></span> My Orders</a></li>
+        <li><%= link_to  destroy_user_session_path , method: :delete do %>
+            <span class="glyphicon glyphicon-log-out"></span> Logout (<%=current_user.first_name%> <%=current_user.last_name%>)
+         <%end%>
+        </li>   
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>

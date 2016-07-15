@@ -1,0 +1,9 @@
+
+<% if flash..present? %>
+<div class="error_alert">
+  <% flash.each do |name, msg| %>
+    <i class="glyphicon glyphicon-ok-sign" id='suces_icon'></i> <%= content_tag :span, msg, class: name %> 
+  <% end %>
+</div>
+
+<%end%>

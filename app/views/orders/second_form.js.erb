@@ -1,0 +1,48 @@
+
+<% if session[:device_model].present? &&  session[:device_type].present? && session[:device_problem].present?%>	
+	$('.second_form').hide();
+
+	$('.information_div').show()
+
+	$('.information_div div').html(" ")
+	.append("<div><%= escape_javascript( render text:"Order ID: "+session[:order_id]) %></div>")
+	.append("<div><%= escape_javascript( render text:"State: "+session[:state]) %></div>")
+	.append("<div><%= escape_javascript( render text:"City: "+session[:city]) %></div>")
+
+	<% if session[:area].present? %>
+	.append("<div><%= escape_javascript( render text:"Area: "+session[:area]) %></div>")
+	<%end%>
+
+	<% if session[:place].present? %>
+	.append("<div><%= escape_javascript( render text:"Place: "+session[:place]) %></div>")
+	<%end%>
+
+	.append("<div><%= escape_javascript( render text:"Pickup Address: "+session[:address]) %></div>")
+
+	.append("<div><%= escape_javascript( render text:"Device Type: "+session[:device_type]) %></div>")
+
+	.append("<div><%= escape_javascript( render text:"Device Model: "+session[:device_model])%> </div>")
+	.append("<div><%= escape_javascript( render text:"Device Problem: "+session[:device_problem])%> </div>")
+	
+
+
+
+
+
+<% elsif  !session[:device_type].present?  %>
+
+$('#device_type').css({border:'2px solid #ff9999'})
+
+$('#device_type2').css({border:'2px solid #ff9999'})
+
+
+
+<% elsif  !session[:device_model].present? %>
+	
+$('#device_model').css({border:'2px solid #ff9999'})
+
+<% elsif  !session[:device_problem].present? %>
+	
+$('#device_problem').css({border:'2px solid #ff9999'})
+
+<%end%>

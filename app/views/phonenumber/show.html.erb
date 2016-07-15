@@ -1,0 +1,31 @@
+  <div class="login_wrapper">
+  <div class="logo_icon">
+<%=link_to  home_index_path do  %>
+  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+<%end%>
+</div>
+
+<%= simple_form_for(:user ,url:phonenumber_path(current_user.first_name), method: :patch,:html=>{class:"form-signin"}) do |f| %>
+
+
+
+<h4 class="form-signin-heading">Almost Done! Please Enter you phone number.</h4>
+  <div class="form-inputs">
+    <%= f.input :phone_number, required: true, autofocus: true %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save & Continue" ,class:"btn btn-lg btn-primary btn-block" %>
+  </div>
+<% end %>
+
+
+</div>
+
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
+  </div>
+</div>

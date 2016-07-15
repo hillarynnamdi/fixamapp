@@ -1,0 +1,27 @@
+  								<% if @user.errors.any? %>
+			<div class="error_alert"> 				
+						<ul>
+						<% @user.errors.full_messages.each do |msg| %>
+
+						<li><i class="glyphicon glyphicon-exclamation-sign"></i> <%= msg %></li>
+
+						<% end %>
+						</ul>
+			</div>
+
+
+
+			<% end %>
+
+<% if flash.present? %>
+
+  <% flash.each do |name, msg| %>
+  <% if msg.length > 0 %>
+  <div class="success_alert">
+    <i class="glyphicon glyphicon-ok-sign" id='suces_icon'></i> <%= content_tag :span, msg, class: name %> 
+    </div>
+   <% end %> 
+  <% end %>
+
+
+<%end%>

@@ -8,6 +8,25 @@
 </head>
 <body>
 
+
+
+
+<% if notice.present?  %>
+
+<div class="success_alert" style="width:70%;margin:10px auto;height:auto !important;text-align:center;color:green">
+  	<div class="notice" style="padding:0px !important"><i class="glyphicon glyphicon-ok-sign" id="suces_icon"></i> <%= notice %></div>
+</div>
+
+<% end -%>
+
+<% if alert.present? %>
+
+<div class="error_alert" style="width:70%;margin:10px auto;height:auto !important;;text-align:center;color:red">
+  	<div class="alert" style="padding:0px !important"><i class="glyphicon glyphicon-exclamation-sign"></i> <%= alert%></div>
+</div>
+
+<% end -%>
+
 <%= yield %>
 
 </body>
