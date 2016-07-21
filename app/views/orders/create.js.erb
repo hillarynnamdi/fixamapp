@@ -7,6 +7,8 @@ $("ul.errors").html("")
 
       $("ul.errors").append($("<li />").html("<%= msg.html_safe %>"))
 
+      $('body,html').animate({scrollTop:0},1000);
+
     <% end %>
 
     <% else %>

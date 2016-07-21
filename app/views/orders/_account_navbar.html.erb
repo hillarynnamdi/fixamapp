@@ -1,3 +1,10 @@
+	<div class='credentials2'>
+
+
+<span class="glyphicon glyphicon-phone-alt"></span> (+234)800008479&nbsp; |&nbsp;  <span class="glyphicon glyphicon-envelope"></span> service@gofixam.com
+
+</div>
+	<div class="account_header">
 		<div class="visible-lg visible-md visible-sm">
 			<div class="account_subheader4">
 
@@ -5,7 +12,11 @@
 						<%=link_to  home_index_path do  %>
 						  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
 						<%end%>
+
+
 				</div>
+
+
 
 				<div class='header-right'>
 
@@ -45,10 +56,14 @@
 					
 				</div>
 
+
+
 			</div>
+
 	</div>
 
 <div class="visible-xs">
+
 <nav class="navbar navbar-inverse" id='mobile_header'>
   <div class="container-fluid">
     <div class="navbar-header">
@@ -74,3 +89,14 @@
   </div>
 </nav>
 </div>
+
+</div>
+
+<div class="search_wrapper">
+<div class="search_div">
+	<%= form_tag orders_path,method: :get do  %>
+		  <%= text_field_tag :search, "",placeholder:'OrderNo/ServiceNo'%>
+	        <input type='submit' value="Track">
+  <% end %>
+  </div>
+			</div>

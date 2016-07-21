@@ -23,7 +23,7 @@ def  first_form
             session[:device_type]=params[:device_type];
 
   session[:device_problem]=params[:device_problem];
-  session[:order_id]="gofix"+Devise.friendly_token[0,20].first(6).upcase
+  session[:order_id]="GOFIX"+Devise.friendly_token[0,20].first(6).upcase
 
   end
 
@@ -34,7 +34,18 @@ def  first_form
 
   def index
     @user=current_user
+    
+
+
+    if params[:search]
+       @all_order=pagination.where("order_number LIKE '#{params[:search]}%' ").order("updated_at DESC")
+      
+    
+    else
     @all_order=pagination.order("updated_at DESC")
+
+  end
+
 
   end
 
@@ -109,7 +120,7 @@ def  first_form
       @order.area=@address.area
       @order.place=@address.place
       @order.pickup_address=@address.pickup_address
-      @order.order_number="gofix"+Devise.friendly_token[0,20].first(6).upcase
+      @order.order_number="GOFIX"+Devise.friendly_token[0,20].first(6).upcase
       if @order.save
 
         flash[:order] = "Your order has been placed successfully."
@@ -132,7 +143,7 @@ def  first_form
     else
 
        @order=@user.orders.create(order_params)
-       @order.order_number="gofix"+Devise.friendly_token[0,20].first(6).upcase
+       @order.order_number="GOFIX"+Devise.friendly_token[0,20].first(6).upcase
 
        if @order.save
       flash[:order] = "Your order has been placed successfully."
