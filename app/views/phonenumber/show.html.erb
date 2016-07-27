@@ -1,4 +1,6 @@
   <div class="login_wrapper">
+
+ <%= render "error_success" %>  
   <div class="logo_icon">
 <%=link_to  home_index_path do  %>
   <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
@@ -6,6 +8,7 @@
 </div>
 
 <%= simple_form_for(:user ,url:phonenumber_path(current_user.first_name), method: :patch,:html=>{class:"form-signin"}) do |f| %>
+
 
 
 
