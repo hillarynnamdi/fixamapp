@@ -1,11 +1,33 @@
-	<div class='credentials2'>
+
+	<div class="account_header">
+
+						<!-- Desktop,Laptop,Tablet Header -->
+
+		<div class="visible-lg visible-md visible-sm ">
+<nav class="navbar navbar-default navbar-static-top" id='navigatn' >
+			<div class='credentials2'>
 
 
-<span class="glyphicon glyphicon-phone-alt"></span> (+234)800008479&nbsp; |&nbsp;  <span class="glyphicon glyphicon-envelope"></span> service@gofixam.com
+
+
+<div class="search_wrapper">
+<div class="search_div">
+	<%= form_tag orders_path,method: :get do  %>
+
+<form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        <%= text_field_tag :search, "", placeholder:'OrderNo/ServiceNo' %>
+
+        <button type="submit" class="btn btn-info track_button"><span class="glyphicon glyphicon-map-marker"></span> Track </button>
+    </div>
+    
+</form>
+
+  <% end %>
+  </div>
+			</div>
 
 </div>
-	<div class="account_header">
-		<div class="visible-lg visible-md visible-sm">
 			<div class="account_subheader4">
 
 				<div class='header-left'>
@@ -59,12 +81,38 @@
 
 
 			</div>
-
+	</nav>
 	</div>
+
+
+						<!-- Mobile Header -->
 
 <div class="visible-xs">
 
-<nav class="navbar navbar-inverse" id='mobile_header'>
+<nav class="navbar navbar-default navbar-static-top" id='mobile_header' id='navigatn'>
+
+
+			<div class='credentials2'>
+
+<div class="search_wrapper">
+<div class="search_div">
+	<%= form_tag orders_path,method: :get do  %>
+
+<form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        <%= text_field_tag :search, "", placeholder:'OrderNo/ServiceNo' %>
+
+        <button type="submit" class="btn btn-info track_button"><span class="glyphicon glyphicon-map-marker"></span> Track</button>
+    </div>
+    
+</form>
+
+  <% end %>
+  </div>
+			</div>
+
+</div>
+
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -78,10 +126,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-list"></span> My Orders</a></li>
-        <li><%= link_to  destroy_user_session_path , method: :delete do %>
-            <span class="glyphicon glyphicon-log-out"></span> Logout (<%=current_user.first_name%> <%=current_user.last_name%>)
+        <li class="active"><a href="/account"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+        <li><a href="/orders"><span class="glyphicon glyphicon-list"></span> My Orders</a></li>
+        <li><%= link_to  destroy_user_session_path  do %>
+            <span class="glyphicon glyphicon-log-out"></span> Log out (<%=current_user.first_name%> <%=current_user.last_name%>)
          <%end%>
         </li>   
       </ul>
@@ -92,11 +140,3 @@
 
 </div>
 
-<div class="search_wrapper">
-<div class="search_div">
-	<%= form_tag orders_path,method: :get do  %>
-		  <%= text_field_tag :search, "",placeholder:'OrderNo/ServiceNo'%>
-	        <input type='submit' value="Track">
-  <% end %>
-  </div>
-			</div>

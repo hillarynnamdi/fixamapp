@@ -1,16 +1,18 @@
 <div class='account_wrapper'>
 
-			<%= render "account_navbar" %>
+
+      <%= render "account_navbar" %>
 
 
-		<div class="account_body">
+                              <!-- Desktop,Laptop,Tablet View -->
+    <div class="account_body_desktop visible-lg visible-md visible-sm">
+        <div class="account_sub_body4">
 
-				<div class="account_sub_body4">
-		<div class="row">
-  			<div class="col-md-2" id='account_left'>
+    <div class="row">
+        <div class="col-md-2" id='account_left'>
 
-  			<div id='myaccount_body_left'>
-  				          <p>
+        <div id='myaccount_body_left'>
+          <p>
           <%=link_to orders_path,class:'inactive_account_link' do %>
             <i class="glyphicon glyphicon-list"></i> All Orders
           <% end -%>
@@ -27,7 +29,7 @@
           <% end -%>
           </p>
           <p>
-          <%=link_to cancelled_orders_path, class:'active_account_link',id:'active_para'  do%>
+          <%=link_to cancelled_orders_path, class:'active_account_link',id:'active_para' do%>
             <i class="glyphicon glyphicon-trash"></i> Cancelled Orders
           <% end -%>
 
@@ -43,45 +45,127 @@
             <i class="glyphicon glyphicon-send"></i> Place Order
           <% end -%>
           </p>
-  			</div>
+        </div>
 
 
-  			</div>
+        </div>
 
 
 
-  			<div class="col-md-10" id=' account_right'>
+        <div class="col-md-10" id=' account_right'>
 <%= render "error_success" %>
-  				<div id="myaccount_body">
-  						<div class="order_tag">
-  							<span>Cancelled Orders</span>
-  						</div>
-  						<div class="items_count">
- <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
-  						</div>
+          <div id="myaccount_body">
+              <div class="order_tag">
+                <span>Cancelled Orders</span>
+              </div>
+              <div class="items_count">
+              <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
+              </div>
 <%= render "order_content" %>
-
-				</div>
-
+        </div>
 
 
 
 
 
-  				</div>
 
-  			</div>
+          </div>
 
-  		</div>
-  		</div>
+        </div>
 
-		<div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+      </div>
+      </div>
 
-		</div>
+                                <!-- Mobile View -->
+
+
+    <div class="account_body_mobile visible-xs">
+        <div class="account_sub_body4">
+
+    <div class="row">
+        <div class="col-md-2" id='account_left'>
+
+        <div id='myaccount_body_left'>
+          <p>
+          <%=link_to orders_path,class:'inactive_account_link' do %>
+            <i class="glyphicon glyphicon-list"></i> All Orders
+          <% end -%>
+          </p>
+          <p>
+          <%=link_to pending_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-transfer"></i> Sent Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to delivered_orders_path, class:'inactive_account_link' do %>
+            <i class="glyphicon glyphicon-check"></i> Delivered Orders
+          <% end -%>
+          </p>
+          <p>
+          <%=link_to cancelled_orders_path, class:'active_account_link',id:'active_para' do%>
+            <i class="glyphicon glyphicon-trash"></i> Cancelled Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to new_order_path, class:'inactive_account_link' do %>
+            <i class="glyphicon glyphicon-send"></i> Place Order
+          <% end -%>
+          </p>
+        </div>
+
+
+        </div>
+
+
+
+        <div class="col-md-10" id=' account_right'>
+<%= render "error_success" %>
+          <div id="myaccount_body">
+              <div class="order_tag">
+                <span>Cancelled Orders</span>
+              </div>
+              <div class="items_count">
+              <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
+              </div>
+<%= render "order_content" %>
+        </div>
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+
+      <%= render "shared/footer_scroll" %>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
