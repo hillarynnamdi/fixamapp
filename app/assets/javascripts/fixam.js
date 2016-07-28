@@ -39,7 +39,9 @@ $(document).ready(
   function(){
 $('#navigatn').affix({
       offset: {
-        top: $('#myCarousel').height()-$('#navigatn').height()
+        top: $('#myCarousel,#account_right').height()-$('#navigatn').height()
+
+        
       }
 }); 
 
@@ -364,7 +366,7 @@ var myarea=$("#order_area :selected").text()
 myoptions=$(myplaces).filter("optgroup[label="+myarea+"]").html()
 
 
-if (options) {
+if (myoptions) {
     $("#order_place").parent().show()
     $("#order_place").html(myoptions)
     $("#order_place").prepend("<option value='' selected>select place</option>")

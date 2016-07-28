@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+
+
 resources :phonenumber,path: '/user/phonenumber'
 
 

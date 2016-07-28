@@ -10,7 +10,7 @@
 				<div class="account_sub_body3">
 
 		<div class="row">
-  			<div class="col-sm-3" id='account_left'>
+  			<div class="col-md-3" id='account_left'>
   			<div id='myaccount_body_left'>
   				<p><%=link_to "Basic Information",account_index_path,class:'inactive_account_link' %></p>
   				<p><%=link_to "Change Password", change_password_account_index_path,class:'inactive_account_link'%></p>
@@ -23,7 +23,7 @@
 
 
 
-  			<div class="col-sm-9" id=' account_right'>
+  			<div class="col-md-9" id=' account_right'>
 <%= render "error_success" %>
   				<div id="myaccount_body">
 <%= simple_form_for(:user, url: remove_user_account_path(current_user.first_name), :html=>{class:"form-update"},method: :delete) do |f| %>
@@ -66,8 +66,4 @@
 
 
 
-    <div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+<%= render "shared/footer_scroll" %>

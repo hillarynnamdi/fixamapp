@@ -61,7 +61,7 @@
 <%=image_tag 'laptop.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
                       <%elsif item.device_type=="Refrigerator" %>
 <%=image_tag 'fridge.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
-                      <%elsif item.device_type=="Electri Oven" %>
+                      <%elsif item.device_type=="Electric Oven" %>
 <%=image_tag 'oven.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
                       <%elsif item.device_type=="Electric Fan" %>
 <%=image_tag 'fan.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
@@ -103,9 +103,14 @@
                       <div><u>State:</u></div><div> <div class='span_tags'><%= item.state %></div></div>
                       <div><u>City/Area:</u></div><div><div class='span_tags'><%= item.city %>/<%= item.area %></div></div>
                         <% if !item.place.blank? %> 
-                        <div><u>Place:</u></div><div> <div class='span_tags'><%= item.place %></div></div>
-                         <%end%>
+                        <div><u>Place/Address:</u></div><div> <div class='span_tags'><%= item.place %>/<%= item.pickup_address %>
+                        </div></div>
+                        <% else %>
+
                         <div><u>Address:</u></div><div> <div class='span_tags'><%= item.pickup_address %></div></div>
+
+                         <%end%>
+                        
              
 
                       </div>
@@ -150,7 +155,7 @@
 <%=image_tag 'laptop.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
                       <%elsif item.device_type=="Refrigerator" %>
 <%=image_tag 'fridge.jpg', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
-                      <%elsif item.device_type=="Electri Oven" %>
+                      <%elsif item.device_type=="Electric Oven" %>
 <%=image_tag 'oven.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
                       <%elsif item.device_type=="Electric Fan" %>
 <%=image_tag 'fan.png', class:"img-thumbnail", width:'100px',height:'100px', id:"nav-icon"%>
@@ -191,9 +196,13 @@
                       <div><u>State:</u></div><div> <div class='span_tags'><%= item.state %></div></div>
                       <div><u>City/Area:</u></div><div><div class='span_tags'><%= item.city %>/<%= item.area %></div></div>
                         <% if !item.place.blank? %> 
-                        <div><u>Place:</u></div><div> <div class='span_tags'><%= item.place %></div></div>
-                         <%end%>
+                        <div><u>Place/Address:</u></div><div> <div class='span_tags'><%= item.place %>/<%= item.pickup_address %>
+                        </div></div>
+                        <% else %>
+
                         <div><u>Address:</u></div><div> <div class='span_tags'><%= item.pickup_address %></div></div>
+                        
+                         <%end%>
              
 
                       </div>
