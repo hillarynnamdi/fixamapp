@@ -1,15 +1,23 @@
-
-<h2 class='form-inputs'>Log in</h2>
+<div class="container">
+<div class="row"><%= image_tag('gofixam.jpg', class:'img-responsive',width:'10%',height:'100%')%></div>
+<h2 class='form-inputs' id="admin">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+
+  <div class="form-inputs" id="admin">
+  	<%if alert.present? || notice.present?%>
+	  	<div class="alert alert-danger">
+	  		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  		<%= alert %> <%= notice %>
+		</div>
+	<%end%>
     <%= f.input :email, required: false, autofocus: true %>
     <%= f.input :password, required: false %>
     <%= f.button :submit, "Log in" , class:'btn btn-primary' %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
-
 <% end %>
-<div class='form-inputs'>
+<div class='form-inputs' id="admin">
 	<%= render "admins/shared/links" %>
+</div>
 </div>
