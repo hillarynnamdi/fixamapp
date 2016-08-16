@@ -1,16 +1,9 @@
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Area:</strong>
-  <%= @area.area %>
-</p>
+<h1>Places in <%= @area.area %></h1>
 
-
-
-
-<h1>Listing Places</h1>
-
-<table>
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>Places</th>
@@ -24,7 +17,7 @@
         <td><%= place.place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td>
-        	<%= link_to 'Destroy Place', place,method: :delete,data: { confirm: 'Are you sure?' } %>
+        	<%= link_to 'Delete Place', place,method: :delete,data: { confirm: 'Are you sure?' } %>
 
         </td>
         <td>&nbsp;</td>
@@ -57,3 +50,4 @@
 
 
 
+</div>

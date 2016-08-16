@@ -41,13 +41,8 @@
         <li><a href="#plan_divider"><span class="glyphicon glyphicon-list"></span> Our Plans</a></li>
         <li><a href="#track_divider"><span class="glyphicon glyphicon-map-marker"></span> Track</a></li>
         <li><a href="#contact_divider"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
-        <li style="margin-right:-15px"> <a href="#">
-        <%=image_tag 'fb.png', class:"img-rounded", width:"30", height:"30"%></a> </li>
-        <li style="margin-right:-15px"> <a href="#">
-        <%=image_tag 'twit.png', class:"img-rounded", width:"30", height:"30"%></a> </li>
-        <li style="margin-right:-15px"> <a href="#">
-        <%=image_tag 'ins.png', class:"img-rounded", width:"30", height:"30"%>
-        </a> </li>
+        <li>
+        <%#image_tag 'fb.png', class:"img-rounded", width:"20", height:"20"%></li>
         </ul>
     </div>
   </div>
@@ -68,12 +63,19 @@
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
+    
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" style="background-color:#66b3ff">
     <div class="item active">
-      <%=image_tag 'go2.jpg', alt:'slider1'%>
+      <%=image_tag 'go.jpg', alt:'slider1'%>
+      <div class="carousel-caption">
+        <p>Go fix am jaree...</p>
+      </div>
     </div>
 
     <div class="item">

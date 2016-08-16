@@ -76,7 +76,7 @@ def  first_form
     @order.save
 
     redirect_to orders_path
-    flash[:order] = "Your order, #{@order.order_number}, has been cancelled successfully.Thank you!"
+    flash[:order] = "Your repair order, #{@order.order_number}, has been cancelled successfully.Thank you!"
 
   end
 
@@ -87,7 +87,7 @@ def  first_form
     @order.save
 
     redirect_to orders_path
-    flash[:order] = "Your order, #{@order.order_number}, has been re-sent successfully."
+    flash[:order] = "Your repair order, #{@order.order_number}, has been re-sent successfully."
 
   end
 
@@ -95,7 +95,7 @@ def  first_form
     @user=current_user
     @order=Order.new
 
-    @old_orders=@user.orders.select('distinct on(state,city,area,place,pickup_address,id) id,state,city,area,place,pickup_address').order(:id).last(3)
+    @old_orders=@user.orders.select('distinct on(state,city,area,place,pickup_address) id,state,city,area,place,pickup_address').order(:state).last(3)
 
 
   end
@@ -123,7 +123,7 @@ def  first_form
       @order.order_number="GOFIX"+Devise.friendly_token[0,20].first(6).upcase
       if @order.save
 
-        flash[:order] = "Your order has been placed successfully."
+        flash[:order] = "Your repair order has been placed successfully."
       flash.keep(:order)
         render js: "window.location = '#{orders_path}'"
 
@@ -146,7 +146,7 @@ def  first_form
        @order.order_number="GOFIX"+Devise.friendly_token[0,20].first(6).upcase
 
        if @order.save
-      flash[:order] = "Your order has been placed successfully."
+      flash[:order] = "Your repair order has been placed successfully."
       flash.keep(:order)
       render js: "window.location = '#{orders_path}'"
 

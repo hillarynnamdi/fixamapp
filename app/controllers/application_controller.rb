@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
         @order=@user.orders.create(device_type:session[:device_type],device_model:session[:device_model],state:session[:state],city:session[:city],area:session[:area],pickup_address:session[:address],place:session[:place],device_problem:session[:device_problem],order_number:session[:order_id])
           if @order
           
-          flash[:order]="Your order has been placed successfully."
+          flash[:order]="Your repair order has been placed successfully."
 
           session.delete(:state)
           session.delete(:city)

@@ -1,0 +1,30 @@
+<%= simple_form_for(@partner,:html=>{class:"form-partner"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <%= f.input :first_name %>
+
+    <%= f.input :last_name %>
+
+    <%= f.input :gender %>
+
+
+    <p>
+<%=f.collection_select :state,State.order(:state),:state, :state,include_blank: "select state"%>
+  </p>
+
+  <p>
+<%=f.grouped_collection_select :city,State.order(:state),:cities,:state,:city,:city,include_blank: "select city" %>
+  </p>
+
+    <%= f.input :office_location %>
+
+    <%= f.input :specializations %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

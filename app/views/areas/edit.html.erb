@@ -1,6 +1,9 @@
+<div class="container-fluid">
 <h1>Editing area</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @area %> |
-<%= link_to 'Back', areas_path %>
+<%= link_to 'Back', city_path(@area.city) %>
+
+</div>

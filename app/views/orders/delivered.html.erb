@@ -9,7 +9,7 @@
         <div class="account_sub_body4">
 
     <div class="row">
-        <div class="col-md-2" id='account_left'>
+        <div class="col-sm-2" id='account_left'>
 
         <div id='myaccount_body_left'>
           <p>
@@ -52,7 +52,7 @@
 
 
 
-        <div class="col-md-10" id=' account_right'>
+        <div class="col-sm-10" id=' account_right'>
 <%= render "error_success" %>
           <div id="myaccount_body">
               <div class="order_tag">
@@ -83,51 +83,18 @@
         <div class="account_sub_body4">
 
     <div class="row">
-        <div class="col-md-2" id='account_left'>
 
-        <div id='myaccount_body_left'>
-          <p>
-          <%=link_to orders_path,class:'inactive_account_link' do %>
-            <i class="glyphicon glyphicon-list"></i> All Orders
-          <% end -%>
-          </p>
-          <p>
-          <%=link_to pending_orders_path, class:'inactive_account_link' do%>
-            <i class="glyphicon glyphicon-transfer"></i> Sent Orders
-          <% end -%>
-
-          </p>
-          <p>
-          <%=link_to delivered_orders_path, class:'active_account_link',id:'active_para' do %>
-            <i class="glyphicon glyphicon-check"></i> Delivered Orders
-          <% end -%>
-          </p>
-          <p>
-          <%=link_to cancelled_orders_path, class:'inactive_account_link' do%>
-            <i class="glyphicon glyphicon-trash"></i> Cancelled Orders
-          <% end -%>
-
-          </p>
-          <p>
-          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
-            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
-          <% end -%>
-
-          </p>
-          <p>
-          <%=link_to new_order_path, class:'inactive_account_link' do %>
-            <i class="glyphicon glyphicon-send"></i> Place Order
-          <% end -%>
-          </p>
-        </div>
-
-
-        </div>
-
-
-
-        <div class="col-md-10" id=' account_right'>
+        <div class="col-sm-12" id=' account_right'>
 <%= render "error_success" %>
+
+<select class="order_select_tag" onchange="location = this.value">
+  <option value='/orders'>All Orders</option>
+  <option value='/orders/pending'>Sent Orders</option>
+  <option value='/orders/delivered' selected>Delivered Orders</option>
+  <option value='/orders/cancelled'>Cancelled Orders</option>
+  <option value='/orders/scheduled'>Scheduled Orders</option>
+</select>
+
           <div id="myaccount_body">
               <div class="order_tag">
                 <span>Delivered Orders</span>

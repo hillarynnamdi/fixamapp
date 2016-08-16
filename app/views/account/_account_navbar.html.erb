@@ -63,9 +63,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-list"></span> My Orders</a></li>
-        <li><%= link_to  destroy_user_session_path , method: :delete do %>
+        <li class="active"><a href="/account"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+        <li><a href="/orders"><span class="glyphicon glyphicon-list"></span> My Orders</a></li>
+        <li><%= link_to  destroy_user_session_path  do %>
             <span class="glyphicon glyphicon-log-out"></span> Logout (<%=current_user.first_name%> <%=current_user.last_name%>)
          <%end%>
         </li>   

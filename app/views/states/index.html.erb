@@ -1,6 +1,8 @@
-<h1>Listing states</h1>
+<div class="container-fluid">
 
-<table>
+<%= render 'shared/fixam_logo'%>
+
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>State</th>
@@ -12,9 +14,9 @@
     <% @states.each do |state| %>
       <tr>
         <td><%= state.state %></td>
-        <td><%= link_to 'Show', state %></td>
+        <td><%= link_to 'Add City', state %></td>
         <td><%= link_to 'Edit', edit_state_path(state) %></td>
-        <td><%= link_to 'Destroy', state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +24,7 @@
 
 <br>
 
-<%= link_to 'New State', new_state_path %>
+<%= link_to '+Add New State', new_state_path %>
+
+
+</div>

@@ -425,3 +425,39 @@ function(){
 }
   )
 
+
+
+
+
+$(document).ready(
+function(){
+  $("#partner_city").parent().hide()
+  partnercities=$("#partner_city").html()
+$("#partner_state").change(
+function(){
+
+var partnerstate=$("#partner_state :selected").text()
+
+partneroptions=$(partnercities).filter("optgroup[label="+partnerstate+"]").html()
+
+
+
+
+if (partneroptions) {
+    $("#partner_city").parent().show()
+    $("#partner_city").html(partneroptions)
+    $("#partner_city").prepend("<option value='' selected>select city</option>")
+
+  }
+else{
+  $("#partner_city").parent().hide()
+  $("#partner_city").empty()
+}
+
+}
+  )
+}
+  )
+
+
+
