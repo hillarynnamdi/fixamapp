@@ -16,8 +16,8 @@
       <li class="active"><%= link_to "HOME" , home_index_path%></li>
       <li><%= link_to "ADD ADMIN", new_admin_invitation_path  %></li>
       <li>
-      <li><%= link_to "FEEDBACKS", admins_path %></li>
-      <li><%= form_tag admins_path, method: :get , remote:true do %>
+      <li><%= link_to "FEEDBACKS", feedback_dashboard_index_path %></li>
+      <li><%= form_tag dashboard_index_path, method: :get  do %>
             <p>
               <%= text_field_tag :search %>
               <%= submit_tag "Search" %>
@@ -44,7 +44,7 @@
         <h5> Users</h5>
       </div>
       <div class="stats-right">
-        <label><%= @users.count %></label>        
+        <label><%= @total.count %></label>        
       </div>
       <div class="clearfix"> </div> 
     </div>
@@ -96,8 +96,13 @@
              </tr> 
             </thead> 
             <tbody>
-              <% @users.each do |user| %>
-             <tr> <th scope="row"><%= user.id %></th> <td><%= user.first_name.humanize %></td> <td><%= user.last_name.humanize %></td> <td><%= user.phone_number %></td><td>home address</td><td>Fixed</td> </tr> 
+              <% @order_status.each do |get_status|%>
+              <% @orders.each do |user| %>
+              <%= form_tag  dashboard_path(get_status.id), method: :patch   do %>
+              <%= select_tag :status, options_for_select(['Scheduled','Fixed','Delivered']) %>
+             <tr> <th scope="row"><%= user.id %></th> <td><%= user.first_name.humanize %></td> <td><%= user.last_name.humanize %></td> <td><%= user.phone_number %></td><td><%=get_status.pickup_address %></td><td><%= get_status.order_status %></td> </tr> 
+             <% end %>
+             <% end %>
              <% end %>
               </tbody> 
            </table>

@@ -48,22 +48,35 @@ end
 
 root 'home#index'
 
-
   resources :home
   
-
+  resources :feed 
 
   devise_for :admins
 
-  resources :admins do
-    get 'show'
-  end
+
+#  resources :admins do
+ #   collection do
+  #  get 'show'
+   ##get 'feedback'
+   
+  #end
+  #member do
+   # get 'index' => 'admins#index'
+  #end
+  #end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   
-
+    resources :dashboard do
+      collection do
+        get 'feedback'
+      end
+    end
+    
     resources :orders do
     collection do 
       post 'first_form' 
