@@ -1,9 +1,28 @@
 <% if @feed.errors.count > 0  %>
 
-$(".error").html("<%= (escape_javascript(render 'error'))%>")
+$(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
+
+
+	var posi = $(".sect_track2").offset().top;
+
+  	$('body,html').animate({scrollTop:posi},700);
 
 <%else%>
 
-	$(".error").html("<%= (escape_javascript(render 'success')) %>")
+	$(".error").html("<%= (escape_javascript(render 'success', object: @feed)) %>")
+
+	$("#feed_name").val("")
+	$("#feed_email").val("")
+	$("#feed_message").val("")
+	$("#feed_mobile_no").val("")
+
+
+	var posi = $(".sect_track2").offset().top;
+
+  	$('body,html').animate({scrollTop:posi},700);
+
+
+
+
 					
 <%end%>

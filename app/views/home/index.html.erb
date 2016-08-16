@@ -250,7 +250,7 @@
     <div class="container" id='section_content3'>
   <div class="row" >
     <div class="col-sm-12">
-      <h3 class='sect_track2'><i class="glyphicon glyphicon-envelope" style='color:#66b5ff'></i> Contact Us</h3>
+      <h3 class='sect_track2' tabindex="-1"><i class="glyphicon glyphicon-envelope" style='color:#66b5ff'></i> Contact Us</h3>
 
     </div>
 </div>
@@ -266,7 +266,7 @@
         <%= simple_form_for  :feed, url:feed_index_path, remote:true do |f| %>      
   <%= f.input :name , as: :string , placeholder:"Alexander", required:true %>
   <%= f.input :email , as: :email,  placeholder:"user@example.com" %>
-  <%= f.input :mobile_no , as: :tel,  input_html:{ maxlength: 11}, placeholder:"enter phone nuimber" %>
+  <%= f.input :mobile_no , as: :tel,  input_html:{ maxlength: 11}, placeholder:"Phone number" %>
   <%= f.input :message , as: :text, class:"form-control1 control3" , placeholder:"Type your comment here" , input_html:{ rows: '8' }%>
   <%= f.button :submit, "Send Message",class:"btn btn-primary" %>
   <%end%>
