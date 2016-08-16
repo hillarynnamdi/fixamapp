@@ -1,0 +1,90 @@
+<div class="container">
+<nav  class="navbar navbar-inverse" role="navigation">
+  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">        
+        <%= image_tag('GOFIX.png', class:'img-responsive', width:'400', height:'300')%>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "HOME" , home_index_path%></li>
+      <li><%= link_to "ADD ADMIN", new_admin_invitation_path  %></li>
+      <li><%= link_to "DASHBOARD", dashboard_index_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to  destroy_admin_session_path do %>
+              <span class="glyphicon glyphicon-log-out"></span>
+               Logout(<%= current_admin.email%>)
+          <%end%>
+      </li>
+    </ul>
+    </div>
+</nav>
+
+<div class="row">
+<div class="col-sm-6 col-md-4 col-lg-6 ">
+                  <table class="table">
+                    <thead>
+                       <tr class="table-row">
+                        <td>
+                      <div class="ribbon left_ribbon">
+                        <h3>Feedbacks</h3>
+                      </div>
+                    </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @feeds.each do |feed|%>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <%= image_tag('chris2.jpg', class:'img-rounded', width:'100px', height:'5%')%>
+                            </td>
+                            <td class="table-text">
+                              <h6> <%= feed.email%></h6>
+                                <p><%=feed.message%></p>
+                            </td>                         
+                            <td class="march">
+                              <h6><%= feed.created_at.strftime('%d %b %Y')%></h6> 
+                            </td>
+                        </tr>                                                                     
+                      <%end%>
+                    </tbody>
+                </table>
+              </div>
+
+          <div class="col-md-8 col-lg-6 tab-content tab-content-in">
+                    <div class="inbox-right">                                  
+                    <div class="mailbox-content">
+                          <!--Compose New Message -->
+                      <div class="compose-mail-box">
+                          <div class="compose-bg">
+                            Compose New Message 
+                          </div>
+                              <div class="panel-body">
+                                  <div class="alert alert-info">
+                                    <h5>Please fill details to send a new message</h5>
+                                  </div>
+                                  <%= simple_form_for :dashboard, validate:true do |f| %>
+                                  <%= f.error_notification %>
+                                    <%= f.input :email , as: :email, class:"form-control1 control3" , placeholder:"To" %>
+                                    <%= f.input :subject , class:"form-control1 control3" , placeholder:"Subject" %>
+                                    <%= f.input :Message , class:"form-control1 control2" ,placeholder:"Message" ,  as: :text  , input_html:{ rows: '10' }%>
+                                     <%= f.button :submit, "Send Message" , class:'btn btn-primary' %>
+                                  <%end%>
+                              </div>
+                            </div>
+                          <!--//Compose New Message -->
+                           </div>
+                        </div>
+                      </div>
+                      <div class="clearfix"> </div>
+                   </div>
+                </div>
+
+</div>
