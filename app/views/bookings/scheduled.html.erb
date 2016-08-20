@@ -1,0 +1,112 @@
+<div class="admin_wrapper">
+
+		<div class="admin-header">
+			<%=render 'navbar' %>
+		</div>
+
+
+		<div class="container">
+
+		<div class="table-responsive">
+              <table class='table'>
+              <% @all_order.each do |item| %>
+                <thead>
+                    <tr class="order_header">
+
+                    <th>Order No<div class="order_time"><%= item.order_number %></div></th>
+
+                    <th>First Name<div class="order_time"><%= item.user.first_name %></div></th>
+
+                    <th>Last Name<div class="order_time"><%= item.user.last_name %></div></th>
+
+                    
+
+                    <th>Placed <div class="order_time"><%= item.created_at.strftime("%d %B %Y") %></div></th>
+
+                    <th>Status <div class="order_time"><%= item.order_status %></div></th>
+
+
+                    <th>
+                    <%=link_to edit_booking_path(item), class:"btn btn-info"  do%>
+                          <i class="glyphicon glyphicon-edit"></i> View Details
+                    <% end -%>
+
+                    </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                	                  <tr><td colspan="6">
+
+          <div class="order_content_wrapper">
+                <div class="order_status">
+
+
+                    <div class="row">
+
+                    <div class="col-sm-2">
+                    <button type="button" class="btn btn-info"><span class="badge">Scheduled</span></button>
+
+                    <div class="datetimepickup"><%= item.pickupdate %></div>
+
+                    </div>
+                        
+                      <div class="col-sm-5">
+                      <div class="device_content">
+                      <div><div><u>Device Type:</u></div>
+                        <div><div class='span_tags'><%= item.device_type %></div></div>
+
+                        <div><u>Device Model:</u></div>
+                        <div><div class='span_tags'><%= item.device_model %></div></div>
+     
+                        <div><u>Device Problem:</u> </div>
+                        <div><div class='span_tags'><%= item.device_problem %></div></div>
+
+                      </div>
+                      </div>
+                      </div>
+                      <div class="col-sm-5">
+                      <div class="device_content">
+                      <div><u>State:</u></div><div> <div class='span_tags'><%= item.state %></div></div>
+                      <div><u>City/Area:</u></div><div><div class='span_tags'><%= item.city %>/<%= item.area %></div></div>
+                        <% if !item.place.blank? %> 
+                        <div><u>Place/Address:</u></div><div> <div class='span_tags'><%= item.place %>/<%= item.pickup_address %>
+                        </div></div>
+                        <% else %>
+
+                        <div><u>Address:</u></div><div> <div class='span_tags'><%= item.pickup_address %></div></div>
+
+                         <%end%>
+                        
+             
+
+                      </div>
+                      </div>
+
+                       
+
+
+                    </div>
+</div>
+                  </td></tr>
+
+
+
+
+                </tbody>
+
+                <% end -%>
+
+                </table>
+			
+		</div>
+
+	
+</div>
+
+<div id='pagination_div'>
+  <%=will_paginate @all_order,renderer: BootstrapPagination::Rails %>
+</div>
+
+</div>

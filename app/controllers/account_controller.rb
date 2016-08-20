@@ -47,6 +47,8 @@ before_action :authenticate_user!
   else
 
   	if @user.update_with_password(password_update_params)
+  		
+
 	 	sign_in @user, :bypass => true
 	 	redirect_to change_password_account_index_path
 	 	flash[:account_updated]="Your password has been changed successfully."

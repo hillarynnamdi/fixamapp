@@ -11,6 +11,11 @@ def create
 	end
 end
 
+def index
+@feeds = Feed.all.order("id DESC")
+
+end
+
 private
 def feed_params
 	   params.require(:feed).permit(:name, :email, :mobile_no, :message)

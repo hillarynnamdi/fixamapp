@@ -2,6 +2,26 @@
 
 $(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
 
+	<%if @feed.name.blank? %> 
+		$("#feed_name").css({border:"1px solid red"})
+
+	<%end%>
+
+	<%if @feed.email.blank? %> 
+		$("#feed_email").css({border:"1px solid red"})
+
+	<%end%>
+
+	<%if @feed.mobile_no.blank? %> 
+		$("#feed_mobile_no").css({border:"1px solid red"})
+
+	<%end%>
+
+	<%if @feed.message.blank? %> 
+		$("#feed_message").css({border:"1px solid red"})
+
+	<%end%>
+
 
 	var posi = $(".sect_track2").offset().top;
 

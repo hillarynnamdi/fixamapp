@@ -460,4 +460,90 @@ else{
   )
 
 
+$(document).ready(
+function(){
+$("#feed_name,#feed_email,#feed_message,#feed_mobile_no").focus(
+  function(){
+$(this).css({border:"1px solid silver"})
+}
+  )
+}
+)
 
+
+
+$(document).ready(
+  function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+
+
+$(document).ready(
+    function(){
+      if($("#order_order_status").val()=="scheduled"){
+        $('.calendar').show()
+
+      }
+      else{
+       $('.calendar').hide()
+      }
+    }
+
+  )
+
+
+$(document).ready(
+    function(){
+      $("#order_order_status").change(
+        function(){
+          if($("#order_order_status").val()=="scheduled"){
+
+        $('.calendar').show()
+
+      }
+      else{
+       $('.calendar').hide()
+      }
+    }
+
+
+        )
+        
+  }
+
+  )
+
+$(document).ready(
+    function(){
+      if($("#order_order_status").val()=="delivered"){
+        $('.repair_cost').show()
+
+      }
+      else{
+       $('.repair_cost').hide()
+      }
+    }
+
+  )
+
+
+$(document).ready(
+    function(){
+      $("#order_order_status").change(
+        function(){
+          if($("#order_order_status").val()=="delivered"){
+
+        $('.repair_cost').show()
+
+      }
+      else{
+       $('.repair_cost').hide()
+      }
+    }
+
+
+        )
+        
+  }
+
+  )

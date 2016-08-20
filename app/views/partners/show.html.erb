@@ -1,39 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @partner.first_name %>
-</p>
+<div class="admin_wrapper">
 
-<p>
-  <strong>Last name:</strong>
-  <%= @partner.last_name %>
-</p>
+    <div class="admin-header">
+      <%=render 'bookings/navbar' %>
+    </div>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @partner.gender %>
-</p>
+<div class="container">
 
-<p>
-  <strong>State:</strong>
-  <%= @partner.state %>
-</p>
+              <table class='table table-striped edit_order' >
 
-<p>
-  <strong>City:</strong>
-  <%= @partner.city %>
-</p>
+              <tr>
+                  <th colspan="2"><b>Details of <%= @partner.first_name.humanize %> <%= @partner.last_name.humanize %></b></th>
+                </tr>
+                
+              
+                <tr>
+                  <th>First Name:</th> <td><%= @partner.first_name.humanize %></td>
+                </tr>
+                <tr>
+                  <th>Last Name:</th> <td><%= @partner.last_name.humanize %></td>
+                </tr>
+                <tr>
+                  <th>Gender:</th> <td><%= @partner.gender %></td>
+                </tr>
+                <tr>
+                  <th>State:</th> <td><%= @partner.state %></td>
+                </tr>
 
-<p>
-  <strong>Office location:</strong>
-  <%= @partner.office_location %>
-</p>
+                <tr>
+                  <th>City:</th> <td><%= @partner.city %></td>
+                </tr>
 
-<p>
-  <strong>Specializations:</strong>
-  <%= @partner.specializations %>
-</p>
+                <tr>
+                  <th>Office location:</th> <td><%= @partner.office_location %></td>
+                </tr>
+
+                <tr>
+                  <th>Areas of Specialization:</th> <td><%= @partner.specializations %></td>
+                </tr>
+                
+              
+
+
+              </table>
+
 
 <%= link_to 'Edit', edit_partner_path(@partner) %> |
 <%= link_to 'Back', partners_path %>
+
+
+</div>
+</div>

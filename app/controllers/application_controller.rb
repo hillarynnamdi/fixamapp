@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
     def after_sign_in_path_for(resource_or_scope)
      if resource_name == :admin
-         dashboard_index_path
+         bookings_path
     elsif resource_name == :user 
 
     if current_user.phone_number=="00000000000"      

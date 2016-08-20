@@ -1,9 +1,17 @@
-	<div class="container-fluid">
+<div class="admin_wrapper">
+
+    <div class="admin-header">
+      <%=render 'bookings/navbar' %>
+    </div>
+
+  <div class="container">
 <h1>Editing city</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @city %> |
 <%= link_to 'Back', city_path %>
+
+</div>
 
 </div>

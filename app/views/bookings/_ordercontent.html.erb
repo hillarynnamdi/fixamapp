@@ -10,7 +10,7 @@
                      <% if item.repair_cost.blank? %>
                       &#8358;?
                       <%else%>
-                      &#8358; <%= item.repair_cost %>
+                      <%= item.repair_cost.blank? %>
                       <% end -%>
                     </div>
 

@@ -3,9 +3,16 @@ Rails.application.routes.draw do
 
 
 
+  resources :bookings,path: '/dashboard/bookings'  do
+    collection do 
+      get 'delivered'
+      get 'scheduled'
+      get 'pickedup'
 
-  resources :partners
-resources :partners
+    end
+end
+
+resources :partners,path: '/dashboard/partners'
 
 resources :phonenumber,path: '/user/phonenumber'
 
@@ -32,15 +39,16 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 
 #map.logout '/users/sign_out', :controller => 'sessions', :action => 'destroy'
 
-  resources :areas 
+   resources :states, path: '/dashboard/states'
+  resources :areas, path: '/dashboard/areas'
 
-  resources :places
+  resources :places,path: '/dashboard/places'
 
-  resources :cities 
+  resources :cities ,path: '/dashboard/cities'
 
   resources :states do 
         resources :cities do
-        resources :areas do
+        resources :areas  do
         resources :places
 
       end
@@ -54,7 +62,7 @@ root 'home#index'
 
   resources :home
   
-  resources :feed 
+  resources :feed, path:'/dashboard/feed'
 
   devise_for :admins
 

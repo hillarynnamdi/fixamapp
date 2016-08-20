@@ -1,0 +1,57 @@
+<div class="action_status">
+<%= form_for :order, url:booking_path(@booking), method: :patch  do|f| %>
+
+	<div class="form-group">
+	<div class="calendar">
+                <div class='input-group date' id='datetimepicker1'>
+                    <%= f.date_field :pickupdate %>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+    </div>
+
+
+    <div class="repair_cost">
+                    &#8358; <%= f.number_field :repair_cost,placeholder:'Repair Cost' %>
+    </div>
+
+
+    <% if @booking.order_status=="pending" %>
+						<%= f.select(:order_status, options_for_select([
+			         ['Schedule', 'scheduled'],
+			         ['Cancel', 'cancelled']],@booking.order_status || default_value),
+			        class: "form-control") %>
+
+
+ 	<% elsif @booking.order_status=="scheduled" %>
+ 					<%= f.select(:order_status, options_for_select([
+			         ['Pickedup', 'pickedup'],
+			         ['Schedule', 'scheduled'],
+			         ['Cancel', 'cancelled']],@booking.order_status || default_value),
+			        class: "form-control") %>
+
+
+	<% elsif @booking.order_status=="pickedup" %>
+ 					<%= f.select(:order_status, options_for_select([
+			         ['Delivered', 'delivered'],
+			         ['Schedule', 'scheduled'],
+			         ['Cancel', 'cancelled']],@booking.order_status || default_value),
+			        class: "form-control") %>
+
+<% elsif @booking.order_status=="delivered" %>
+ 					<%= f.select(:order_status, options_for_select([
+			         ['pickedup', 'pickedup'],
+			         ['Cancel', 'cancelled']],@booking.order_status || default_value),
+			        class: "form-control") %>
+
+	<% end -%>
+
+			<% if @booking.order_status!="cancelled" %>
+			        <%= f.submit "Update",class: "btn btn-info",id:'submit_bts' %>
+			 <% end -%>
+			        <%= link_to "BACK", bookings_path, class: "btn", data: {dismiss: "modal"} %>
+
+<% end -%>
+</div>
+</div>

@@ -17,10 +17,6 @@ class User < ActiveRecord::Base
 
  	validates :gender, presence: true
 
- 	#validates :password, presence: true, on: :update
-  	#validates :password, length: { in: 6..128 },if: "password.present?", on: :update
-
-  	#validates :password,confirmation:true,if: "password.present?", on: :update
 
 
   	validates :phone_number, presence: true

@@ -78,7 +78,10 @@
 <div class="bio_label">Preferred Language:</div>
       <%= f.select(:preferred_language, options_for_select([
       	 ['Preferred Language',''],
-         ['English', 'English']
+         ['English', 'English'],
+         ['Igbo', 'Igbo'],
+         ['Yoruba', 'Yoruba'],
+         ['Hausa', 'Hausa']
 		],@user.preferred_language),
         class: "form-control") %>    
  </div>

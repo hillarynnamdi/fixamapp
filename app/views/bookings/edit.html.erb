@@ -1,0 +1,105 @@
+<div class="admin_wrapper">
+
+		<div class="admin-header">
+			<%=render 'navbar' %>
+		</div>
+
+
+		<div class="container">
+
+
+		<div class="table-responsive">
+
+			<div class="row">
+
+					<div class="col-sm-6">
+						<h3> <span class="glyphicon glyphicon-tag"></span> Order Number: <%=@booking.order_number%></h3>
+					</div>
+
+						<div class="booking_options col-sm-6">
+
+						 <%=render 'action' %>
+
+
+
+			        </div>
+				
+			</div>
+		
+				
+
+              <table class='table table-striped edit_order' >
+              
+              	<tr>
+              		<th>First Name:</th> <td><%= @booking.user.first_name.humanize %></td>
+              	</tr>
+              	<tr>
+              		<th>Last Name:</th> <td><%= @booking.user.last_name.humanize %></td>
+              	</tr>
+              	<tr>
+              		<th>Gender:</th> <td><%= @booking.user.gender.humanize %></td>
+              	</tr>
+              	<tr>
+              		<th>Phone Number:</th> <td><%= @booking.user.phone_number %></td>
+              	</tr>
+
+              	<tr>
+              		<th>Preferred Language:</th> <td><%= @booking.user.preferred_language %></td>
+              	</tr>
+
+              	<tr>
+              		<th>Order Placed:</th> <td><%= @booking.created_at.strftime("%d %B %Y") %></td>
+              	</tr>
+
+              	<tr>
+              		<th>Order Status:</th> <td><i><u><%= @booking.order_status.humanize %></u></i></td>
+              	</tr>
+              	<tr>
+              		<th>Pick Up Date & Time:</th> <td><%= @booking.pickupdate %></td>
+              	</tr>
+              	<tr>
+              		<th>Device Type:</th> <td><%= @booking.device_type.humanize %></td>
+              	</tr>
+              	<tr>
+              		<th>Device Model:</th> <td><%= @booking.device_model.humanize %></td>
+              	</tr>
+
+              	<tr>
+              		<th>Device Problem:</th> <td><%= @booking.device_problem.humanize %></td>
+              	</tr>
+
+                     <tr>
+                            <th>Repair Cost:</th> <td>&#8358; <%= @booking.repair_cost %></td>
+                     </tr>
+
+              	<tr>
+              		<th>State:</th> <td><%= @booking.state %></td>
+              	</tr>
+
+              	<tr>
+              		<th>City:</th> <td><%= @booking.city %></td>
+              	</tr>
+              	<tr>
+              		<th>Area:</th> <td><%= @booking.area %></td>
+              	</tr>
+              	<tr>
+              		<th>Place:</th> <td><%= @booking.place %></td>
+              	</tr>
+              	<tr>
+              		<th>Pick up Address:</th> <td><%= @booking.pickup_address.humanize %></td>
+              	</tr>
+
+
+
+
+
+              	</tr>
+              
+
+
+              </table>
+
+
+		</div>
+
+</div>
