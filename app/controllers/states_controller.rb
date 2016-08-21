@@ -1,4 +1,5 @@
 class StatesController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_state, only: [:show, :edit, :update, :destroy]
 
   # GET /states

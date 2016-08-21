@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+	before_action :authenticate_admin!
 
 	def create
 	@state=State.find(params[:state_id])

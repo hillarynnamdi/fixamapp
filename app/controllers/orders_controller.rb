@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  def new
-  end
+  before_action :authenticate_user!, only: [:index, :pending, :cancelled, :delivered, :new ,:create ,:cancel ,:reorder]
+
 
 def  first_form
     session[:state]=params[:state][:id];

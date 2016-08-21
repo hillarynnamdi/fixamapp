@@ -1,5 +1,8 @@
 class PartnersController < ApplicationController
+
+  before_action :authenticate_admin!
   before_action :set_partner, only: [:show, :edit, :update, :destroy]
+
 
   # GET /partners
   # GET /partners.json
