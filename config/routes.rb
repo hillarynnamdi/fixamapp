@@ -39,12 +39,12 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 
 #map.logout '/users/sign_out', :controller => 'sessions', :action => 'destroy'
 
-   resources :states, path: '/dashboard/states'
-  resources :areas, path: '/dashboard/areas'
+   resources :states, path: '/dashboard/settings/states'
+  resources :areas, path: '/dashboard/settings/areas'
 
-  resources :places,path: '/dashboard/places'
+  resources :places,path: '/dashboard/settings/places'
 
-  resources :cities ,path: '/dashboard/cities'
+  resources :cities ,path: '/dashboard/settings/cities'
 
   resources :states do 
         resources :cities do
@@ -99,6 +99,7 @@ root 'home#index'
       get 'delivered'
       get 'cancelled'
       get 'scheduled'
+      get 'pickedup'
     end
 
     member do 

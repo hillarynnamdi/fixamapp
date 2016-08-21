@@ -7,8 +7,6 @@ before_action :authenticate_user!
 	end
 
 	def update
-
-    	
 	@user=User.find(current_user.id)
 	 if @user.update(update_params)
 	 	redirect_to account_index_path
@@ -80,7 +78,7 @@ before_action :authenticate_user!
 
 
 	private def update_params
-      params.require(:user).permit(:email,:first_name,:last_name,:gender,:phone_number,:location,:profile_icon,:preferred_language,:location)
+      params.require(:user).permit(:email,:first_name,:last_name,:gender,:phone_number,:location,:profile_icon,:preferred_language,:location,:password)
 	end
 
 	private def password_update_params

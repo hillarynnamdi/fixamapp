@@ -7,6 +7,15 @@
 
 		<div class="container">
 
+        <%if  @all_order.count==0%>
+
+       <div class='booking_notice'>
+          No Delivered Records Yet!
+       </div>
+
+    <% end -%>
+
+      <%= render "shared/success" %>
 		<div class="table-responsive">
               <table class='table'>
               <% @all_order.each do |item| %>
@@ -40,16 +49,17 @@
                 	                  <tr><td colspan="6">
 
           <div class="order_content_wrapper">
-                <div class="order_status">
+                
 
 
                     <div class="row">
 
                     <div class="col-sm-2">
+                    <div class="order_status">
                     <button type="button" class="btn btn-success"><span class="badge">Delivered</span></button>
 
                     <div class="datetimepickup"><%= item.pickupdate %></div>
-
+                    </div>
                     </div>
                         
                       <div class="col-sm-5">
@@ -110,3 +120,5 @@
 </div>
 
 </div>
+
+<%=render "shared/footer_scroll"%>

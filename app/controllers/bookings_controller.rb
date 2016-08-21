@@ -4,21 +4,21 @@ class BookingsController < ApplicationController
 
 
   def index
-    @all_order=pagination.where("order_status='pending'").order("id DESC")
+    @all_order=pagination.where("order_status='pending'").order("updated_at DESC")
   end
 
   def scheduled
-    @all_order=pagination.where("order_status='scheduled'").order("id DESC")
+    @all_order=pagination.where("order_status='scheduled'").order("updated_at DESC")
 
   end
 
   def pickedup
-    @all_order=pagination.where("order_status='pickedup'").order("id DESC")
+    @all_order=pagination.where("order_status='pickedup'").order("updated_at DESC")
 
   end
 
    def delivered
-    @all_order=pagination.where("order_status='delivered'").order("id DESC")
+    @all_order=pagination.where("order_status='delivered'").order("updated_at DESC")
 
   end
 
@@ -31,8 +31,19 @@ class BookingsController < ApplicationController
  def update
  	@booking=Order.find(params[:id])
  	 	@booking.update(order_params)
- 	redirect_to edit_booking_path(@booking)
- 	flash[:success]="Update was successful"
+    if @booking.order_status=="scheduled"
+ 	      redirect_to scheduled_bookings_path
+    elsif @booking.order_status=="pickedup"
+        redirect_to pickedup_bookings_path
+    elsif @booking.order_status=="delivered"
+        redirect_to delivered_bookings_path
+  elsif @booking.order_status=="cancelled"
+        redirect_to bookings_path
+    end
+  
+ 	  flash[:success]="Update for Order No,#{@booking.order_number}, was successful"
+
+
  	
 
  	

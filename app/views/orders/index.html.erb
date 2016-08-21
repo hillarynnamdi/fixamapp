@@ -26,6 +26,19 @@
             <i class="glyphicon glyphicon-transfer"></i> Sent Orders
           <% end -%>
 
+          </p> 
+
+          <p>
+          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
+          <% end -%>
+
+          </p>
+          <p>
+          <%=link_to  pickedup_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-chevron-up"></i> Picked Up Orders
+          <% end -%>
+
           </p>
   				<p>
           <%=link_to delivered_orders_path, class:'inactive_account_link' do %>
@@ -38,12 +51,7 @@
           <% end -%>
 
           </p>
-          <p>
-          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
-            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
-          <% end -%>
 
-          </p>
           <p>
           <%=link_to new_order_path, class:'inactive_account_link' do %>
             <i class="glyphicon glyphicon-send"></i> Place Order
@@ -63,7 +71,12 @@
 <%= render "error_success" %>
   				<div id="myaccount_body">
   						<div class="order_tag">
-  							<span>All Orders</span>
+  							 <%if params[:search].present? %>
+                    <div class="order_search"><i class="glyphicon glyphicon-search"></i> 
+                    <%= pluralize(@all_order.count, "Search result") %> for <i><u><%= params[:search].humanize %></u></i></div>
+                  <%else%>
+                    <span> All Orders </span>
+                <% end -%>
   						</div>
   						<div class="items_count">
               <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
@@ -98,14 +111,20 @@
 <select class="order_select_tag" onchange="location = this.value">
   <option value='/orders' selected>All Orders</option>
   <option value='/orders/pending'>Sent Orders</option>
+  <option value='/orders/scheduled'>Scheduled Orders</option>
+    <option value='/orders/pickedup'>Picked Up Orders</option>
   <option value='/orders/delivered'>Delivered Orders</option>
   <option value='/orders/cancelled'>Cancelled Orders</option>
-  <option value='/orders/scheduled'>Scheduled Orders</option>
 </select>
 
           <div id="myaccount_body">
               <div class="order_tag">
-                <span>All Orders</span>
+                <%if params[:search].present? %>
+                    <div class="order_search"><i class="glyphicon glyphicon-search"></i> 
+                    <%= pluralize(@all_order.count, "Search result") %> for <i><u><%= params[:search].humanize %></u></i></div>
+                  <%else%>
+                    <span> All Orders </span>
+                <% end -%>
               </div>
               <div class="items_count">
               <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>

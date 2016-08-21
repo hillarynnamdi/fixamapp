@@ -68,6 +68,16 @@ def  first_form
 
   end
 
+  def scheduled
+    @user=current_user
+    @all_order=pagination.where("order_status='scheduled'").order("updated_at DESC")
+  end
+
+  def pickedup
+    @user=current_user
+    @all_order=pagination.where("order_status='pickedup'").order("updated_at DESC")
+  end
+
 
   def cancel
     @user=current_user

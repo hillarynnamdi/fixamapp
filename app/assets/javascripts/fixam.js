@@ -475,6 +475,7 @@ $(this).css({border:"1px solid silver"})
 $(document).ready(
   function () {
                 $('#datetimepicker1').datetimepicker();
+                
             });
 
 

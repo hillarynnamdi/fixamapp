@@ -23,6 +23,9 @@ class User < ActiveRecord::Base
   	validates :phone_number,numericality: { only_integer:true},if: "phone_number.present?"
 	validates :phone_number, length: { minimum: 11 } ,if: "phone_number.present?"
 	validates :phone_number, length: {maximum:11} ,if: "phone_number.present?"
+
+
+
  
 
 

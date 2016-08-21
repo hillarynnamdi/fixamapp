@@ -7,6 +7,14 @@
 
 		<div class="container">
 
+        <%if  @all_order.count==0%>
+
+       <div class='booking_notice'>
+          No Picked Up Records Found!
+       </div>
+
+    <% end -%>
+      <%= render "shared/success" %>
 		<div class="table-responsive">
               <table class='table'>
               <% @all_order.each do |item| %>
@@ -110,3 +118,5 @@
 </div>
 
 </div>
+
+<%=render "shared/footer_scroll"%>

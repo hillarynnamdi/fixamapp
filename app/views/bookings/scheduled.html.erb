@@ -6,6 +6,14 @@
 
 
 		<div class="container">
+      <%= render "shared/success" %>
+        <%if  @all_order.count==0%>
+
+       <div class='booking_notice'>
+          No Scheduled Bookings Yet!
+       </div>
+
+    <% end -%>
 
 		<div class="table-responsive">
               <table class='table'>
@@ -48,7 +56,9 @@
                     <div class="col-sm-2">
                     <button type="button" class="btn btn-info"><span class="badge">Scheduled</span></button>
 
-                    <div class="datetimepickup"><%= item.pickupdate %></div>
+                    <div class="datetimepickup">
+                    <%= item.pickupdate %>
+                    </div>
 
                     </div>
                         
@@ -110,3 +120,5 @@
 </div>
 
 </div>
+
+<%=render "shared/footer_scroll"%>

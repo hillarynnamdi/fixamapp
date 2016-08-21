@@ -23,6 +23,21 @@
           <% end -%>
 
           </p>
+
+        <p>
+          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
+          <% end -%>
+
+          </p>
+
+        <p>
+          <%=link_to  pickedup_orders_path, class:'inactive_account_link' do%>
+            <i class="glyphicon glyphicon-chevron-up"></i> Picked Up Orders
+          <% end -%>
+
+          </p>
+
           <p>
           <%=link_to delivered_orders_path, class:'active_account_link',id:'active_para' do %>
             <i class="glyphicon glyphicon-check"></i> Delivered Orders
@@ -34,12 +49,7 @@
           <% end -%>
 
           </p>
-          <p>
-          <%=link_to  scheduled_orders_path, class:'inactive_account_link' do%>
-            <i class="glyphicon glyphicon-time"></i> Scheduled Orders
-          <% end -%>
 
-          </p>
           <p>
           <%=link_to new_order_path, class:'inactive_account_link' do %>
             <i class="glyphicon glyphicon-send"></i> Place Order
