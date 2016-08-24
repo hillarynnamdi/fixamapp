@@ -38,7 +38,7 @@ def  first_form
 
 
     if params[:search]
-       @all_order=pagination.where("order_number LIKE '#{params[:search]}%' ").order("updated_at DESC")
+       @all_order=pagination.where("order_number LIKE '#{params[:search].upcase}%' ").order("updated_at DESC")
       
     
     else
@@ -176,6 +176,16 @@ def  first_form
 
   end
 
+end
+
+def track_order
+@order_number=Order.find_by(order_number:params[:order_number].upcase)
+
+ respond_to do |format|
+
+      format.js{}
+
+    end
 end
 
 

@@ -121,7 +121,7 @@
 
       <div class='book_form'>
       <div class='easy_to_use'>Easy To Use & Reliable.</div>
-      <div class='easy_to_use2'><span>Place An Order Now!</span></div>
+      <div class='easy_to_use2'><span>Go ahead. Book Now!</span></div>
       
 
     <%= render "forms" %>
@@ -140,7 +140,7 @@
 
   <div class="row" >
     <div class="col-sm-12">
-      <h2 class='sect1' >Get your device fixed & delivered</h2>
+      <h2 class='sect1' >Introducing the four step process</h2>
 
     </div>
   </div>
@@ -149,20 +149,34 @@
   <div class="container" id='section_content2'>
 
   <div class="row" >
-    <div class="col-sm-4" >
-      <h3>1.Place an Order</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    <div class="col-sm-3" >
+      <h3>1.Register your device</h3>
+      <p>
+      You can create an account and register all your device with us (Free Lite Plan for signing up).
+      </p>
     </div>
-    <div class="col-sm-4">
-      <h3>2.Repair & Services</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+      <div class="col-sm-3">
+      <h3>2.Schedule a Pickup</h3>
+      <p>
+      You can schedule a pickup, schedule an onsite visit or schedule an online support.
+      </p>
     </div>
-    <div class="col-sm-4">
-      <h3>3.Delivery & Payment</h3> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+    <div class="col-sm-3">
+      <h3>3.Repair & Services</h3>
+            <p>
+      
+       Devices are repaired in our state of art repair factory under the supervision of trained experts.
+      </p>
+
+    </div>
+
+    <div class="col-sm-3">
+      <h3>4.Delivery & Payment</h3> 
+      <p>
+       You can avail our easy pay prepaid or postpaid options and take delivery of the device.
+      </p>
     </div>
     <div class="divider" id="plan_divider"></div>
   </div>
@@ -189,21 +203,21 @@
       <p><i class="glyphicon glyphicon-remove"></i> No Discount on Bills</p>
       <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> Free ($0.00)</p>
        <p><i class="glyphicon glyphicon-ok"></i></i> 30 Days Repair Warranty</p>
-       <p><input type="button" value="Get Started"></p>
+       <p><a href="/users/sign_up"><input type="button" value="Get Started"></a></p>
     </div>
     <div class="col-sm-4">
       <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>PREMIUM</p>
       <p><i class="glyphicon glyphicon-ok"></i> 10% Discount on Bills</p>
       <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> &#8358;3,000 ($7.2)</p>
       <p> <i class="glyphicon glyphicon-ok"></i> 60 Days Repair Warranty</p>
-      <p><a href='#' class='unavailable'>Get Started</a></p>
+      <p><input type="button" value="Unavailable" disabled="disable"></p>
     </div>
     <div class="col-sm-4">
       <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>BUSINESS</p>
       <p> <i class="glyphicon glyphicon-ok"></i> 20% Discount on Bills</p>
       <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> &#8358;4,500 ($10.4)</p>
        <p> <i class="glyphicon glyphicon-ok"></i> 90 Days Repair Warranty</p>
-       <p><a href='#'  class='unavailable'>Get Started</a></p>
+       <p><input type="button" value="Unavailable" disabled="disable"></p>
     </div>
 <span class="divider" id="track_divider"></span>
   </div>
@@ -225,19 +239,18 @@
 <div class="container" id="section_content5">
   <div class="row" >
     <div class="col-sm-12" >
-<form role="form" id='track_form'>
-  <div class="form-group">
-    <div class="input-group input-group-lg">
-  <input type="text" class="form-control" placeholder="Enter your unique order ID">
-  <span class="input-group-btn">
-        <button class="btn btn-info" type="submit">Track</button>
+  <%= form_tag(track_order_orders_path,remote:'true',id:'track_form' ) do %> 
+     <div class="form-group">    
+        <div class="input-group input-group-lg"> 
+  <%= text_field_tag(:order_number,"",placeholder:"Enter your unique order ID", required:true,class:"form-control") %>
+    <span class="input-group-btn">
+          <%= submit_tag("Track",class:"btn btn-info" ) %>
       </span>
-</div>
-  </div>
+        </div>
 
-  
-</form>
-  
+      <%end%>
+      </div>
+
   </div>
 
 </div>
@@ -265,17 +278,17 @@
         <div class='error'></div>
         <%= simple_form_for  :feed, url:feed_index_path, remote:true do |f| %>      
   <%= f.input :name , as: :string , placeholder:"Alexander", required:true %>
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <%= f.input :email , as: :email,  placeholder:"user@example.com" %>
   <%= f.input :mobile_no , as: :tel,  input_html:{ maxlength: 11}, placeholder:"Phone number" %>
   <%= f.input :message , as: :text, class:"form-control1 control3" , placeholder:"Type your comment here" , input_html:{ rows: '8' }%>
-  <%= f.button :submit, "Send Message",class:"btn btn-primary" %>
+  <%= f.button :submit, "Send Message",class:"btn btn-info" %>
   <%end%>
     </div>
     <div class="col-sm-5" id='contact_phone'>
       <h3><i class="glyphicon glyphicon-pushpin"></i> Gofixam&trade; </i></h3>
       <p><i class="glyphicon glyphicon-road"></i> Lekki phase 1,Lekki Lagos Island,Nigeria.</p>
       <p><i class="glyphicon glyphicon-phone-alt"></i> +2348000000000</p>
-      <p><i class="glyphicon glyphicon-hourglass"></i> 9.00am-5pm</p>
       <p></p>
     </div>
   </div>
@@ -310,3 +323,4 @@
 </div>
 
 </div>
+

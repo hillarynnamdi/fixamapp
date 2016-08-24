@@ -3,25 +3,21 @@
 <%=form_tag(first_form_orders_path,remote:'true' ,class:'first_form') do %>
 
 
+<p class="location_service">Choose your location & Service</p>
 <p>
-<%=collection_select :state,:id,State.order(:state),:state, :state,include_blank: "select state"%>
-
-
-
-
-
+<%=collection_select :state,:id,State.order(:state),:state, :state,include_blank: "Select State"%>
 </p>
 <p>
-<%=grouped_collection_select :city, :id, State.order(:state),:cities,:state,:city,:city,include_blank: "select city" %>
+<%=grouped_collection_select :city, :id, State.order(:state),:cities,:state,:city,:city,include_blank: "Select City" %>
 </p> 
 
 <p>
-<%=grouped_collection_select :area, :id, City.order(:city),:areas,:city,:area,:area,include_blank: "select area" %>
+<%=grouped_collection_select :area, :id, City.order(:city),:areas,:city,:area,:area,include_blank: "Select Area" %>
 </p>
 
 
 <p>
-<%=grouped_collection_select :place, :id, Area.order(:area),:places,:area,:place,:place,include_blank: "select place" %>
+<%=grouped_collection_select :place, :id, Area.order(:area),:places,:area,:place,:place,include_blank: "Select Place" %>
 </p> 
 
 

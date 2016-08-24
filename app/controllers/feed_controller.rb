@@ -3,13 +3,7 @@ before_action :authenticate_admin!
 
 def create
 	@feed = Feed.create(feed_params) 	
-	respond_to do |format|
-	if @feed.save
-		format.js{}
-	else
-		format.js{}
-	end
-	end
+	@feed.save
 end
 
 def index

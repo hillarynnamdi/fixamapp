@@ -1,8 +1,11 @@
 			<div class='admin-top'>
-			<span class="glyphicon glyphicon-user"></span> 
-			Welcome Admin( <%= current_admin.email %> )
+			 
 
-
+			<%= form_tag bookings_path, method: :get  do %>
+				<span class="glyphicon glyphicon-user"></span> Welcome Admin( <%= current_admin.email %> )
+					<%= text_field_tag :search,params[:search] %>
+					<%= submit_tag "Search",class:"btn btn-info" %>
+					<%end%>
 
 			</div>
 			 <nav class="navbar navbar-default admin_navbar">
@@ -25,6 +28,7 @@
 
 				 <div class="collapse navbar-collapse" id="myNavbar2">
 					<ul class="nav navbar-nav  navbar-right">
+
 					<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Latest Bookings
 					<span class="caret"></span></a>

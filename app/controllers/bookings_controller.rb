@@ -4,7 +4,13 @@ class BookingsController < ApplicationController
 
 
   def index
-    @all_order=pagination.where("order_status='pending'").order("updated_at DESC")
+    if params[:search]
+      @all_order = pagination.where("first_name LIKE '%#{params[:search].camelcase}%' or last_name LIKE '%#{params[:search].camelcase}%'
+       or phone_number LIKE '%#{params[:search]}%' or order_number LIKE '%#{params[:search].upcase}%'") 
+    else
+    @all_order=pagination.where("order_status='pending'").order("updated_at DESC")   
+    end
+    
   end
 
   def scheduled

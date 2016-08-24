@@ -1,20 +1,3 @@
-$(document).ready(
-setInterval(function() {
-  $('.easy_to_use2 span').slideUp().slideDown()
-    if($('.easy_to_use2 span').html()=="Place An Order Now!"){
-    $('.easy_to_use2 span').html("Place...")
-  }
-  else if($('.easy_to_use2 span').html()=="Place..."){
-    $('.easy_to_use2 span').html("Place An...")
-  }
-  else if($('.easy_to_use2 span').html()=="Place An..."){
-    $('.easy_to_use2 span').html("Place An Order...")
-  }
-  else if($('.easy_to_use2 span').html()=="Place An Order..."){
-    $('.easy_to_use2 span').html("Place An Order Now!")
-  }
-},2000)
-    )
 
 $(document).ready(
   function(){

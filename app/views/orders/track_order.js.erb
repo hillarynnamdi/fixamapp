@@ -1,0 +1,13 @@
+
+<% if @order_number.present? %>
+
+alert("<%= escape_javascript(render text:"\n\n"+@order_number.order_number+"\n\nDevice Type: "+@order_number.device_type+"\n\nDevice Model: "+@order_number.device_model+"\n\nStatus: "+@order_number.order_status)%>")
+
+$("#order_number").val("")
+
+<%else%>
+
+alert("oops! invalid order number.")
+
+<%end%>
+

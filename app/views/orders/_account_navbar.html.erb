@@ -13,15 +13,12 @@
 <div class="search_wrapper">
 <div class="search_div">
 	<%= form_tag orders_path,method: :get do  %>
-
-<form class="navbar-form navbar-left" role="search">
     <div class="form-group">
-        <%= text_field_tag :search, "", placeholder:'OrderNo/ServiceNo' %>
+        <%= text_field_tag :search,params[:search], placeholder:'OrderNo/ServiceNo' %>
 
         <button type="submit" class="btn btn-info track_button"><span class="glyphicon glyphicon-map-marker"></span> Track </button>
     </div>
-    
-</form>
+ 
 
   <% end %>
   </div>

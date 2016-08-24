@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,:confirmable,:omniauthable, :omniauth_providers => [:facebook]
  has_many :orders,dependent: :destroy
 
+  before_validation { self.first_name = first_name.camelcase }
+  before_validation { self.last_name = last_name.camelcase }
+ 
+
+
     validates :first_name, presence: true
 	validates :first_name, length: {minimum:2} ,if: "first_name.present?"
 	validates :first_name, length: {maximum:20} ,if: "first_name.present?"
