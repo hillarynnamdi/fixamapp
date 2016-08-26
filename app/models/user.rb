@@ -3,11 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:confirmable,:omniauthable, :omniauth_providers => [:facebook]
- has_many :orders,dependent: :destroy
-
-  before_validation { self.first_name = first_name.camelcase }
-  before_validation { self.last_name = last_name.camelcase }
- 
+ has_many :orders,dependent: :destroy 
 
 
     validates :first_name, presence: true
