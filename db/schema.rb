@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20160819144126) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-    t.string   "unconfirmed_email"
   end
 
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true, using: :btree
