@@ -1,5 +1,7 @@
 <% if @feed.errors.count > 0  %>
 
+$("#feed-btn").val("Send Message").attr({disabled:false})
+
 $(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
 
 	<%if @feed.name.blank? %> 
@@ -27,8 +29,11 @@ $(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
 
   	$('body,html').animate({scrollTop:posi},700);
 
+
+
 <%else%>
 
+$("#feed-btn").val("Send Message").attr({disabled:false})
 	$(".error").html("<%= (escape_javascript(render 'success', object: @feed)) %>")
 
 	$("#feed_name").val("")
@@ -40,6 +45,8 @@ $(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
 	var posi = $(".sect_track2").offset().top;
 
   	$('body,html').animate({scrollTop:posi},700);
+
+
 
 
 

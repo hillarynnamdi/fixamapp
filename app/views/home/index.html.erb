@@ -282,7 +282,7 @@
   <%= f.input :email , as: :email,  placeholder:"user@example.com" %>
   <%= f.input :mobile_no , as: :tel,  input_html:{ maxlength: 11}, placeholder:"Phone number" %>
   <%= f.input :message , as: :text, class:"form-control1 control3" , placeholder:"Type your comment here" , input_html:{ rows: '8' }%>
-  <%= f.button :submit, "Send Message",class:"btn btn-info" %>
+  <%= f.button :submit, "Send Message",id:'feed-btn',class:"btn btn-info" %>
   <%end%>
     </div>
     <div class="col-sm-5" id='contact_phone'>
