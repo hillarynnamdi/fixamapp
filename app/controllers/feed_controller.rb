@@ -1,5 +1,5 @@
 class FeedController < ApplicationController
-before_action :authenticate_admin!
+before_action :authenticate_admin! , only:[:create]
 
 def create
 	@feed = Feed.create(feed_params) 	
