@@ -1,4 +1,5 @@
 class FeedController < ApplicationController
+
 before_action :authenticate_admin!, only: [:index]
 
 

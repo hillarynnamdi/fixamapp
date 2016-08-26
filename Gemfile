@@ -46,6 +46,7 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -58,6 +59,10 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
+
+group :production do
+ gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
