@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :pending, :cancelled, :delivered, :new ,:create ,:cancel ,:reorder]
+  before_action :authenticate_user!, only: [:index, :pending, :cancelled, :delivered,:scheduled, :pickedup, :new ,:create ,:cancel ,:reorder]
 
 
 def  first_form
