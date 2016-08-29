@@ -71,6 +71,7 @@ margin: 0px;
 #myCarousel{
 margin-top: 50px !important;
 margin-bottom:50px !important;
+width: 100% !important
 
 }
 
@@ -105,9 +106,7 @@ margin-bottom:50px !important;
 
 }
 
-.container-fluid{
-  
-}
+
 
 .logo_div{
   height: 100px;
@@ -128,7 +127,7 @@ margin-bottom:50px !important;
 .credentials a{
 color: #eeeeee !important;
 margin-right: 10px;
-font-size: 12px !important;
+font-size: 13px !important;
 text-decoration: none;
 padding: 7px;
 font-family: arial !important;
@@ -1426,3 +1425,44 @@ border-radius: 5px;
 }
 
 
+/* responsive text queries */
+@media screen and (max-width: 768px) {
+
+  .sect1,.sect2,.sect_track2 {
+    font-size: 20px !important;
+    border-bottom: 1px dotted silver;
+    padding-bottom: 10px !important
+  }
+
+  .sect1::before,.sect1::after{
+  display: inline-block;
+    content: none;
+}
+
+.sect2::after{
+  display: inline-block;
+    content: none;
+}
+
+.sect_track2::before,.sect_track2::after{
+  display: inline-block;
+    content: none;
+}
+
+.container{
+  width: 95% !important
+}
+
+#jumbotron-index{
+  padding: 0px
+}
+
+.easy_to_use{
+font-size: 25px
+}
+
+.easy_to_use2{
+font-size: 18px;
+}
+
+}
