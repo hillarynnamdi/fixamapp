@@ -3,9 +3,6 @@
 
 <div id='body'>
 
-
-
-
 <div class='wrapper'>
 <nav class="navbar navbar-default navbar-static-top" id='navigatn' >
 <div class='credentials'>
@@ -51,10 +48,10 @@
 
 
 <div class="container-fluid" style="background-color:#66b3ff">
-  <div class="jumbotron" id='jumbotron-index'>
-  <div class="container" >
-<div class="row" id='index_jumb_track'>
 
+  <div class="jumbotron_wrapper">
+  <div class="jumbotron" id='jumbotron-index'>
+<div class="row">
     <div class="col-sm-6">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -245,6 +242,7 @@
   <%= text_field_tag(:order_number,"",placeholder:"Enter your unique order ID", required:true,class:"form-control") %>
     <span class="input-group-btn">
           <%= submit_tag("Track",class:"btn btn-info",id:'landing_track_bt' ) %>
+
       </span>
         </div>
 

@@ -61,17 +61,16 @@ height:400px !important;
 #jumbotron-index{
 background-color: #66b3ff;
 color: white;
-padding: 10px;
 border-radius: 0px;
 text-align: center;
-width: 100%;
+width: 100% !important;
 margin: 0px;
 }
 
 #myCarousel{
 margin-top: 50px !important;
 margin-bottom:50px !important;
-width: 100% !important
+width: 100% !important;
 
 }
 
@@ -175,8 +174,6 @@ color: white;
 .book_form{
     margin:50px auto;
 
-    
-
 }
 .book_form form{
   color: black;
@@ -185,7 +182,6 @@ color: white;
   padding: 30px 10px 20px 10px;
   margin: auto;
   box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
-
 }
 
 .book_form select{
@@ -521,12 +517,13 @@ font-size: 20px
   left: 0;
   padding: 1rem;
   text-align: left;
-  height: 60px
+  height: 60px;
 }
 
 
 html {
   height: 100%;
+  padding: 0px !important;
 }
 
 body {
@@ -535,7 +532,8 @@ body {
   padding-bottom: 6rem !important;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  padding-top: 0px !important
+  padding-top: 0px !important;
+  padding: 0px !important
 }
 
 .scroll-top {
@@ -1424,6 +1422,16 @@ border-radius: 5px;
   font-size: 15px !important
 }
 
+.jumbotron_wrapper{
+  width: 90% !important;
+  margin: auto
+}
+
+
+#container{
+  width: 100% 
+}
+
 
 /* responsive text queries */
 @media screen and (max-width: 768px) {
@@ -1453,10 +1461,6 @@ border-radius: 5px;
   width: 95% !important
 }
 
-#jumbotron-index{
-  padding: 0px
-}
-
 .easy_to_use{
 font-size: 25px
 }
@@ -1465,4 +1469,42 @@ font-size: 25px
 font-size: 18px;
 }
 
+#reach_us h3{
+font-size: 17px;
 }
+
+.book_form form{
+
+  width: 100% !important;
+}
+
+.location_service{
+  text-transform: uppercase;
+  font-weight: bolder !important;slider1
+  font-size: 13px !important;
+}
+
+.jumbotron_wrapper{
+  width: 100% !important;
+  margin: auto;
+  padding: 0px !important
+}
+
+.jumbotron{
+  padding: 0px !important
+}
+
+.book_form form{
+  color: black;
+  background-color: white;
+  max-width:100%;
+  padding: 30px 10px 20px 10px;
+  margin: auto;
+  box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
+}
+
+
+
+}
+
+
