@@ -35,7 +35,11 @@ end
 
 
 
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :path => "/" }  
+
+#devise_for :users, path: '/'
+ 
 
 #map.logout '/users/sign_out', :controller => 'sessions', :action => 'destroy'
 
