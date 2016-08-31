@@ -1,6 +1,6 @@
 <% if @feed.errors.count > 0  %>
 
-$("#feed-btn").val("Send Message").attr({disabled:false})
+$("#feed-btn").val("Send Message")
 
 $(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
 
@@ -33,7 +33,7 @@ $(".error").html("<%= (escape_javascript(render 'error' , object: @feed))%>")
 
 <%else%>
 
-$("#feed-btn").val("Send Message").attr({disabled:false})
+$("#feed-btn").val("Send Message")
 	$(".error").html("<%= (escape_javascript(render 'success', object: @feed)) %>")
 
 	$("#feed_name").val("")

@@ -537,7 +537,7 @@ $(document).ready(
 function(){
 $(".feed").submit(
   function(){
-$("#feed-btn").val("Sending Message...").attr({disabled:'disable'})
+$("#feed-btn").val("Sending Message...")
 }
   )
 }
@@ -547,7 +547,7 @@ $(document).ready(
 function(){
 $("#track_form").submit(
   function(){
-$("#landing_track_bt").val("Tracking...").attr({disabled:'disable'})
+$("#landing_track_bt").val("Tracking...")
 }
   )
 }

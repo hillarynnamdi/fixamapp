@@ -5,7 +5,7 @@
 
 <p class="location_service">Choose your location & Service</p>
 <p>
-<%=collection_select :state,:id,State.order(:state),:state, :state,include_blank: "Select State"%>
+<%=collection_select :state,:id,State.order(:state),:state, :state,include_blank: "Select State", required:true %>
 </p>
 <p>
 <%=grouped_collection_select :city, :id, State.order(:state),:cities,:state,:city,:city,include_blank: "Select City" %>

@@ -1,3 +1,8 @@
+* {
+margin: 0;
+padding: 0;
+}
+
 body{
   font-family: 'Roboto', sans-serif;
     font-size: 100%;
@@ -61,16 +66,16 @@ height:400px !important;
 #jumbotron-index{
 background-color: #66b3ff;
 color: white;
-padding: 10px;
 border-radius: 0px;
 text-align: center;
-width: 100%;
+width: 100% !important;
 margin: 0px;
 }
 
 #myCarousel{
 margin-top: 50px !important;
 margin-bottom:50px !important;
+width: 100% !important;
 
 }
 
@@ -105,9 +110,7 @@ margin-bottom:50px !important;
 
 }
 
-.container-fluid{
-  
-}
+
 
 .logo_div{
   height: 100px;
@@ -128,7 +131,7 @@ margin-bottom:50px !important;
 .credentials a{
 color: #eeeeee !important;
 margin-right: 10px;
-font-size: 12px !important;
+font-size: 13px !important;
 text-decoration: none;
 padding: 7px;
 font-family: arial !important;
@@ -176,8 +179,6 @@ color: white;
 .book_form{
     margin:50px auto;
 
-    
-
 }
 .book_form form{
   color: black;
@@ -186,7 +187,6 @@ color: white;
   padding: 30px 10px 20px 10px;
   margin: auto;
   box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
-
 }
 
 .book_form select{
@@ -397,7 +397,6 @@ border:2px solid #1a90ff;
 .easy_to_use{
   margin-bottom: 15px;
   font-size: 30px;
-  font-family:Comic Sans MS;
   color: white;
   font-weight: bolder;
   text-shadow:2px;
@@ -522,12 +521,13 @@ font-size: 20px
   left: 0;
   padding: 1rem;
   text-align: left;
-  height: 60px
+  height: 60px;
 }
 
 
 html {
   height: 100%;
+  padding: 0px !important;
 }
 
 body {
@@ -536,7 +536,8 @@ body {
   padding-bottom: 6rem !important;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  padding-top: 0px !important
+  padding-top: 0px !important;
+  padding: 0px !important
 }
 
 .scroll-top {
@@ -1423,6 +1424,78 @@ border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold !important;
   font-size: 15px !important
+}
+
+
+
+
+/* responsive text queries */
+@media screen and (max-width: 768px) {
+
+  .sect1,.sect2,.sect_track2 {
+    font-size: 23px !important;
+    border-bottom: 1px dotted silver;
+    padding-bottom: 10px !important
+  }
+
+  .sect1::before,.sect1::after{
+  display: inline-block;
+    content: none;
+}
+
+.sect2::after{
+  display: inline-block;
+    content: none;
+}
+
+.sect_track2::before,.sect_track2::after{
+  display: inline-block;
+    content: none;
+}
+
+.container{
+  width: 95% !important
+}
+
+.easy_to_use{
+font-size: 25px
+}
+
+.easy_to_use2{
+font-size: 18px;
+}
+
+#reach_us h3{
+font-size: 17px;
+}
+
+.book_form form{
+
+  width: 100% !important;
+}
+
+.location_service{
+  text-transform: uppercase;
+  font-weight: bolder !important;slider1
+  font-size: 13px !important;
+}
+
+
+.jumbotron{
+  padding: 0px !important
+}
+
+.book_form form{
+  color: black;
+  background-color: white;
+  max-width:100%;
+  padding: 30px 10px 20px 10px;
+  margin: auto;
+  box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
+}
+
+
+
 }
 
 

@@ -1,7 +1,7 @@
 
 <% if @order_number.present? %>
 
-$("#landing_track_bt").val("Track").attr({disabled:false})
+$("#landing_track_bt").val("Track")
 
 alert("<%= escape_javascript(render text:"\n\n"+@order_number.order_number+"\n\nDevice Type: "+@order_number.device_type+"\n\nDevice Model: "+@order_number.device_model+"\n\nStatus: "+@order_number.order_status)%>")
 
@@ -11,7 +11,7 @@ $("#order_number").val("")
 
 <%else%>
 
-$("#landing_track_bt").val("Track").attr({disabled:false})
+$("#landing_track_bt").val("Track")
 
 alert("oops! invalid order number.")
 
