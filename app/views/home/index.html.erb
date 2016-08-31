@@ -1,5 +1,13 @@
 <% provide(:title, 'FIXAM')%>
-<div id="container">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=625994250892808";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Your like button code -->
 
 
 <div id='body'>
@@ -18,6 +26,7 @@
 <%=link_to new_user_registration_path do  %>
 <span class="glyphicon glyphicon-user"></span> Register
 <%end%>
+<div class="fb-like" data-href="https://www.facebook.com/Kliqtest" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 
 </div>
   <div class="container" id='section_content'>
