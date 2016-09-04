@@ -18,6 +18,5 @@
 #ignore database
 /config/database.yml
 
-/config/environment_variables.yml
 # Ignore application configuration
-/config/application.yml
+# /config/application.yml
