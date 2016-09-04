@@ -32,7 +32,7 @@ Rails.application.configure do
   #config.assets.compile = false
 
   config.assets.compile = true
-  config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
+  #config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
 
 
 
