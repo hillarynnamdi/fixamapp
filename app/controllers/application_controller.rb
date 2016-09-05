@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
 
     elsif resource_name == :user
 
-        orders_path
+        new_user_session_path
       
      end
   end
