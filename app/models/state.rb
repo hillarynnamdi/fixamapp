@@ -3,7 +3,7 @@ class State < ActiveRecord::Base
 	has_many :areas,dependent: :destroy
 	has_many :places,dependent: :destroy
 
-	before_validation { self.state = state.upcase }
+	before_validation { self.state = state.camelcase }
 
 
 	validates :state,presence:true

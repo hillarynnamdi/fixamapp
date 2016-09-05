@@ -4,4 +4,7 @@ class City < ActiveRecord::Base
   has_many :places,dependent: :destroy
 
   validates :city,presence:true
+
+  before_validation { self.city = city.camelcase }
+
 end

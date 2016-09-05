@@ -5,4 +5,6 @@ class Area < ActiveRecord::Base
 
 
   validates :area,presence:true
+
+  before_validation { self.area = area.camelcase }
 end

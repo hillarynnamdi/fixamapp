@@ -4,4 +4,7 @@ class Place < ActiveRecord::Base
   belongs_to :state
 
   validates :place,presence:true
+
+  before_validation { self.place = place.camelcase }
+
 end
