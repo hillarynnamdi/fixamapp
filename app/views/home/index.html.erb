@@ -1,4 +1,16 @@
+
 <div id="container">
+<% provide(:title, 'FIXAM')%>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=625994250892808";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Your like button code -->
+
 
 
 <div id='body'>
@@ -282,9 +294,8 @@
     </div>
     <div class="col-sm-5" id='contact_phone'>
       <h3><i class="glyphicon glyphicon-pushpin"></i> Gofixam&trade; </i></h3>
-      <p><i class="glyphicon glyphicon-road"></i> Lekki phase 1,Lekki Lagos Island,Nigeria.</p>
-      <p><i class="glyphicon glyphicon-phone-alt"></i> +2348000000000</p>
-      <p></p>
+      <div class="fb-like" data-href="https://www.facebook.com/gofixam" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+
     </div>
   </div>
 

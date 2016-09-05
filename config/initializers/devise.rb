@@ -12,7 +12,8 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender =  "GofixamTeam@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org"
+#  config.mailer_sender =  "GofixamTeam@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org"
+  config.mailer_sender =  "testgofixam@gmail.com"
 
  config.secret_key ='cdc09858c16478f59c113c96531517857
    de92cb7591ad54eea6bdd461f664023bf17e3236c9a0824a11046f893cfb600d9b92dc5c2a865b253c1d5e7002ddf99'
