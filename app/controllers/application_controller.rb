@@ -51,7 +51,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_up_path_for(resource_or_scope)
      if resource_name == :admin
-
   	   new_admin_session_path
 
     elsif resource_name == :user
