@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
 
     elsif resource_name == :user
 
-        account_index_path
+        orders_path
       
      end
   end
