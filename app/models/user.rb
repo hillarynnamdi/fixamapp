@@ -6,25 +6,6 @@ class User < ActiveRecord::Base
  has_many :orders,dependent: :destroy 
 
 
-    validates :first_name, presence: true
-	validates :first_name, length: {minimum:2} ,if: "first_name.present?"
-	validates :first_name, length: {maximum:20} ,if: "first_name.present?"
-
-
-  	validates :last_name, presence: true
-	validates :last_name, length: {minimum:2} ,if: "last_name.present?"
-	validates :last_name, length: {maximum:20} ,if: "last_name.present?"
-
-
- 	validates :gender, presence: true
-
-
-
-  	validates :phone_number, presence: true
-  	validates :phone_number,numericality: { only_integer:true},if: "phone_number.present?"
-	validates :phone_number, length: { minimum: 11 } ,if: "phone_number.present?"
-	validates :phone_number, length: {maximum:11} ,if: "phone_number.present?"
-
 
 
  
