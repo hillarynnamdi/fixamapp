@@ -20,21 +20,31 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
 
-  
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "mail.google.com",
+    :user_name => "confirm@gofixam.com",
+    :password => "kliqital29",
+    :authentication => "plain",
+    :enable_starttls_auto => true
+  }
+
+
   config.action_mailer.default_url_options={host: "localhost:3000"}
 
 
-  config.action_mailer.smtp_settings = {
+#  config.action_mailer.smtp_settings = {
 
-    :address => "smtp.mailgun.org",
-    :port => "587",
-    :domain => "sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org",
-     user_name: "postmaster@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org" ,
-     password:  "92d3aae47277c9d1b36468e53cde7777",
-    :authentication => "plain",
-   :enable_starttls_auto => true
+ #   :address => "smtp.mailgun.org",
+  #  :port => "587",
+  #  :domain => "sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org",
+   #  user_name: "postmaster@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org" ,
+   #  password:  "92d3aae47277c9d1b36468e53cde7777",
+   # :authentication => "plain",
+   #:enable_starttls_auto => true
 
-  } 
+  #} 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

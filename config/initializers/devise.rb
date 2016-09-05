@@ -13,7 +13,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 #  config.mailer_sender =  "GofixamTeam@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org"
-  config.mailer_sender =  "testgofixam@gmail.com"
+  config.mailer_sender =  "Team Gofixam"
 
  config.secret_key ='cdc09858c16478f59c113c96531517857
    de92cb7591ad54eea6bdd461f664023bf17e3236c9a0824a11046f893cfb600d9b92dc5c2a865b253c1d5e7002ddf99'
@@ -176,7 +176,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
