@@ -17,10 +17,6 @@ before_action :authenticate_user!
 
 	end
 
-	def show
-		@user=User.find(current_user.id)
-		redirect_to account_index_path
-	end
 
 	def change_password
 		@user=current_user
