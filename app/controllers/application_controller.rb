@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
      if resource_name == :admin
   	   new_admin_session_path
 
-    elsif resource_name == :user
+    else
 
         new_user_session_path
       

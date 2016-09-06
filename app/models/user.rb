@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
   validates :phone_number, presence: true,on: :update
   validates :phone_number, length: {minimum:11} ,if: "phone_number.present?",on: :update
   validates :phone_number, length: {maximum:15} ,if: "phone_number.present?",on: :update
-$/
+
+*/
 
 
 
