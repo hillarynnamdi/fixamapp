@@ -112,15 +112,16 @@
 <select class="order_select_tag" onchange="location = this.value">
   <option value='/orders'>All Orders</option>
   <option value='/orders/pending'>Sent Orders</option>
-  <option value='/orders/scheduled' selected>Scheduled Orders</option>
+  <option value='/orders/scheduled'>Scheduled Orders</option>
     <option value='/orders/pickedup' selected>Picked Up Orders</option>
   <option value='/orders/delivered'>Delivered Orders</option>
   <option value='/orders/cancelled'>Cancelled Orders</option>
+  <option value='/orders/new'>Book a Repair</option>
 </select>
 
           <div id="myaccount_body">
               <div class="order_tag">
-                <span>All Orders</span>
+                <span>Picked Orders</span>
               </div>
               <div class="items_count">
               <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>

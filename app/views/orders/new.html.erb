@@ -15,6 +15,7 @@
 
         <div id='myaccount_body_left'>
 
+<div class="visible-lg visible-md visible-sm">
           <p>
           <%=link_to orders_path,class:'inactive_account_link' do %>
             <i class="glyphicon glyphicon-list"></i> All Orders
@@ -59,7 +60,20 @@
           </p>
         </div>
 
+</div>
 
+<div class='visible-xs'>
+        <select class="order_select_tag" onchange="location = this.value">
+          <option value='/orders'>All Orders</option>
+          <option value='/orders/pending'>Sent Orders</option>
+          <option value='/orders/scheduled'>Scheduled Orders</option>
+            <option value='/orders/pickedup'>Picked Up Orders</option>
+          <option value='/orders/delivered'>Delivered Orders</option>
+          <option value='/orders/cancelled'>Cancelled Orders</option>
+          <option value='/orders/new' selected>Book a Repair</option>
+        </select>
+
+</div>
         </div>
 
 
