@@ -23,9 +23,6 @@ class User < ActiveRecord::Base
   validates :phone_number, length: {maximum:15} ,if: "phone_number.present?",on: :update
 
 
-  validates :password, presence: true,on: :update
-  validates :password, length: {minimum:8} ,if: "password.present?",on: :update
-
 
 
 
