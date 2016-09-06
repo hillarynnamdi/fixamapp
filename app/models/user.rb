@@ -21,42 +21,27 @@ class User < ActiveRecord::Base
   validates :phone_number, presence: true,on: :update
   validates :phone_number, length: {minimum:11} ,if: "phone_number.present?",on: :update
   validates :phone_number, length: {maximum:15} ,if: "phone_number.present?",on: :update
-/
+$/
 
 
 
 	def self.from_omniauth(auth)
 
- if self.where(email: auth.info.email).exists?
-    return_user = self.where(email: auth.info.email).first
-    return_user.provider = auth.provider
-    return_user.uid = auth.uid
-  else
-    return_user = self.create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.email = auth.info.email
-      user.first_name=auth.info.first_name
-      user.last_name=auth.info.last_name
-      user.gender = auth.extra.raw_info.gender
-      user.phone_number="00000000000"
-      user.password=Devise.friendly_token[0,20]
+		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+		user.email = auth.info.email
+	    user.first_name=auth.info.first_name
+	    user.last_name=auth.info.last_name
+	    user.gender = auth.extra.raw_info.gender
+    	user.phone_number="00000000000"
+    	user.password=Devise.friendly_token[0,20]
       user.has_password=false
       user.profile_icon = auth.info.image
-      user.skip_confirmation!
-      user.save
-    end
-  end
-
+  		user.skip_confirmation!
+  		user.save
+		#user.name = auth.info.name   # assuming the user model has a name
+		#user.image = auth.info.image # assuming the user model has an image
+	 end
 end
-
-
-
-
-
-
-
-
 
 
  def self.new_with_session(params, session)
