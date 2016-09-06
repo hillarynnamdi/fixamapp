@@ -20,14 +20,11 @@ resources :phonenumber,path: '/user/phonenumber'
 resources :account do 
 collection do 
       get 'change_password'
-      get 'delete_account'
       patch 'update_password'
-      patch 'info'
-end
-
-member do 
-delete 'remove_user'
-
+      get 'delete_account'
+      get 'info' 
+      patch 'update_account'
+      delete 'remove_user'
 end
 
 

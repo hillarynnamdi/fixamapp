@@ -1,21 +1,22 @@
 class AccountController < ApplicationController
 before_action :authenticate_user!
-	def index
+	def info
 		@user=current_user
 
 
 	end
 
-	def update
+	def update_account
 	@user=User.find(current_user.id)
 	 if @user.update(update_params)
-	 	redirect_to account_index_path
+	 	redirect_to info_account_index_path
 	 	flash[:account_updated]="Your account has been updated successfully."
   	else
-  		render 'index'
+  		render 'info'
   	end
 
 	end
+
 
 
 	def change_password
@@ -23,8 +24,7 @@ before_action :authenticate_user!
 	end
 
 	def update_password
-		@user=User.find(current_user.id)
-
+		@user=current_user
 		if !@user.has_password?
 		      params.delete("current_password")
 		      		if @user.update(password_update_params)
@@ -61,6 +61,11 @@ before_action :authenticate_user!
 		
 	end
 
+	def show
+		redirect_to info_account_index_path
+
+	end
+
 
 	def remove_user
 		@user=User.find(current_user.id)
@@ -77,7 +82,7 @@ before_action :authenticate_user!
       params.require(:user).permit(:email,:first_name,:last_name,:gender,:phone_number,:location,:profile_icon,:preferred_language,:location,:password)
 	end
 
-	private def password_update_params
+	def password_update_params
       params.require(:user).permit(:current_password,:password, :password_confirmation,)
 	end
 

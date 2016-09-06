@@ -12,7 +12,7 @@
 		<div class="row">
   			<div class="col-md-3" id='account_left'>
   			<div id='myaccount_body_left'>
-  				<p><%=link_to "Basic Information",account_index_path,class:'inactive_account_link' %></p>
+  				<p><%=link_to "Basic Information",info_account_index_path,class:'inactive_account_link' %></p>
   				<p><%=link_to "Change Password", change_password_account_index_path,class:'inactive_account_link'%></p>
   				<p><%=link_to "Delete Account", delete_account_account_index_path,class:'active_account_link' , id:'active_para'%></p>
 
@@ -26,7 +26,7 @@
   			<div class="col-md-9" id=' account_right'>
 <%= render "error_success" %>
   				<div id="myaccount_body">
-<%= simple_form_for(:user, url: remove_user_account_path(current_user.first_name), :html=>{class:"form-update"},method: :delete) do |f| %>
+<%= simple_form_for(:user, :url => { :action => "remove_user" }, :html=>{class:"form-update"},method: :delete) do |f| %>
 <div id="myaccount_body">
               <div class="order_tag">
                 <span>Delete Account</span>
