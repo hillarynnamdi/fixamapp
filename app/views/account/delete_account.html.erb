@@ -38,7 +38,7 @@
  </div>
   <div class="form-actions">
 
-    <%= button_to "I UNDERSTAND,DELETE MY ACCOUNT",  account_path(current_user.first_name), data: { confirm: "Are you sure?" }, method: :delete,class:"btn btn-danger"  %>
+    <%= f.submit "I UNDERSTAND,DELETE MY ACCOUNT", data: { confirm: "Are you sure?" },class:"btn btn-danger"  %>
   </div>
 
 
