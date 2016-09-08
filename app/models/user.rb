@@ -7,25 +7,37 @@ class User < ActiveRecord::Base
 
 
 
+    def self.from_omniauth(auth)
+      user = User.where(:provider => auth.provider, :uid => auth.uid).first
+      if user
+        return user
+      else
+        registered_user = User.where(:email => auth.info.email).first
+        if registered_user
+          return registered_user
+        else
+          user = User.create(
+                              provider:auth.provider,
+                              uid:auth.uid,
+                              email:auth.info.email,
+                              password:Devise.friendly_token[0,20],
+                              first_name:auth.info.first_name,
+                              last_name:auth.info.last_name,
+                              gender:auth.extra.raw_info.gender,
+                              phone_number:"00000000000",
+                              has_password:false,
+                              profile_icon:auth.info.image
+
+                                      )
+          user.skip_confirmation!
+          user.save
 
 
-	def self.from_omniauth(auth)
+        end
+      end
+    end
 
-		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-  		user.email = auth.info.email
-	    user.first_name=auth.info.first_name
-	    user.last_name=auth.info.last_name
-	    user.gender = auth.extra.raw_info.gender
-    	user.phone_number="00000000000"
-    	user.password=Devise.friendly_token[0,20]
-      user.has_password=false
-      user.profile_icon = auth.info.image
-  		user.skip_confirmation!
-  		user.save
-	 end
-end
+
 
 
  def self.new_with_session(params, session)
