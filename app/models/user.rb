@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
 
 
-    def self.from_omniauth(auth)
+    def self.from_omniauth(auth,signed_in_resource=nil)
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
       if user
         return user
@@ -31,7 +31,10 @@ class User < ActiveRecord::Base
                                       )
           user.skip_confirmation!
           user.save
+
+          if user
           return user
+        end
 
 
         end
