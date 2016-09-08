@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
                                       )
           user.skip_confirmation!
           user.save
+          return user
 
 
         end
