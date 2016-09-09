@@ -1,7 +1,8 @@
+<% provide(:title, 'Change Password | Gofixam')%>
 <div class="login_wrapper">
   <div class="logo_icon">
 <%=link_to  home_index_path do  %>
-  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon",alt:'gofixam-logo'%>
 <%end%>
 </div>
 
@@ -19,6 +20,7 @@
     <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
   </div>
 
+ 
   <div class="form-actions">
     <%= f.button :submit, "Change my password",class:"btn btn-lg btn-primary btn-block" %>
   </div>
@@ -30,8 +32,4 @@
 </div>
 
 
-<div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+<%= render 'shared/footer_scroll2'%>

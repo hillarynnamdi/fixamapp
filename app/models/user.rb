@@ -6,43 +6,59 @@ class User < ActiveRecord::Base
  has_many :orders,dependent: :destroy 
 
 
-
-/#
-  validates :first_name, presence: true,on: :update
-  validates :first_name, length: {minimum:3} ,if: "first_name.present?",on: :update
-  validates :first_name, length: {maximum:100} ,if: "first_name.present?",on: :update
+  validates :first_name, presence: true
+  validates :first_name, length: {minimum:2} ,if: "first_name.present?"
+  validates :first_name, length: {maximum:100} ,if: "first_name.present?"
 
 
+  validates :last_name, presence: true
+  validates :last_name, length: {minimum:2} ,if: "last_name.present?"
+  validates :last_name, length: {maximum:100} ,if: "last_name.present?"
 
-  validates :last_name, presence: true,on: :update
-  validates :last_name, length: {minimum:3} ,if: "last_name.present?",on: :update
-  validates :last_name, length: {maximum:100} ,if: "last_name.present?",on: :update
+  validates :phone_number, presence: true
+  validates :phone_number, length: {minimum:11} ,if: "phone_number.present?"
+  validates :phone_number, length: {maximum:15} ,if: "phone_number.present?"
 
-  validates :phone_number, presence: true,on: :update
-  validates :phone_number, length: {minimum:11} ,if: "phone_number.present?",on: :update
-  validates :phone_number, length: {maximum:15} ,if: "phone_number.present?",on: :update
 
-*/
+  validates :gender, presence: true
 
 
 
-	def self.from_omniauth(auth)
+    def self.from_omniauth(auth,signed_in_resource=nil)
+      user = User.where(:provider => auth.provider, :uid => auth.uid).first
+      if user
+        return user
+      else
+        registered_user = User.where(:email => auth.info.email).first
+        if registered_user
+          return registered_user
+        else
+          user = User.create(
+                              provider:auth.provider,
+                              uid:auth.uid,
+                              email:auth.info.email,
+                              password:Devise.friendly_token[0,20],
+                              first_name:auth.info.first_name,
+                              last_name:auth.info.last_name,
+                              gender:auth.extra.raw_info.gender,
+                              phone_number:"00000000000",
+                              has_password:false,
+                              profile_icon:auth.info.image
 
-		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-		user.email = auth.info.email
-	    user.first_name=auth.info.first_name
-	    user.last_name=auth.info.last_name
-	    user.gender = auth.extra.raw_info.gender
-    	user.phone_number="00000000000"
-    	user.password=Devise.friendly_token[0,20]
-      user.has_password=false
-      user.profile_icon = auth.info.image
-  		user.skip_confirmation!
-  		user.save
-		#user.name = auth.info.name   # assuming the user model has a name
-		#user.image = auth.info.image # assuming the user model has an image
-	 end
-end
+                                      )
+          user.skip_confirmation!
+          user.save
+
+          if user
+          return user
+        end
+
+
+        end
+      end
+    end
+
+
 
 
  def self.new_with_session(params, session)

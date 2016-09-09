@@ -1,8 +1,0 @@
-<% @orders.each do |order| %>
-	<%= order.id%>
-
- <%= form_tag  dashboard_path(order), method: :patch  do %>
-<%= select_tag(:status, options_for_select([['Scheduled'], ['Fixed'], ['Delivered']], selected: :status )) %>
-<%= submit_tag "submit" %>
-<% end %>
-<%end%>

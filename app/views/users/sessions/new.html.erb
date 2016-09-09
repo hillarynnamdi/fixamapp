@@ -1,8 +1,35 @@
-<% provide(:title, 'LOGIN')%>
+<% provide(:title, 'Login | Gofixam')%>
+
+<script type="text/javascript">
+    jQuery ->
+  $('body').prepend('<div id="fb-root"></div>')
+
+  $.ajax
+    url: "#{window.location.protocol}//connect.facebook.net/en_US/all.js"
+    dataType: 'script'
+    cache: true
+
+
+window.fbAsyncInit = ->
+  FB.init(appId: '<%= ENV["facebook_app_id"] %>', cookie: true)
+
+  $('#sign_in').click (e) ->
+    e.preventDefault()
+    FB.login (response) ->
+      window.location = '/auth/facebook/callback' if response.authResponse
+
+  $('#sign_out').click (e) ->
+    FB.getLoginStatus (response) ->
+      FB.logout() if response.authResponse
+    true
+
+</script>
+
+
   <div class="login_wrapper">
   <div class="logo_icon">
 <%=link_to  home_index_path do  %>
-  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon",alt:'gofixam-logo'%>
 <%end%>
 </div>
 
@@ -20,8 +47,8 @@
 
         <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= link_to omniauth_authorize_path(resource_name, provider) do %>
-          <%=image_tag 'login.png'%>
+        <%= link_to omniauth_authorize_path(resource_name, provider),id:'sign_in' do %>
+          <%=image_tag 'login.png',alt:'fb-login'%>
         <%end%>
       <% end -%>
     <% end -%>
@@ -48,11 +75,7 @@
 </div>
 
 
-<div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+<%= render 'shared/footer_scroll2'%>
 
 
 

@@ -1,6 +1,7 @@
 
 <div id="container">
-<% provide(:title, 'FIXAM')%>
+<% provide(:title, 'Book any Gadget Repair | Phone | Laptop | Refrigerator |... ')%>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -39,7 +40,7 @@
       </button>
 
 <%=link_to  home_index_path do  %>
-  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon",alt:'gofixam-logo'%>
 <%end%>
     
 
@@ -127,8 +128,9 @@
 
 
       <div class='book_form'>
-      <div class='easy_to_use'>Easy To Use & Reliable.</div>
-      <div class='easy_to_use2'><span>Go ahead. Book Now!</span></div>
+      <div class='easy_to_use'><span>Go Ahead. Book Now!</span></div>
+      <div class='easy_to_use2'>Easy To Use & Reliable.</div>
+      
       
 <div class="container">
     <%= render "forms" %>
@@ -322,11 +324,7 @@
 
 
 
-<div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+<%= render 'shared/footer_scroll2'%>
 
 </div>
 

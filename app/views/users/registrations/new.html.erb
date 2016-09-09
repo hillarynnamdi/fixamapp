@@ -1,10 +1,10 @@
-<% provide(:title, 'REGISTER')%>
+<% provide(:title, 'Sign Up | Gofixam')%>
   <div class="login_wrapper">
 
 
 <div class="logo_icon">
 <%=link_to  home_index_path do  %>
-  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon"%>
+  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon",alt:'gofixam-logo'%>
 <%end%>
 </div>
 
@@ -21,7 +21,7 @@
   	  	<%- if devise_mapping.omniauthable? %>
 		  <%- resource_class.omniauth_providers.each do |provider| %>
 		    <%= link_to omniauth_authorize_path(resource_name, provider),id:'sign_in' do %>
-		    	<%=image_tag 'signup.png'%>
+		    	<%=image_tag 'signup.png',alt:'fb-signup'%>
 		    <%end%>
 		  <% end -%>
 		<% end -%>
@@ -72,8 +72,4 @@
 </div>
 
 
-<div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+<%= render 'shared/footer_scroll2'%>

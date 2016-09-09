@@ -8,7 +8,7 @@ def update
  @user = User.find(current_user.id)
  @user.update(update_userparams)
  if @user.save
- 	redirect_to account_index_path
+ 	redirect_to info_account_index_path
 else
 	render 'show'
 end
