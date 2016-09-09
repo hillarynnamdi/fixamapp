@@ -6,6 +6,16 @@ class User < ActiveRecord::Base
  has_many :orders,dependent: :destroy 
 
 
+  validates :first_name, presence: true
+  validates :first_name, length: {minimum:3} ,if: "first_name.present?"
+  validates :first_name, length: {maximum:100} ,if: "first_name.present?"
+
+  
+  validates :last_name, presence: true
+  validates :last_name, length: {minimum:3} ,if: "last_name.present?"
+  validates :last_name, length: {maximum:100} ,if: "last_name.present?"
+
+
 
     def self.from_omniauth(auth,signed_in_resource=nil)
       user = User.where(:provider => auth.provider, :uid => auth.uid).first

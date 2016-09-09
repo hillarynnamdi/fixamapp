@@ -33,7 +33,7 @@ end
 
 
 
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :path => "/" }  
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , registrations: 'registrations' , :path => "/"}  
 
 #devise_for :users, path: '/'
  
