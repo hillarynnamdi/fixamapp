@@ -151,10 +151,10 @@ ActiveRecord::Schema.define(version: 20160819144126) do
     t.datetime "updated_at",                            null: false
     t.string   "provider"
     t.string   "uid"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "gender"
-    t.string   "phone_number"
+    t.string   "first_name",             default: "",   null: false
+    t.string   "last_name",              default: "",   null: false
+    t.string   "gender",                 default: "",   null: false
+    t.string   "phone_number",           default: "",   null: false
     t.string   "unconfirmed_email"
     t.string   "preferred_language"
     t.string   "location"
