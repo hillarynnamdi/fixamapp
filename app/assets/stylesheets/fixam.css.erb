@@ -173,13 +173,13 @@ color: white;
 
 .book_form{
     margin:50px auto;
-
 }
+
 .book_form form{
   color: black;
   background-color: white;
   max-width:90%;
-  padding: 30px 10px 20px 10px;
+  padding: 30px 10px 20px 10px !important;
   margin: auto;
   box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
 }
@@ -195,6 +195,7 @@ color: white;
   margin-bottom: 10px;
   border: 1px solid silver;
 }
+
 
 
 
@@ -425,8 +426,8 @@ border:2px solid #1a90ff;
 
 .sect1::before,.sect1::after{
   display: inline-block;
-    content: "";
-    width: 220px;
+  content: '';
+   width: 220px;
     border:1px dotted silver;
     margin: 5px 10px 5px 10px;
     text-align: center;
@@ -1425,28 +1426,37 @@ border-radius: 5px;
 }
 
 
+
 /* responsive text queries */
 @media screen and (max-width: 768px) {
+
 
   .sect1,.sect2,.sect_track2 {
     font-size: 20px !important;
     border-bottom: 1px dotted silver;
     padding-bottom: 10px !important
-  }
+
+}
 
   .sect1::before,.sect1::after{
   display: inline-block;
     content: none;
+   width: 0px;
+    border:0px dotted silver;
 }
 
 .sect2::after{
   display: inline-block;
     content: none;
+    width: 0px;
+    border:0px dotted silver;
 }
 
 .sect_track2::before,.sect_track2::after{
   display: inline-block;
     content: none;
+    width: 0px;
+    border:0px dotted silver;
 }
 
 .container{
@@ -1487,12 +1497,7 @@ font-size: 17px;
 }
 
 
-.book_form form{
-  color: black;
-  background-color: white;
-  width:100% !important;
-  padding: 30px 0px 20px 0px;
-}
+
 
 html{
   overflow-x: hidden;
@@ -1559,3 +1564,4 @@ a.read.fourth {
 a.read.fourth:hover{
  background:#052963;
 }
+
