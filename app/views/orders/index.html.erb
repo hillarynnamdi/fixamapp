@@ -76,13 +76,21 @@
                     <div class="order_search"><i class="glyphicon glyphicon-search"></i> 
                     <%= pluralize(@all_order.count, "Search result") %> for <i><u><%= params[:search].humanize %></u></i></div>
                   <%else%>
-                    <span> All Orders </span>
+                    <span>All Orders (<%=@all_order.count %>)</span>
                 <% end -%>
   						</div>
-  						<div class="items_count">
-              <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
-              </div>
+
 <%= render "order_content" %>
+
+          <% if @all_order.count==0 %>
+
+          <div class="notify_order">
+            No orders placed!
+          </div>
+
+          <% end -%>
+
+
 				</div>
 
 
@@ -119,19 +127,27 @@
   <option value='/orders/new'>Book a Repair</option>
 </select>
 
-          <div id="myaccount_body">
+            <div id="myaccount_body">
               <div class="order_tag">
-                <%if params[:search].present? %>
+                 <%if params[:search].present? %>
                     <div class="order_search"><i class="glyphicon glyphicon-search"></i> 
                     <%= pluralize(@all_order.count, "Search result") %> for <i><u><%= params[:search].humanize %></u></i></div>
                   <%else%>
-                    <span> All Orders </span>
+                    <span>All Orders (<%=@all_order.count %>)</span>
                 <% end -%>
               </div>
-              <div class="items_count">
-              <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
-              </div>
+
 <%= render "order_content" %>
+
+          <% if @all_order.count==0 %>
+
+          <div class="notify_order">
+            No orders placed!
+          </div>
+
+          <% end -%>
+
+
         </div>
 
 

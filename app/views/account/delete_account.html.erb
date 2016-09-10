@@ -8,17 +8,22 @@
 
 		<div class="account_body">
 
-				<div class="account_sub_body3">
+				<div class="account_sub_body">
 
 		<div class="row">
   			<div class="col-md-3" id='account_left'>
-  			<div id='myaccount_body_left'>
-  				<p><%=link_to "Basic Information",info_account_index_path,class:'inactive_account_link' %></p>
-  				<p><%=link_to "Change Password", change_password_account_index_path,class:'inactive_account_link'%></p>
-  				<p><%=link_to "Delete Account", delete_account_account_index_path,class:'active_account_link' , id:'active_para'%></p>
+        <div id='myaccount_body_left' class="visible-lg visible-md visible-s">
+          <p><%=link_to "Basic Information",info_account_index_path,class:'inactive_account_link' %></p>
+          <p><%=link_to "Change Password", change_password_account_index_path,class:'inactive_account_link' %></p>
+          <p><%=link_to "Delete Account", delete_account_account_index_path,class:'active_account_link', id:'active_para' %></p>
 
-  			</div>
+        </div>
 
+        <select class="order_select_tag visible-xs" onchange="location = this.value" >
+  <option value='/account/info'>My profile</option>
+  <option value='/account/change_password'>Change Password</option>
+  <option value='/account/delete_account' selected>Delete Account</option>
+</select>
 
   			</div>
 
