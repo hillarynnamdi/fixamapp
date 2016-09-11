@@ -37,6 +37,7 @@ $('document').ready(
 function() {
   $('.previous').click(
     function(){
+      $(".ajax2").hide()
       if($(this).attr('position')=='second_form'){
       $('.first_form').show();
       $('.second_form').hide();
@@ -138,6 +139,7 @@ if (options) {
     $("#city_id").parent().show()
     $("#city_id").html(options)
     $("#city_id").prepend("<option value='' selected>select city</option>")
+    $(".ajax2").hide()
 
   }
 else{
@@ -167,6 +169,7 @@ if (options) {
     $("#area_id").parent().show()
     $("#area_id").html(options)
     $("#area_id").prepend("<option value='' selected>select area</option>")
+    $(".ajax2").hide()
   }
 else{
   $("#area_id").parent().hide()
@@ -195,6 +198,7 @@ if (options) {
     $("#place_id").parent().show()
     $("#place_id").html(options)
     $("#place_id").prepend("<option value='' selected>select place</option>")
+    $(".ajax2").hide()
   }
 else{
   $("#place_id").parent().hide()
