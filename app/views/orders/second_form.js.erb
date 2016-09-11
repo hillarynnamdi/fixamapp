@@ -3,6 +3,7 @@
 	$('.second_form').hide();
 
 	$('.information_div').show()
+	$(".ajax2").hide()
 
 	$('.information_div div').html(" ")
 	.append("<div><%= escape_javascript( render text:"Order ID: "+session[:order_id]) %></div>")
@@ -34,15 +35,18 @@
 $('#device_type').css({border:'2px solid #ff9999'})
 
 $('#device_type2').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 
 
 <% elsif  !session[:device_model].present? %>
 	
 $('#device_model').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:device_problem].present? %>
 	
 $('#device_problem').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <%end%>
