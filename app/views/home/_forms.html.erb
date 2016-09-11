@@ -26,7 +26,8 @@
 
 <p>
 
- <%= submit_tag("Next") %>
+ <%= submit_tag("Next",class:'next_submit') %> 
+ <p><%=image_tag 'ajax2.gif', class:"ajax2",alt:'loading'%></p>
 </p>
 
 <% end %>
@@ -73,7 +74,7 @@
 
 <div class="form-group"><%= text_area_tag(:device_problem,"",id:'device_problem',placeholder:"Enter Device Problem",class: "form-control") %></div>
 <div class="form-group">
-<button type='button' class='previous' position='second_form'>Previous</button> <%= submit_tag("Next") %>
+<button type='button' class='previous' position='second_form'>Previous</button> <%= submit_tag("Next",class:'next_submit') %>
 </div>
 <% end %>
 
@@ -88,7 +89,7 @@
 </div>
 <%=form_tag(third_form_orders_path,remote:'true' ,class:'third_form') do %>
 
-<p><button type='button' class='previous' position='third_form'>Previous</button> <%= submit_tag("Submit") %></p>
+<p><button type='button' class='previous' position='third_form'>Previous</button> <%= submit_tag("Submit",class:'next_submit') %></p>
 
 <%end%>
 

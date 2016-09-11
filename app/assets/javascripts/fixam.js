@@ -554,3 +554,13 @@ $("#landing_track_bt").val("Tracking...")
   )
 
 
+
+$(document).ready(
+  function(){
+    $(".next_submit").click(
+function(){
+  $(".ajax2").show()
+}
+      )
+  }
+  )

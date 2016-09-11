@@ -10,18 +10,23 @@ if ($("#area_id").is(':hidden') && $("#place_id").is(':hidden'))
 	
 	$('.first_form').hide();
 	$('.second_form').show();
+	$(".ajax2").hide()
+
 
 <% elsif  !session[:state].present? %>
 
 $('#state_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:city].present? %>
 	
 $('#city_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:address].present? %>
 	
 $('#address_street').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <%end%>
 
@@ -34,23 +39,28 @@ else if(!$("#area_id").is(':hidden') && $("#place_id").is(':hidden')){
 
 	$('.first_form').hide();
 	$('.second_form').show();
+	$(".ajax2").hide()
 
 <% elsif  !session[:state].present? %>
 
 $('#state_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:city].present? %>
 	
 $('#city_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 
 <% elsif  !session[:area].present? %>
 	
 $('#area_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:address].present? %>
 	
 $('#address_street').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 
 <%end%>
@@ -66,29 +76,35 @@ else if(!$("#place_id").is(':hidden')){
 
 	$('.first_form').hide();
 	$('.second_form').show();
+	$(".ajax2").hide()
 
 
 <% elsif  !session[:state].present? %>
 
 $('#state_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:city].present? %>
 	
 $('#city_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 
 <% elsif  !session[:area].present? %>
 	
 $('#area_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 
 <% elsif  !session[:place].present? %>
 	
 $('#place_id').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <% elsif  !session[:address].present? %>
 	
 $('#address_street').css({border:'2px solid #ff9999'})
+$(".ajax2").hide()
 
 <%end%>
 
