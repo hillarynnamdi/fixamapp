@@ -131,13 +131,13 @@ function(){
 $("#state_id").change(
 function(){
 
-var state=$("#state_id :selected").text()
+var state=$("#state_id :selected").val()
 
-options=$(cities).filter("optgroup[label="+state+"]").html()
+optionsstate=$(cities).filter("optgroup[label="+state+"]").html()
 
-if (options) {
+if (optionsstate) {
     $("#city_id").parent().show()
-    $("#city_id").html(options)
+    $("#city_id").html(optionsstate)
     $("#city_id").prepend("<option value='' selected>select city</option>")
     $(".ajax2").hide()
   }
@@ -160,7 +160,6 @@ $("#city_id").change(
 function(){
 
 var city=$("#city_id :selected").text()
-
 optionscity=$(areas).filter("optgroup[label="+city+"]").html()
 
 
