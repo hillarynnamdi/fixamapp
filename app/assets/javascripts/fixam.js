@@ -541,7 +541,8 @@ $(document).ready(
 function(){
 $(".feed").submit(
   function(){
-$("#feed-btn").val("Sending Message...")
+$(".ajax4").show()
+
 }
   )
 }
@@ -551,11 +552,12 @@ $(document).ready(
 function(){
 $("#track_form").submit(
   function(){
-$("#landing_track_bt").val("Tracking...")
+$(".ajax3").show()
 }
   )
 }
   )
+
 
 
 

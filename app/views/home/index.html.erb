@@ -252,7 +252,9 @@
         </div>
 
       <%end%>
+
       </div>
+      <p class="ajax3"><%=image_tag 'ajax2.gif', alt:'loading'%><br>Please wait...</p>
 
   </div>
 
@@ -287,6 +289,7 @@
   <%= f.input :message , as: :text, class:"form-control1 control3" , placeholder:"Type your comment here" , input_html:{ rows: '8' }%>
   <%= f.button :submit, "Send Message",id:'feed-btn',class:"btn btn-info" %>
   <%end%>
+  <p class="ajax4"><%=image_tag 'ajax2.gif', alt:'loading'%><br>Please wait...</p>
     </div>
     <div class="col-sm-5" id='contact_phone'>
       <h3><i class="glyphicon glyphicon-pushpin"></i> Gofixam&trade; </i></h3>
