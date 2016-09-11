@@ -38,12 +38,11 @@ end
 
 
 
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :path => "/", registrations: 'registrations' }  
+devise_for :users,:path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :path => "/", registrations: 'registrations' } 
 
-#devise_for :users, path: '/'
- 
 
-#map.logout '/users/sign_out', :controller => 'sessions', :action => 'destroy'
+
+
 
    resources :states, path: '/dashboard/settings/states'
   resources :areas, path: '/dashboard/settings/areas'
