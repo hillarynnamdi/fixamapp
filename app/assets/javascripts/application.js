@@ -16,5 +16,6 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-datetimepicker
+//= require bootstrap.min
 //= require_tree .
 
