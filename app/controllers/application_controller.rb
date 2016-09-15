@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
     if current_user.phone_number=="00000000000"      
       phonenumber_path(current_user.first_name)
     else
+       orders_path
+    end
 
-        if session[:state].present? && session[:city].present? && session[:address].present? && session[:area].present? && session[:device_model].present? && session[:device_type].present? && session[:device_problem].present?
+            if session[:state].present? && session[:city].present? && session[:address].present? && session[:area].present? && session[:device_model].present? && session[:device_type].present? && session[:device_problem].present?
         @user=current_user  
         @order=@user.orders.create(device_type:session[:device_type],device_model:session[:device_model],state:session[:state],city:session[:city],area:session[:area],pickup_address:session[:address],place:session[:place],device_problem:session[:device_problem],order_number:session[:order_id])
           if @order
@@ -34,10 +36,6 @@ class ApplicationController < ActionController::Base
           
 
           end
-    end
-
-
-       orders_path
     end
 
          
