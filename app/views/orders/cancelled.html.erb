@@ -67,12 +67,12 @@
 <%= render "error_success" %>
           <div id="myaccount_body">
               <div class="order_tag">
-                <span>Cancelled Orders</span>
+                <span>Cancelled Orders(<%=@all_order.count %>)</span>
               </div>
-              <div class="items_count">
-              <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
-              </div>
+
 <%= render "order_content" %>
+
+
         </div>
 
 
@@ -107,14 +107,14 @@
   <option value='/orders/scheduled'>Book a Repair</option>
 </select>
 
-          <div id="myaccount_body">
+         <div id="myaccount_body">
               <div class="order_tag">
-                <span>Cancelled Orders</span>
+                <span>Cancelled Orders(<%=@all_order.count %>)</span>
               </div>
-              <div class="items_count">
-              <button type="button" class="btn btn-info">Orders <span class="badge"><%=@all_order.count %></span></button>
-              </div>
+
 <%= render "order_content" %>
+
+
         </div>
 
 
