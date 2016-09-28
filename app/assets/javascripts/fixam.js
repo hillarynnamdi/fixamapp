@@ -211,7 +211,7 @@ else{
   )
 
 $(document).ready(function(){
-    $("#popover").popover({
+    $("#popover,#popover2").popover({
         html : true,
         placement: 'bottom',
 })
