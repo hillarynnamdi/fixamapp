@@ -1,4 +1,6 @@
-<% provide(:title, 'Invited | Gofixam')%>
+
+ <% meta title: "Invited | Gofixam" %>
+
 <h2><%= t 'devise.invitations.edit.header' %></h2>
 
 <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
