@@ -3,14 +3,12 @@
   description: "We fix and repair all electronic devices ranging from laptops,TVs,sound systems,mobile phones, At Affordable Price in Nigeria",
   keywords:     %w(Mobile phone repair, Gadget Repair, Tv Repair , Cell phone repair, Smartphone repair, Mobile repair shops, Laptop repair center, Tablet service center, Tablet repair shop, Mobile phone service, Tablet service, Laptop service, LCD screen repair, Mobile screen repair, Touchscreen repair, nokia service center, lenovo service center, toshiba service center, asus service center, acer service center, samsung service center, iball service center, sony service center, authorised service center )
 
-
 %>
 
 <%
 meta og: {
   image: "http://gofixam.com/images/gopng.png",
   url: "http://gofixam.com"
-
 }
 %>
 <div id="container">
@@ -20,7 +18,13 @@ meta og: {
 
   <!-- Your like button code -->
 
+<% render_content="<div class='popover_wrapper_home'>
+  <div> <a href='/account/info'><i class='glyphicon glyphicon-user'></i> My Profile</a> </div>
+  <div> <a href='/orders'><i class='glyphicon glyphicon-list'></i> My Orders</a> </div>
+  <div><a href='/users/logout'><i class='glyphicon glyphicon-log-out'></i> Log Out </a> </div>
+  </div>
 
+  </div>" %>
 
 <div id='body'>
 
@@ -28,13 +32,28 @@ meta og: {
 <nav class="navbar navbar-default navbar-static-top" id='navigatn' >
 <div class='credentials'>
 
-<%=link_to user_session_path do  %>
+<% if user_signed_in? %>
+
+
+  <span data-toggle="popover" data-placement="bottom" 
+  data-content="<%=render_content%>" id='popover2' >
+    <i class='glyphicon glyphicon-user' style="color:<%=current_user.profile_icon%> !important" ></i> <span class='logout_welcome'>Hello <%= current_user.first_name %></span>
+
+  </span>
+
+
+  <%else%>
+
+  <%=link_to user_session_path do  %>
 <span class="glyphicon glyphicon-log-in"></span> Log in
 <%end%>
 
 <%=link_to new_user_registration_path do  %>
 <span class="glyphicon glyphicon-user"></span> Register
 <%end%>
+
+<% end -%>
+
 
 
 

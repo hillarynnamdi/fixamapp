@@ -86,9 +86,21 @@
 
 
 </div>
+<% if user_signed_in? %>
+
+<%=form_tag(user_session_path ,class:'third_form') do %>
+
+<p><button type='button' class='previous' position='third_form'>Previous</button> <%= submit_tag("Save") %></p>
+
+<%end%>
+
+<%else%>
+
 <%=form_tag(third_form_orders_path,remote:'true' ,class:'third_form') do %>
 
 <p><button type='button' class='previous' position='third_form'>Previous</button> <%= submit_tag("Submit",class:'next_submit') %> <%=image_tag 'ajax2.gif', class:"ajax2",alt:'loading'%></p>
+
+<%end%>
 
 <%end%>
 
