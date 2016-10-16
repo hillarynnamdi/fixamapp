@@ -3,7 +3,7 @@
 host "www.gofixam.com"
 
 sitemap :site do
-  url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url root_url, last_mod: Time.now, change_freq: "weekly", priority: 1.0
 end
 
 # You can have multiple sitemaps like the above – just make sure their names are different.
@@ -37,4 +37,4 @@ end
 
 # Ping search engines after sitemap generation:
 #
-  ping_with "http://#{host}/sitemap.xml"
+  ping_with "http://#{host}/public/sitemaps/sitemap.xml"
