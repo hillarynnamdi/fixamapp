@@ -11,6 +11,8 @@ meta og: {
   url: "http://www.gofixam.com"
 }
 %>
+
+
 <div id="container">
 <% provide(:title, 'Book any Gadget Repair | Phone | Laptop | Refrigerator |... ')%>
 
@@ -66,7 +68,7 @@ meta og: {
         <span class="icon-bar"></span> 
       </button>
 
-<%=link_to  home_index_path do  %>
+<%=link_to  root_path do  %>
   <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon",alt:'gofixam-logo'%>
 <%end%>
     
@@ -78,8 +80,6 @@ meta og: {
         <li><a href="#plan_divider"><span class="glyphicon glyphicon-list"></span> Our Plans</a></li>
         <li><a href="#track_divider"><span class="glyphicon glyphicon-map-marker"></span> Track</a></li>
         <li><a href="#contact_divider"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
-        <li>
-        <%#image_tag 'fb.png', class:"img-rounded", width:"20", height:"20"%></li>
         </ul>
     </div>
   </div>
@@ -91,6 +91,7 @@ meta og: {
 <div class="row">
 <div class="container">
     <div class="col-sm-6">
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -187,30 +188,35 @@ meta og: {
     <div class="col-sm-3" >
       <h3>1.Register your device</h3>
       <p>
+      <ul>
+      <li>
       You can create an account and register all your device with us (Free Lite Plan for signing up).
+      </li>
+      </ul>
       </p>
     </div>
 
       <div class="col-sm-3">
       <h3>2.Schedule a Pickup</h3>
-      <p>
-      You can schedule a pickup, schedule an onsite visit or schedule an online support.
+      <p><ul>
+      <li>
+      You can schedule a pickup, schedule an onsite visit or schedule an online support.</li></ul>
       </p>
     </div>
 
     <div class="col-sm-3">
       <h3>3.Repair & Services</h3>
-            <p>
-      
-       Devices are repaired in our state of art repair factory under the supervision of trained experts.
+      <p><ul><li>
+       Devices are repaired in our state of art repair factory under the supervision of trained experts.</li></ul>
       </p>
 
     </div>
 
     <div class="col-sm-3">
       <h3>4.Delivery & Payment</h3> 
-      <p>
+      <p><ul><li>
        You can avail our easy pay prepaid or postpaid options and take delivery of the device.
+       </li></ul>
       </p>
     </div>
     <div class="divider" id="plan_divider"></div>
@@ -237,7 +243,7 @@ meta og: {
       <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>LITE</p>
       <p><i class="glyphicon glyphicon-remove"></i> No Discount on Bills</p>
       <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> Free </p>
-       <p><i class="glyphicon glyphicon-ok"></i></i> 30 Days Repair Warranty</p>
+       <p><i class="glyphicon glyphicon-ok"></i> 30 Days Repair Warranty</p>
        <p><a href="/users/sign_up"><input type="button" value="Get Started"></a></p>
     </div>
     <div class="col-sm-4">
@@ -245,14 +251,14 @@ meta og: {
       <p><i class="glyphicon glyphicon-ok"></i> 10% Discount on Bills</p>
       <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> &#8358;3,000 </p>
       <p> <i class="glyphicon glyphicon-ok"></i> 60 Days Repair Warranty</p>
-      <p><input type="button" value="Unavailable" disabled="disable"></p>
+      <p><a href="/users/login"><input type="button" value="Login Now" ></a></p>
     </div>
     <div class="col-sm-4">
       <p class='plan_label'><i class="glyphicon glyphicon-ok-sign"></i>BUSINESS</p>
       <p> <i class="glyphicon glyphicon-ok"></i> 20% Discount on Bills</p>
       <p class="cost_para"><i class="glyphicon glyphicon-ok"></i> &#8358;4,500 </p>
        <p> <i class="glyphicon glyphicon-ok"></i> 90 Days Repair Warranty</p>
-       <p><input type="button" value="Unavailable" disabled="disable"></p>
+       <p><a href="/users/login"><input type="button" value="Login Now"></a></p>
     </div>
 <span class="divider" id="track_divider"></span>
   </div>
@@ -268,6 +274,8 @@ meta og: {
     <div class="col-sm-12">
       <h3 class='sect_track2'><span class="glyphicon glyphicon-map-marker" style='color:#66b5ff'></span> Track Order</h3>
     </div>
+</div>
+
 </div>
 
 
@@ -310,7 +318,7 @@ meta og: {
   <div class="container" id='section_content6' >
 
   <div class="row" >
-    <div class="col-sm-7" id='reach_us' >
+    <div class="col-sm-12" id='reach_us' >
       <h3> <i class="glyphicon glyphicon-thumbs-up" style='color:#66b5ff'></i> We'd love to hear from you. Drop us a line any time!</h3>
       
         <div class='error'></div>
@@ -320,28 +328,32 @@ meta og: {
   <%= f.input :email , as: :email,  placeholder:"user@example.com" %>
   <%= f.input :mobile_no , as: :tel,  input_html:{ maxlength: 11}, placeholder:"Phone number" %>
   <%= f.input :message , as: :text, class:"form-control1 control3" , placeholder:"Type your comment here" , input_html:{ rows: '8' }%>
-  <%= f.button :submit, "Send Message",id:'feed-btn',class:"btn btn-info" %>
+  <%= f.button :submit, "Send",id:'feed-btn',class:"btn btn-info btn-block" %>
   <%end%>
   <p class="ajax4"><%=image_tag 'ajax2.gif', alt:'loading'%><br>Please wait...</p>
     </div>
-    <div class="col-sm-5" id='contact_phone'>
-      <h3><i class="glyphicon glyphicon-pushpin"></i> Gofixam&trade; </i></h3>
-
-      <p class="fb-like" data-href="https://www.facebook.com/gofixam" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></p>
-
-      <p>
-      <i class="glyphicon glyphicon-envelope"></i> enquiry@gofixam.com
-      </p>
-
-    </div>
+ 
   </div>
 
 </div>
 
+  <div class="container" id='section_content6' >
+  
+  <div  id='contact_p'>
+  <div class="row">
+       <div class="col-sm-12">
+
+      <p class="fb-like" data-href="https://www.facebook.com/gofixam" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></p>
 
 
+    </div>
+    </div>
 
+  </div>
 </div>
+  </div>
+
+
 
 
 
