@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-
   resources :bookings,path: '/dashboard/bookings'  do
     collection do 
       get 'delivered'
@@ -11,17 +8,13 @@ Rails.application.routes.draw do
 
     end
 end
-
       get "/404", :to => "errors#not_found"
       get "/422", :to => "errors#unacceptable"
       get "/500", :to => "errors#internal_error"
 
-
 resources :partners,path: '/dashboard/partners'
 
 resources :phonenumber,path: '/user/phonenumber'
-
-
 resources :account do 
 collection do 
       get 'change_password'
@@ -40,10 +33,6 @@ end
 
 devise_for :users,:path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" , :path => "/", registrations: 'registrations' } 
 
-
-
-
-
    resources :states, path: '/dashboard/settings/states'
   resources :areas, path: '/dashboard/settings/areas'
 
@@ -60,10 +49,7 @@ devise_for :users,:path_names => {:sign_in => 'login', :sign_out => 'logout'}, :
     
 end
   end
-
-
-
-root 'home#index'
+  root 'home#index'
 
   resources :home
   
