@@ -53,9 +53,9 @@ Rails.application.configure do
     :address        => "smtp.sendgrid.net",
     :port           => "587",
     :authentication => :plain,
-    :user_name      => "<%= ENV['sendgrid_username'] %>",
-    :password       => "<%= ENV['sendgrid_password'] %>",
-    :domain         => "sendgrid.com",
+    :user_name      => "<%= ENV['SENDGRID_USERNAME'] %>",
+    :password       => "<%= ENV['SENDGRID_PASSWORD'] %>",
+    :domain         => "gofixam.com",
     :enable_starttls_auto => true
   
   }
