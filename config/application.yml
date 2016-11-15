@@ -13,3 +13,6 @@
 
 facebook_app_id: "625994250892808"
 facebook_secret: b192e26f25f64c55bb9fa3baf1d3ef52
+
+sendgrid_username: app55668069@heroku.com
+sendgrid_password: rsscnqwf5612

@@ -48,15 +48,17 @@ Rails.application.configure do
 
 
 
-config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => "587",
-    :domain => "mail.google.com",
-    :user_name => "confirm@gofixam.com",
-    :password => "kliqital29",
-    :authentication => "plain",
+ config.action_mailer.smtp_settings = {
+    
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => "<%= ENV['SENDGRID_USERNAME'] %>",
+    :password       => "<%= ENV['SENDGRID_PASSWORD'] %>",
     :enable_starttls_auto => true
-  } 
+  
+  }
+
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
