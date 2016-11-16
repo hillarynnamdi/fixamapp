@@ -13,7 +13,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 #  config.mailer_sender =  "GofixamTeam@sandbox2664bb594bc24f869e5f9aa7c716e9f5.mailgun.org"
-  config.mailer_sender =  "chrisgeeq@gmail.com"
+  config.mailer_sender =  "Team-Gofixam@gofixam.com"
   #config.mailer_sender =  "Team-Gofixam@gofixam.com"
 
  config.secret_key ='cdc09858c16478f59c113c96531517857
