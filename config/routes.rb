@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     end
 end
 
-resources :terms,path: '/terms_and_conditions'
 
       get "/404", :to => "errors#not_found"
       get "/422", :to => "errors#unacceptable"
@@ -59,6 +58,8 @@ end
   resources :feed, path:'/dashboard/feed'
 
   devise_for :admins
+
+  resources :terms
 
 
 #  resources :admins do
