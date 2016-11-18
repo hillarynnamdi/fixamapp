@@ -23,7 +23,7 @@
   	  	<%- if devise_mapping.omniauthable? %>
 		  <%- resource_class.omniauth_providers.each do |provider| %>
 		    <%= link_to omniauth_authorize_path(resource_name, provider) do %>
-		    	<%=image_tag 'signup.png',alt:'fb-signup'%>
+		    	<%=image_tag 'signup.png',alt:'fb-signup',class:"img-thumbnail"%>
 		    <%end%>
 		  <% end -%>
 		<% end -%>
