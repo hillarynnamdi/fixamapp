@@ -3,6 +3,9 @@ class HomeController < ApplicationController
   def index
   	@user=current_user
 
+ @username="SENDGRID_USERNAME: #{ENV['SENDGRID_USERNAME']}"
+ @password= "SENDGRID_PASSWORD: #{ENV['SENDGRID_PASSWORD']}" 
+
 session.delete(:state)
   session.delete(:city)
   session.delete(:area)
