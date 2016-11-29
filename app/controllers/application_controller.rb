@@ -57,17 +57,17 @@ class ApplicationController < ActionController::Base
        
     elsif
         resource_name == :user
-        new_user_session_path
+        new_user_registration_path
       
      end
   end
+
 
   def after_sign_out_path_for(resource_or_scope)
      if resource_name == :admin
        new_admin_session_path
     elsif resource_name == :user
       new_user_session_path
-
      end
   end 
 
