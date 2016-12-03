@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 
 
-  def after_sign_up_path_for(resource_or_scope)
+  def after_inactive_sign_up_path_for(resource)
      if resource_name == :admin
   	   new_admin_session_path
        
