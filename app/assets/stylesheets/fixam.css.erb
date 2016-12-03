@@ -23,14 +23,6 @@ height:400px !important;
   background-color: white;
 }
 
-#navigatn ul {
- background-color: white
-}
-
-#navigatn ul li{
- background-color: white;
- border-bottom:#eeeeee;
-}
 
 #navigatn.affix-top {
    position: absolute;
@@ -57,13 +49,17 @@ height:400px !important;
    
 }
 
+.jumbotron{
+  width:100% !important;
+}
+
 #jumbotron-index{
 background-color: #66b3ff;
 color: white;
 border-radius: 0px;
 text-align: center;
 width: 100% !important;
-margin: 0px;
+margin: 0px !important;
 }
 
 #myCarousel{
@@ -79,11 +75,11 @@ width: 100% !important;
 }
 
 #navigatn{
-  background-color: white;
+	background-color: white;
   border: 0px solid grey;
   margin-bottom: 0px;
 
-  
+	
 
 }
 
@@ -170,8 +166,19 @@ color: white;
 
 }
 
+
 #myNavbar a{
   font-weight: normal !important;
+  color: #66b3ff !important ;
+
+}
+
+.scroll_links{
+  background-color: #66b3ff !important ;
+}
+
+#myNavbar ul{
+  background-color: white !important;
 }
 
 .book_form{
@@ -185,6 +192,7 @@ color: white;
   padding: 30px 10px 20px 10px !important;
   margin: auto;
   box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
+
 }
 
 .book_form select{
@@ -198,6 +206,8 @@ color: white;
   margin-bottom: 10px;
   border: 1px solid silver;
 }
+
+
 
 
 
@@ -265,8 +275,14 @@ border:0px solid grey;
 
 
 #section_content{
-  width:95%;
+  width:100%;
   margin:auto;
+  background-color: white;
+  margin-bottom: 0px !important
+}
+
+.home_logo{
+  background-color: white !important
 }
 
 #section_content3{
@@ -489,13 +505,12 @@ border:1px solid #1a90ff;
 color: #66b5ff;
 margin-right: 10px;
 font-size: 20px;
-
+text-align: left;
 }
 
 
 #contact_p{
   font-family: arial;
-  background-color: #eee;
   width: 100% !important;
   padding: 10px;
   margin-top: 20px;
@@ -527,14 +542,16 @@ font-size: 20px;
 
 
 #footer {
-  background-color:#414141;
+ background-color:#414141;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  text-align: left;
-  height: 60px
+  text-align: center;
+  height: 60px;
+  color: white !important
+
 }
 
 
@@ -550,6 +567,8 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   padding-top: 0px !important;
   padding: 0px
+
+
 }
 
 .scroll-top {
@@ -570,46 +589,46 @@ body {
 
 
 .second_form,.fourth_form,.fifth_form{
-  display: none;
+	display: none;
 }
 
 .sign_up_complete,.information_div{
-  display: none
+	display: none
 }
 
 
 
 .second_form input{
-  padding:5px;
-  background-color: #ffffff;
-  border:1px solid grey;
-  margin-bottom: 10px;
-  width:100%;
+	padding:5px;
+	background-color: #ffffff;
+	border:1px solid grey;
+	margin-bottom: 10px;
+	width:100%;
 }
 
 .second_form textarea{
-  padding:5px;
-  background-color: #ffffff;
+	padding:5px;
+	background-color: #ffffff;
 }
 
 .fourth_form div{
-  margin-top: 5px
+	margin-top: 5px
 }
 
 
 .information_div{
-  background-color: white;
-  color:black !important;
-  padding-top: 10px
+	background-color: white;
+	color:black !important;
+	padding-top: 10px
 }
 
 .information_div div{
-  font-size: 18px
+	font-size: 18px
 
 }
 
 .information_div form{
-  box-shadow: none;
+	box-shadow: none;
 }
 
 .sign_up_complete,.login_complete{
@@ -628,25 +647,26 @@ margin-top: -30px !important
 }
 
 .fourth_form div{
-  font-size: 18px;
+	font-size: 18px;
   font-family:Comic Sans MS;
 }
 
 .unavailable{
-  text-decoration: line-through;
-  font-size: 18px;
+	text-decoration: line-through;
+	font-size: 18px;
   font-family:Comic Sans MS;
 }
 
 #address_street{
-  width: 70%;
-  margin: auto;
-  background-color: #ffffff;
+	width: 70%;
+	margin: auto;
+	background-color: #ffffff;
 }
 
 .login_wrapper {  
   background-color: white;
-  margin-bottom: 20px
+  padding-bottom: 20px;
+
 }
 
 
@@ -680,7 +700,6 @@ margin-top: -30px !important
     background-color: white;
     box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
     margin: 10px 0px 20px 0px
-  border:1px solid #a6a6a6;
   }
 
 
@@ -743,7 +762,7 @@ margin-top: -30px !important
 
 .devise_login_links{
   text-align: center;
-  margin-top: 30px
+  margin: 20px 0px 20px 0px
 
 }
 
@@ -772,14 +791,15 @@ margin-top: -30px !important
 
 .or{
   color: #a6a6a6;
+  text-align: center;
 }
 
 
 .or::before,.or::after{
   display: inline-block;
     content: "";
-    width: 150px;
-    border:0.3px solid #a6a6a6;
+    width: 50px;
+    border:0.3px solid #eeeeee;
     margin: 5px 10px 5px 10px;
     text-align: center;
 
@@ -1531,12 +1551,9 @@ font-size: 17px;
 .jumbotron_wrapper{
   width: 100% !important;
   margin: auto;
-  padding: 0px !important
+  
 }
 
-.jumbotron{
-  padding: 0px !important;
-}
 
 .jumbotron .container{
   width: 100% !important;
@@ -1643,17 +1660,6 @@ a.read.fourth:hover{
   padding-top: 10px
 }
 
-#footer {
-  background-color:#414141;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  height: 60px;
-  color: white !important;
-}
 .logout_welcome{
   color: white !important;
   font-size: 14px;
@@ -1722,4 +1728,3 @@ a.read.fourth:hover{
   margin: auto;
   background-repeat: no-repeat;
 }
-
