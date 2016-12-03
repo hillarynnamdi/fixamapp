@@ -7,7 +7,15 @@ $(document).ready(
   })
 }
 )
-
+$(document).ready(
+  function(){
+  $('#desktopmenu a').click(function(){
+  var link = $(this).attr('href');
+  var posi = $(link).offset().top;
+  $('body,html').animate({scrollTop:posi},700);
+  return false;
+});
+  })
 
 
 $(document).ready(
