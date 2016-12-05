@@ -31,7 +31,7 @@
 
                     
 
-                    <th>Placed <div class="order_time"><%= item.created_at.strftime("%d %B %Y") %></div></th>
+                    <th>Placed <div class="order_time"><%= item.created_at.strftime("%d %b %Y") %>/<%= item.created_at.strftime('%H:%M %p')%></div></th>
 
                     <th>Status <div class="order_time"><%= item.order_status %></div></th>
 
