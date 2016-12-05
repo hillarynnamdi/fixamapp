@@ -14,6 +14,14 @@ height:400px !important;
   
 }
 
+ #mobilemenu{
+    display:none;
+  }
+
+  #desktopmenu{
+    display: inline;
+  }
+
 
 
 
@@ -23,14 +31,6 @@ height:400px !important;
   background-color: white;
 }
 
-#navigatn ul {
- background-color: white
-}
-
-#navigatn ul li{
- background-color: white;
- border-bottom:#eeeeee;
-}
 
 #navigatn.affix-top {
    position: absolute;
@@ -57,13 +57,17 @@ height:400px !important;
    
 }
 
+.jumbotron{
+  width:100% !important;
+}
+
 #jumbotron-index{
 background-color: #66b3ff;
 color: white;
 border-radius: 0px;
 text-align: center;
 width: 100% !important;
-margin: 0px;
+margin: 0px !important;
 }
 
 #myCarousel{
@@ -170,8 +174,19 @@ color: white;
 
 }
 
+
 #myNavbar a{
   font-weight: normal !important;
+  color: #66b3ff !important ;
+
+}
+
+.scroll_links{
+  background-color: #66b3ff !important ;
+}
+
+#myNavbar ul{
+  background-color: white !important;
 }
 
 .book_form{
@@ -268,8 +283,14 @@ border:0px solid grey;
 
 
 #section_content{
-  width:95%;
+  width:100%;
   margin:auto;
+  background-color: white;
+  margin-bottom: 0px !important
+}
+
+.home_logo{
+  background-color: white !important
 }
 
 #section_content3{
@@ -529,14 +550,16 @@ text-align: left;
 
 
 #footer {
-  background-color:#414141;
+ background-color:#414141;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  text-align: left;
-  height: 60px
+  text-align: center;
+  height: 60px;
+  color: white !important
+
 }
 
 
@@ -552,6 +575,8 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   padding-top: 0px !important;
   padding: 0px
+
+
 }
 
 .scroll-top {
@@ -648,7 +673,8 @@ margin-top: -30px !important
 
 .login_wrapper {  
   background-color: white;
-  margin-bottom: 20px
+  padding-bottom: 20px;
+
 }
 
 
@@ -1476,6 +1502,40 @@ border-radius: 5px;
 /* responsive text queries */
 @media screen and (max-width: 768px) {
 
+  #mobilemenu{
+    display:inline;
+  }
+
+  #desktopmenu{
+    display: none;
+  }
+
+  .book_form{
+    margin:50px auto;
+}
+
+.book_form form{
+  color: black;
+  background-color: white;
+  max-width:100%;
+  padding: 30px 10px 20px 10px !important;
+  margin: auto;
+  box-shadow: 0px 5px 7px rgba(0,0,0,0.4);
+
+}
+
+.book_form select{
+  padding: 4px;
+  border-radius: 5px;
+  width:90%;
+  margin:auto;
+  background-color: #ffffff;
+  font-size: 17px !important;
+  font-weight: lighter !important;
+  margin-bottom: 10px;
+  border: 1px solid silver;
+}
+
 
   .sect1,.sect2,.sect_track2 {
     font-size: 20px !important;
@@ -1533,12 +1593,13 @@ font-size: 17px;
 .jumbotron_wrapper{
   width: 100% !important;
   margin: auto;
-  padding: 0px !important
+  
 }
 
 .jumbotron{
   padding: 0px !important;
 }
+
 
 .jumbotron .container{
   width: 100% !important;
@@ -1693,4 +1754,23 @@ a.read.fourth:hover{
 
 .img-thumbnail{
   border:0px solid #eeeeee !important;
+}
+
+.facebook_login_icon{
+  background-image: url("<%= asset_path 'login.png' %>");
+  height: 60px;
+  background-size: 100%;
+  width: 80%;
+  margin: auto;
+  background-repeat: no-repeat;
+}
+
+
+.facebook_signup_icon{
+ background-image: url("<%= asset_path 'signup.png' %>");
+  height: 60px;
+  background-size: 100%;
+  width: 80%;
+  margin: auto;
+  background-repeat: no-repeat;
 }

@@ -2,12 +2,19 @@ class RegistrationsController < Devise::RegistrationsController
 
 
 
-
-  protected
-
-    def after_inactive_sign_up_path_for(resource)
+  def after_inactive_sign_up_path_for(resource)
+     if resource_name == :admin
+  	   new_admin_session_path
+       
+    elsif
+        resource_name == :user
         new_user_session_path
-    end
+      
+     end
+  end
+
+
+
 
   private
 	  def sign_up_params
