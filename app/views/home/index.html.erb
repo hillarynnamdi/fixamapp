@@ -36,6 +36,7 @@ meta og: {
 <nav class="navbar navbar-default  navbar-fixed-top" id='navigatn' >
 <div class='credentials'>
 
+
 <% if user_signed_in? %>
 
 
@@ -48,15 +49,31 @@ meta og: {
 
   <%else%>
 
-  <%=link_to user_session_path do  %>
+  <%=link_to user_session_path,class:'creden' do  %>
 <span class="glyphicon glyphicon-log-in"></span> Log in
 <%end%>
 
-<%=link_to new_user_registration_path do  %>
-<span class="glyphicon glyphicon-user"></span> Register
+<%=link_to new_user_registration_path,class:'creden' do  %>
+
+<span class="glyphicon glyphicon-user"></span> Register  
 <%end%>
 
 <% end -%>
+
+<div class="socialtop" id='mobilesocial'>
+<div class="row" >
+    <a href="https://www.facebook.com/GofixamNigeria/"><div class="col-sm-4 fbsocial"></div></a>
+
+    <a href="https://twitter.com/gofixam"><div class="col-sm-4 twittersocial"></div></a>
+        
+    <a href="#"><div class="col-sm-4 instagramsocial"></div></a>
+
+</div>
+</div>
+
+
+
+
 
 
 
@@ -65,7 +82,8 @@ meta og: {
 <div id='section_content'>
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
@@ -82,18 +100,20 @@ meta og: {
     <div class="collapse navbar-collapse" id="myNavbar">
     <div id="mobilemenu">
         <ul class="nav navbar-nav navbar-right scroll_links">
-        <li><a href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#plan"><span class="glyphicon glyphicon-list"></span> Our Plans</a></li>
-        <li><a href="#track"><span class="glyphicon glyphicon-map-marker"></span> Track</a></li>
-        <li><a href="#contact"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#plan">OUR PLANS</a></li>
+        <li><a href="#track">TRACK</a></li>
+        <li><a href="#contact"> CONTACT US</a></li>
+        <li><a href="#"> GADGET</a></li>
         </ul>
     </div>
     <div id="desktopmenu">
         <ul class="nav navbar-nav navbar-right scroll_links">
-        <li><a href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#plan"><span class="glyphicon glyphicon-list"></span> Our Plans</a></li>
-        <li><a href="#track"><span class="glyphicon glyphicon-map-marker"></span> Track</a></li>
-        <li><a href="#contact"><span class="glyphicon glyphicon-earphone"></span> Contact</a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#plan">OUR PLANS</a></li>
+        <li><a href="#track">TRACK ORDER</a></li>
+        <li><a href="#contact"> CONTACT US</a></li>
+        <li><a href="#"> GADGET</a></li>
         </ul>
     </div>
 
@@ -335,7 +355,7 @@ meta og: {
   <%= f.input :email , as: :email,  placeholder:"user@example.com" %>
   <%= f.input :mobile_no , as: :tel,  input_html:{ maxlength: 11}, placeholder:"Phone number" %>
   <%= f.input :message , as: :text, class:"form-control1 control3" , placeholder:"Type your comment here" , input_html:{ rows: '8' }%>
-  <%= f.button :submit, "Send",id:'feed-btn',class:"btn btn-info btn-block" %>
+  <%= f.button :submit, "Send",id:'feed-btn',class:"btn btn-info" %>
   <%end%>
   <p class="ajax4"><%=image_tag 'ajax2.gif', alt:'loading'%><br>Please wait...</p>
     </div>
@@ -348,14 +368,15 @@ meta og: {
   
   <div  id='contact_p'>
   <div class="row">
-       <div class="col-sm-12">
-       
+<div class="col-sm-12">
       <p class="fb-like" data-href="https://www.facebook.com/GofixamNigeria/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true">
       </p>
       <p>
  <a href="https://twitter.com/gofixam" class="twitter-follow-button" data-show-count="false">Follow Gofixam on Twitter</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 </div>
+
+
 <div class="col-sm-12 phone_num">
 <i class="glyphicon glyphicon-earphone"></i> 08145216690,09059335755
 </div>
@@ -363,6 +384,12 @@ meta og: {
     </div>
 
   </div>
+
+
+
+
+
+
 </div>
   </div>
 
@@ -382,6 +409,26 @@ meta og: {
 
 </div>
 
+<div class="connect_with_us">
+
+<div class="connect_with_us_inner container"> 
+
+<div class="row" >
+<div class="connect_right col-sm-6">Connect with us</div>
+    <div class="col-sm-6">
+     <a href="https://www.facebook.com/GofixamNigeria/"> <div class="fbsocial"></div></a>
+
+    <a href="https://twitter.com/gofixam"><div class="twittersocial"></div></a>
+        
+    <a href="#"><div class="instagramsocial"></div></a>
+    </div>
+
+</div>
+ 
+
+</div>
+
+</div>
 
 
 <%= render 'shared/footer_scroll2'%>
