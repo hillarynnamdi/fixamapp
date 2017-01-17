@@ -1161,3 +1161,17 @@ function(){
       )
   }
   )
+
+
+
+
+$(document).ready(
+  function(){
+    $("#subscription_email").focus(
+function(){
+  $(".subscribe_success").hide()
+$(".subscribe_error").hide()
+}
+      )
+  }
+  )
