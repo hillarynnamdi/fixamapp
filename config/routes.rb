@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
 end
 
+resources :subscriptions
+
 
       get "/404", :to => "errors#not_found"
       get "/422", :to => "errors#unacceptable"

@@ -47,6 +47,10 @@
 
 <div class="col-sm-4 newsletter"><h5>Sign up for our newsletter and we'll inform you of updates, offers and more. </h5>
 
+<%= simple_form_for  :subscriber, url:subscriptions_path, remote:true do |f| %>      
+  <%= f.input :email , as: :email,  placeholder:"Your email address",label: false,required:true %>
+  <%= f.button :submit, "Subscribe",id:'subscribe-btn',class:"btn btn-info" %> <%=image_tag 'ajax2.gif', alt:'loading',class:"ajax5"%>
+  <%end%>
 
   <div class="subscribe_error"> </div>
   <div class="subscribe_success"> </div>

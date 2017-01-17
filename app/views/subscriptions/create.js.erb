@@ -1,0 +1,21 @@
+
+
+
+<% if @subscription.errors.count > 0  %>
+
+
+$("#subscriber_email").css({border:"1px solid #ff8080"})
+
+$(".subscribe_error").html("<%= (escape_javascript(render 'error' , object: @subscription))%>")
+
+$(".ajax5").hide()
+
+<%else%>
+
+$("#subscriber_email").css({border:"1px solid #eeeeee"})
+$("#subscriber_email").val("")
+$(".ajax5").hide()
+$(".subscribe_error").hide()
+$(".subscribe_success").html("Congrats! You’re subscribed")
+
+<%end%>
