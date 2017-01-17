@@ -3,10 +3,14 @@
 
 <% if @subscription.errors.count > 0  %>
 
-
+$(".subscribe_error").show()
 $("#subscription_email").css({border:"1px solid #ff8080"})
 
 $(".subscribe_error").html("<%= (escape_javascript(render 'error' , object: @subscription))%>")
+
+$(".subscribe_success").hide()
+
+
 
 $(".ajax5").hide()
 
@@ -14,6 +18,7 @@ $(".ajax5").hide()
 
 $("#subscription_email").css({border:"1px solid #eeeeee"}).val("")
 $(".ajax5").hide()
+$(".subscribe_success").show()
 $(".subscribe_error").hide()
 $(".subscribe_success").html("Congrats! You’re subscribed")
 
