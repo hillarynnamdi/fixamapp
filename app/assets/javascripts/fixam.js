@@ -1139,7 +1139,7 @@ $(".ajax3").show()
 
 $(document).ready(
 function(){
-$(".subscriber").submit(
+$(".subscription").submit(
   function(){
 $(".ajax5").show()
 
