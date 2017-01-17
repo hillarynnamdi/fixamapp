@@ -8,7 +8,7 @@ class SubscriptionsController < ApplicationController
 
 	private 
 	def subscribe_params
-		params.require(:subscriber).permit(:email)
+		params.require(:subscription).permit(:email)
 
 	end
 
