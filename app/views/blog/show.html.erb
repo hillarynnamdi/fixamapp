@@ -37,7 +37,7 @@
 
  <div>
 
- <%= social_share_button_tag(@post.title,:url => "http://www.gofixam.com/blog/"+@post.url ,:image=> @post.image,desc: @post.title) %>
+ <%= social_share_button_tag(@post.title,:url => "http://www.gofixam.com/blog/#{@post.url}" ,:image=> "#{@post.image}",desc: "#{@post.title}") %>
  </div>
 
 
