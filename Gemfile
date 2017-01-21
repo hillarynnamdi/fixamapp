@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -13,6 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'tinymce-rails'
+
+gem 'social-share-button', '0.2.1'
 
 gem 'metamagic'
 gem 'sendgrid'

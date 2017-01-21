@@ -18,6 +18,9 @@
 
 <div>
 
+
+
+
 <div class="blogtitle">
 
 <%=@post.title %>
@@ -30,6 +33,11 @@
 
  <div>
  <%=image_tag @post.image,class:'img-thumbnail blog_thumb' %>
+ </div>
+
+ <div>
+
+ <%= social_share_button_tag(@post.title,:url => "http://www.gofixam.com/blog/"+@post.url ,:image=> @post.image,desc: @post.title) %>
  </div>
 
 
@@ -58,6 +66,8 @@
   <div class="subscribe_success"> </div>
 </p>
 </div>
+
+<div class="fb-comments" data-href="http://www.gofixam.com/blog/<%=@post.url%>"  data-numposts="5" data-width="100%" ></div>
 
 
 
