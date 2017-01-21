@@ -26,21 +26,10 @@
   </p>
 
     <p>
-    <%= f.label :image_link_1 %><br>
+    <%= f.label :image_link %><br>
     <%= f.text_area :image,:rows => 2, :cols => 150 %>
   </p>
-      <p>
-    <%= f.label :image_link_2 %><br>
-    <%= f.text_area :image2,:rows => 2, :cols => 150 %>
-  </p>
-      <p>
-    <%= f.label :image_link_3 %><br>
-    <%= f.text_area :image3,:rows => 2, :cols => 150 %>
-  </p>
-      <p>
-    <%= f.label :image_link_4 %><br>
-    <%= f.text_area :image4,:rows => 2, :cols => 150 %>
-  </p>
+
 
   <%= f.label :post_category %><br>
    <p class="form-group"><%= f.select(:category, options_for_select([
