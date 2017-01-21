@@ -9,6 +9,7 @@ one:
   image2: MyString
   image3: MyString
   image4: MyString
+  category: MyString
 
 two:
   url: MyString
@@ -19,3 +20,4 @@ two:
   image2: MyString
   image3: MyString
   image4: MyString
+  category: MyString
