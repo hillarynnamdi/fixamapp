@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :blog
+
   resources :bookings,path: '/dashboard/bookings'  do
     collection do 
       get 'delivered'
