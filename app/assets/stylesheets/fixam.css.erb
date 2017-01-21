@@ -1525,6 +1525,23 @@ border-radius: 5px;
 /* responsive text queries */
 @media screen and (max-width: 768px) {
 
+    .blognavbar .nav li a{
+border-right: 0px solid #e6e6e6 !important
+
+}
+
+  .blog_left{
+  border-right:0px solid grey !important;
+  }
+
+
+  .blog_thumb{
+  width:100% !important;
+  height: 100% !important;
+  text-align: center !important;
+  
+}
+
 .bottom_social{
   width:100% !important;
 }
@@ -2093,26 +2110,25 @@ color:white !important;
 
 
 .blog_left{
-  border-right: 1px solid #eeeeee
-}
+  border-right: 1px solid #eeeeee;
+  padding-bottom: 50px;
+  }
 
-.blog_thumb{
-  width:150px;
-  height: 150px
-}
 
 .blogurl{
-  font-size: 20px;
+  font-size: 22px;
   color:#66b5ff ;
+  font-family: Microsoft Sans Serif
 }
 
 .blogurl:hover{
-  font-size: 20px;
-  color:black ;
+  font-size: 22px;
+  color:#0084ff ;
+  text-decoration: none;
 }
 
 .post_date{
-  color: silver;
+  color: #b3b3b3;
   padding:5px 0px ;
 }
 
@@ -2122,11 +2138,17 @@ color:white !important;
   padding-top: 10px
 }
 
+.blogcat:hover{
+
+  color:#0084ff ;
+text-decoration: none;
+}
+
 .blog_main_div{
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   padding-right: 15px;
-  border-bottom: 1px solid #eeeeee
+  border-bottom: 1px solid #e6e6e6
 }
 
 
@@ -2142,7 +2164,7 @@ color:white !important;
 }
 
 .blogtitle{
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   font-family: arial
 
@@ -2150,8 +2172,48 @@ color:white !important;
 
 .blogbodyfull{
   font-size: 17px;
-  font-family: arial;
+  font-family: Verdana;
   padding-top: 20px;
   font-weight: lighter
 
+}
+
+.blogbodyfull a{
+  color: #66b5ff ;
+  text-decoration: none;
+
+}
+
+.blogbodyfull a:hover{
+  color: #66b5ff ;
+  text-decoration: none;
+
+}
+
+.likepost_subscribe_div{
+  border-top: 1px solid #eeeeee;
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+.likepost_subscribe_div p{
+  font-family: verdana;
+  font-size: 20px !important
+}
+
+.likepost_subscribe_div #subscription_email{
+  border-radius: 0px !important;
+  height:40px !important;
+  margin-bottom: 0px !important
+}
+
+#subscribe-btn{
+  margin-top: 0px !important;
+  border-radius: 0px !important
+}
+
+#subscription_email{
+  border-radius: 0px !important;
+  height:40px !important;
+  margin-bottom: 0px !important
 }

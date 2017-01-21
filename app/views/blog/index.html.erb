@@ -23,6 +23,50 @@
 </p>
 
 
+
+
+<% @posts.each do |post|%>
+
+<div class="row blog_main_div">
+ <div class="col-sm-4 ">
+
+ <%=image_tag post.image,class:'img-thumbnail' %>
+
+
+ </div>
+
+  <div class="col-sm-8">
+
+<div>
+
+<%=link_to post.title,blog_path(post.url),class:'blogurl' %>
+
+</div>
+
+<div class="post_date">
+	by Gofixam Staff, <%=post.created_at.strftime('%d %B %Y') %>
+</div>
+
+<div>
+	<%=link_to post.category,"#",class:'blogcat' %>
+</div>
+
+
+
+
+ </div>
+
+ </div>
+                      
+                                                                                               
+ <%end%>
+
+
+
+
+
+
+
   
 
 
