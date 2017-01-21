@@ -1,0 +1,26 @@
+ <div class="subscribe_div">
+<p class="ournew">Subscribe to Our News Letter</p>
+<p>
+
+<%= simple_form_for  :subscription, url:subscriptions_path, remote:true do |f| %>      
+  <%= f.input :email , as: :email,  placeholder:"Your email address",label: false,required:true %>
+  <%= f.button :submit, "Subscribe",id:'subscribe-btn',class:"btn btn-info" %> <%=image_tag 'ajax2.gif', alt:'loading',class:"ajax5"%>
+  <%end%>
+
+  <div class="subscribe_error"> </div>
+  <div class="subscribe_success"> </div>
+</p>
+</div>
+
+<div class="social_div">
+<p>
+ <a href="https://twitter.com/gofixam" class="twitter-follow-button" data-show-count="true" data-size="large">Follow Gofixam on Twitter</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+<p>
+
+<div class="fb-page" data-href="https://www.facebook.com/GofixamNigeria/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GofixamNigeria/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GofixamNigeria/">Gofixam</a></blockquote></div>
+
+</p>
+
+</div>

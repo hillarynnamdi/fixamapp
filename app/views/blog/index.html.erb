@@ -1,2 +1,49 @@
-<h1>Blog#index</h1>
-<p>Find me in app/views/blog/index.html.erb</p>
+
+<%= provide(:title, 'Gofixam | Blog')%>
+
+<div>
+
+<%=render "header_nav"%>
+
+
+<div class="blog_body_outer container">
+<div class="blog_body">
+<div class="container">
+<div class="row">
+ <div class="col-sm-8 blog_left">
+
+<p>Home | <span class='blogbodyhead'>Technology News</span></p>
+
+
+<div>
+
+<p>
+	
+<div class="overall_blog_heading"><span class='tech'>TECHNOLOGY</span> NEWS</div>
+</p>
+
+
+  
+
+
+
+
+</div>
+</div>
+ <div class="col-sm-4 blog_right" >
+
+<%= render 'blog_right'%>
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+
+<%= render 'shared/footer_scroll2'%>
+
+</div>

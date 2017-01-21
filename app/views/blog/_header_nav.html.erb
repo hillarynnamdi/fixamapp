@@ -1,0 +1,45 @@
+	<div class="container bloggofixhead">
+		<%=link_to  root_path do  %>
+  <%=image_tag 'gopng.png', class:"img-thumbnail home_logo",id:"nav-icon",alt:'gofixam-logo'%>
+<%end%>
+
+<div class="search_website">
+<ul class="nav navbar-nav navbar-right">
+        <li>
+        	  <%# form_tag(track_order_orders_path,remote:'true',id:'track_form' ) do %> 
+     <div class="form-group">    
+  <%= text_field_tag(:order_number,"",placeholder:"search this website...",class:"form-control") %>
+       
+      <%#end%>
+
+        </li>     
+        </ul>
+</div>
+	</div>
+ <nav class="navbar navbar-inverse blognavbar">
+  <div class="container ">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#blognavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="blognavbar">
+      <ul class="nav navbar-nav ">
+      <li class="current"><a href="#" id='active'>HOME</a></li>
+        <li><a href="#">MOBILES</a></li>
+        <li><a href="#">TABLETS</a></li>
+        <li><a href="#">LAPTOPS</a></li>
+        <li><a href="#">GAMING</a></li>
+        <li><a href="#">CAMERAS</a></li>
+        <li><a href="#">AUDIO/VIDEOS</a></li>
+        <li><a href="#">SOCIAL MEDIA</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+
+      
+
+    </div>
+  </div>
+</nav>
