@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'tinymce-rails'
 
-gem 'social-share-button', '0.2.1'
+gem 'social-share-button', '~> 0.1.6'
 
 gem 'metamagic'
 gem 'sendgrid'

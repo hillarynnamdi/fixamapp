@@ -177,7 +177,7 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
-    social-share-button (0.2.1)
+    social-share-button (0.1.10)
       coffee-rails
       sass-rails
     sprockets (3.6.0)
@@ -236,7 +236,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sendgrid
   simple_form
-  social-share-button (= 0.2.1)
+  social-share-button (~> 0.1.6)
   tinymce-rails
   turbolinks
   tzinfo-data
