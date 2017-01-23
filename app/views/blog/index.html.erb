@@ -12,58 +12,21 @@
 <div class="row">
  <div class="col-sm-8 blog_left">
 
-<p>Home | <span class='blogbodyhead'>Technology News</span></p>
+<%= render 'head_tag' %>
 
 
 <div>
 
-<p>
-	
-<div class="overall_blog_heading"><span class='tech'>TECHNOLOGY</span> NEWS</div>
-</p>
+
+<%= render 'latest_technology_tag' %>
 
 
 
 
-<% @posts.each do |post|%>
-
-<div class="row blog_main_div">
- <div class="col-sm-4 ">
-
- <%=image_tag post.image,class:'img-thumbnail' %>
-
-
- </div>
-
-  <div class="col-sm-8">
-
-<div>
-
-<%=link_to post.title,blog_path(post.url),class:'blogurl' %>
-
-</div>
-
-<div class="post_date">
-	by Gofixam Staff, <%=post.created_at.strftime('%d %B %Y') %>
-</div>
-
-<div>
-	<%=link_to post.category,"#",class:'blogcat' %>
-</div>
 
 
 
-
- </div>
-
- </div>
-                      
-                                                                                               
- <%end%>
-
-
-
-
+<%= render 'blog_left'%>
 
 
 
@@ -73,6 +36,10 @@
 
 
 </div>
+
+<%= render 'pagination'%>
+
+
 </div>
  <div class="col-sm-4 blog_right" >
 
@@ -84,7 +51,9 @@
 
 
 </div>
+
 </div>
+
 
 
 

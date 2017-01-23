@@ -15,7 +15,7 @@
         <li><a href="#plan">Our Plans</a></li>
         <li><a href="#track">Track Order</a></li>
         <li><a href="#contact">Contact us</a></li>
-        <li><a href="#" target="blank"> Blog</a></li>
+        <li><a href="/blog" target="blank"> Blog</a></li>
         </ul>
     </div>
     <div id="desktopmenu">
@@ -24,7 +24,7 @@
         <li><a href="#plan">Our Plans</a></li>
         <li><a href="#track">Track Order</a></li>
         <li><a href="#contact">Contact us</a></li>
-        <li><a href="#" target="blank"> Blog</a></li>
+        <li><a href="/blog" target="blank"> Blog</a></li>
         </ul>
     </div>
 
@@ -45,7 +45,7 @@
 </div>
 
 
-<div class="col-sm-4 newsletter"><h5>Sign up for our newsletter and we'll inform you of updates, offers and more. </h5>
+<div class="col-sm-4 newsletter"><h5>Subscribe to our newsletter and we'll inform you of updates, offers and more. </h5>
 
 <%= simple_form_for  :subscription, url:subscriptions_path, remote:true do |f| %>      
   <%= f.input :email , as: :email,  placeholder:"Your email address",label: false,required:true %>

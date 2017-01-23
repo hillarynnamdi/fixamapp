@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
 
-  resources :blog
+  resources :blog  do
+    collection do 
+      get 'mobiles'
+      get 'internet'
+      get 'tablets'
+      get 'gaming'
+      get 'cameras'
+      get 'socials'
+      get 'apps'
+      get 'pc_laptops'
+      get 'startups'
+      get 'tech'
+      get 'science'
+      get 'audio_videos'
+      get 'telecom'
+
+    end
+
+end
 
   resources :bookings,path: '/dashboard/bookings'  do
     collection do 
