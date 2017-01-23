@@ -1,0 +1,72 @@
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= form_for :post, url: blog_index_path(@post) do |f| %>
+
+  <div class="form-inputs">
+
+  
+
+  <p>
+    <%= f.label :custom_url %><br>
+    <%= f.text_area :url,:rows => 2, :cols => 150 %>
+  </p>
+
+    <p>
+    <%= f.label :image_link %><br>
+    <%= f.text_area :image,:rows => 2, :cols => 150 %>
+  </p>
+
+
+  <%= f.label :post_category %><br>
+   <p class="form-group"><%= f.select(:category, options_for_select([
+         ['select category',''],
+         ['Mobiles', 'Mobiles'],
+         ['Tablets', 'Tablets'],
+         ['Cameras', 'Cameras'],
+         ['Socials', 'Socials'],
+         ['Gaming', 'Gaming'],
+         ['Apps', 'Apps'],
+         ['Internet', 'Internet'],
+         ['Pc/Laptops', 'Pc/Laptops'],
+         ['Audio/Videos', 'Audio/Videos'],
+         ['Startups', 'Startups'],
+         ['Tech', 'Tech'],
+         ['Science', 'Science'],
+         ['Telecom', 'Telecom']
+
+    ],@post.category),class: "form-control") %> </p>
+
+  <p>
+    <%= f.label :post_title %><br>
+    <%= f.text_area :title,  :rows => 5, :cols => 150 %>
+  </p>
+
+    <p>
+    <%= f.label :post_body %><br>
+    <%= f.text_area :post, :class => "tinymce", :rows => 40, :cols => 120 %>
+  </p>
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit%>
+  </div>
+<% end %>
+
+
+<%= tinymce %>

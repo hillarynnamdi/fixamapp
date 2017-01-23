@@ -1,0 +1,99 @@
+<% provide(:title, @post.title)%>
+
+<div>
+<div>
+
+<%=render "header_nav"%>
+
+
+
+
+<div class="blog_body_outer container">
+<div class="blog_body">
+<div class="container">
+<div class="row">
+ <div class="col-sm-8 blog_left">
+
+
+
+<div>
+
+
+<div id="fb-root"></div>
+
+<div class="blogtitle">
+
+<%=@post.title %>
+
+</div>
+
+ <div class="post_date">
+	Gofixam Staff, <%=@post.created_at.strftime('%d %B %Y') %>
+</div>
+
+<div>
+
+<div class="fb-share-button" data-href="http://www.gofixam.com/blog/<%=@post.url%>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.gofixam.com%2Fblog%2F<%=@post.url%>&amp;src=sdkpreparse">Share</a></div>
+
+</div>
+
+ <div>
+ <%=image_tag @post.image,class:'img-thumbnail blog_thumb' %>
+ </div>
+
+ <div>
+
+
+
+ </div>
+
+
+
+<div class="blogbodyfull">
+
+<%=@post.post.html_safe %>
+
+</div>
+
+
+</div>
+
+
+
+ <div class="likepost_subscribe_div">
+<p class="ournew">Like this post? Subscribe to our weekly newsletter</p>
+<p>
+
+<%= simple_form_for  :subscription, url:subscriptions_path, remote:true do |f| %>      
+  <%= f.input :email , as: :email,  placeholder:"Your email address",label: false,required:true %>
+  <%= f.button :submit, "Subscribe",id:'subscribe-btn',class:"btn btn-info" %> <%=image_tag 'ajax2.gif', alt:'loading',class:"ajax5"%>
+  <%end%>
+
+  <div class="subscribe_error"> </div>
+  <div class="subscribe_success"> </div>
+</p>
+</div>
+
+<div class="fb-comments" data-href="http://www.gofixam.com/blog/<%=@post.url%>"  data-numposts="5" data-width="100%" ></div>
+
+
+
+
+</div>
+ <div class="col-sm-4 blog_right">
+
+<%=render 'blog_right'%>
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+
+<%= render 'shared/footer_scroll2'%>
+
+</div>

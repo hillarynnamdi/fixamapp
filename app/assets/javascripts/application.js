@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require moment
+//= require tinymce-jquery
+//= require social-share-button
 //= require bootstrap-datetimepicker
 //= require_tree .
 
