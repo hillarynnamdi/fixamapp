@@ -21,8 +21,33 @@
 </div>
 
 <div>
-	<%=link_to post.category,"#",class:'blogcat' %>
+
+	<%=link_to post.category,"../blog/#{post.category.downcase.tr('/','_')}",class:'blogcat' %>
+
+
 </div>
+
+
+
+<% if admin_signed_in? %>
+
+<div class="admin_auth_menu navbar-right">
+
+	<%=link_to  edit_blog_path(post.url) do  %>
+  <span class='glyphicon glyphicon-edit' title="Visible to admin only"></span>
+<%end%>
+
+<%=link_to  blog_path(post.url),method: :delete,data: { confirm: "Are you sure?" } do  %>
+
+  <span class='glyphicon glyphicon-trash' title="Visible to admin only"></span>
+
+<%end%>
+
+
+
+</div>
+
+<% end %>
 
 
 

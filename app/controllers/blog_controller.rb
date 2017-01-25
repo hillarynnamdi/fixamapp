@@ -65,11 +65,32 @@ end
 
   end
 
+  def edit 
+    @post=Blog.find_by_url(params[:id])
+
+  end
+
   def show
   	@post=Blog.find_by_url(params[:id])
 
 
   end
+
+def update
+  @post=Blog.find_by_url(params[:id])
+    if @post.update(post_params)
+    redirect_to blog_index_path 
+  else
+    render 'edit'
+  end
+end
+
+def destroy
+  @post=Blog.find_by_url(params[:id])
+   if @post.destroy
+    redirect_to blog_index_path 
+  end
+end
 
  
 def create
