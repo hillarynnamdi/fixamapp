@@ -230,6 +230,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.9.0)
   omniauth-facebook
   pg
+  rack (~> 1.6.4)
   rails (= 4.2.4)
   rails_12factor
   sass-rails (~> 5.0)
