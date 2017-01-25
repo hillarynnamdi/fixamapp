@@ -19,6 +19,8 @@ gem 'social-share-button', '~> 0.1.6'
 gem 'metamagic'
 gem 'sendgrid'
 
+gem 'rack', '~> 1.6.4'
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
