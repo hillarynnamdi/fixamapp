@@ -1,4 +1,7 @@
 class BlogController < ApplicationController
+
+  impressionist actions: [:show], unique: [:session_hash]
+  
   def index
   	@posts=pagination
   end
