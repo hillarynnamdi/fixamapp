@@ -33,7 +33,7 @@
 
 <div class="admin_auth_menu navbar-right">
 
-<span class="glyphicon glyphicon-eye-open"></span> <%= Postcounter.where("blog_id='#{post.id}'").count %>
+<span class="glyphicon glyphicon-eye-open"></span> <b class='post_count_span'><%= Postcounter.where("blog_id='#{post.id}'").count %></b>
 
 	<%=link_to  edit_blog_path(post.url) do  %>
   <span class='glyphicon glyphicon-edit' title="Visible to admin only"></span>
