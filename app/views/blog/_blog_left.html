@@ -29,12 +29,20 @@
 
 
 
-<% if admin_signed_in? %>
+
+<div class='post_count_div navbar-right'>
+	
+	
+
+</div>
+
+
 
 <div class="admin_auth_menu navbar-right">
 
 <span class="glyphicon glyphicon-eye-open"></span> <b class='post_count_span'><%= Postcounter.where("blog_id='#{post.id}'").count %></b>
 
+<% if admin_signed_in? %>
 	<%=link_to  edit_blog_path(post.url) do  %>
   <span class='glyphicon glyphicon-edit' title="Visible to admin only"></span>
 <%end%>
@@ -50,6 +58,8 @@
 </div>
 
 <% end %>
+
+
 
 
 
