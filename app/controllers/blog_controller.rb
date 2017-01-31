@@ -1,5 +1,7 @@
 class BlogController < ApplicationController
 
+  before_action :authenticate_admin!, only: [:new ,:create ,:edit]
+
   impressionist actions: [:show], unique: [:session_hash]
 
   def index
@@ -81,7 +83,7 @@ end
     if @post_track.count==0
         @ip=request.remote_ip
         @save_post_track=Postcounter.create({ :blog_id => @post_id, :ip_address =>@ip  })
-        @save_post_track.save!
+        
         @all_track_for_post=Postcounter.where("blog_id='#{@post_id}' and ip_address='#{request.remote_ip}'").distinct.count
 
     else
