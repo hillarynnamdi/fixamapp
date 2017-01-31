@@ -84,11 +84,11 @@ end
         @ip=request.remote_ip
         @save_post_track=Postcounter.create({ :blog_id => @post_id, :ip_address =>@ip  })
         
-        @all_track_for_post=Postcounter.where("blog_id='#{@post_id}' and ip_address='#{request.remote_ip}'").distinct.count
+        @all_track_for_post=Postcounter.where("blog_id='#{@post_id}'").count
 
     else
 
-      @all_track_for_post=Postcounter.where("blog_id='#{@post_id}' and ip_address='#{request.remote_ip}'").distinct.count
+      @all_track_for_post=Postcounter.where("blog_id='#{@post_id}'").count
 
 
 
