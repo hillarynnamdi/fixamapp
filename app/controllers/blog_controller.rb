@@ -127,7 +127,7 @@ def create
 end
 
 def pagination
-@pagination=Blog.order("id DESC").paginate(:page => params[:page], :per_page => 2)
+@pagination=Blog.order("id DESC").paginate(:page => params[:page], :per_page => 7)
   end
  
 private
