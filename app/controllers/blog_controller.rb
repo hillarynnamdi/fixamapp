@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
 
   impressionist actions: [:show], unique: [:session_hash]
-  
+
   def index
   	@posts=pagination
   end
@@ -75,6 +75,24 @@ end
 
   def show
   	@post=Blog.find_by_url(params[:id])
+    @post_id=@post.id
+    @post_track=Postcounter.where("blog_id='#{@post_id}' and ip_address='#{request.remote_ip}'")
+
+    if @post_track.count==0
+        @ip=request.remote_ip
+        @save_post_track=Postcounter.create({ :blog_id => @post_id, :ip_address =>@ip  })
+        @save_post_track.save!
+        @all_track_for_post=Postcounter.distinct.count
+
+    else
+
+      @all_track_for_post=Postcounter.distinct.count
+
+
+
+    end
+
+
 
 
   end
