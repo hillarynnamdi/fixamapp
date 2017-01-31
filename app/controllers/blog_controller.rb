@@ -36,7 +36,7 @@ def socials
 end
 
 def apps
-  @posts=pagination.where("category='App'")
+  @posts=pagination.where("category='Apps'")
 end
 
 def pc_laptops
