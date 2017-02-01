@@ -77,6 +77,7 @@ function(){
   if($(this).val()=="sign_in"){
     $('.login_complete').show();
     $('.sign_up_complete').hide();
+  
   }
   else if($(this).val()=="sign_up"){
     $('.sign_up_complete').show();
@@ -132,13 +133,17 @@ $("#state_id").change(
 function(){
 
 var state=$("#state_id :selected").val()
+$("#city_id").prop("selectedIndex", 0);
+
+ $("#city_id").prepend("<option value='' selected>select city</option>")
 
 optionsstate=$(cities).filter("optgroup[label="+state+"]").html()
 
+
+
 if (optionsstate) {
 
-  $("#city_id").prepend("<option value='' selected>select city</option>")
-  $("#city_id").prop("selectedIndex", 0);
+ 
     $("#city_id").parent().show()
     $("#city_id").html(optionsstate) 
     $(".ajax2").hide()
@@ -162,12 +167,14 @@ $("#city_id").change(
 function(){
 
 var city=$("#city_id :selected").text()
+$("#area_id").prepend("<option value='' selected>select area</option>")
+
+  $("#area_id").prop("selectedIndex", 0);
 optionscity=$(areas).filter("optgroup[label="+city+"]").html()
 
 
 if (optionscity) {
-  $("#area_id").prepend("<option value='' selected>select area</option>")
-  $("#area_id").prop("selectedIndex", 0);
+  
     $("#area_id").parent().show()
     $("#area_id").html(optionscity)   
     $(".ajax2").hide()
@@ -191,13 +198,12 @@ $("#area_id").change(
 function(){
 $("#address_street").parent().show()
 var area=$("#area_id :selected").text()
-
+$("#place_id").prepend("<option value='' selected>select place</option>")
+  $("#place_id").prop("selectedIndex", 0);
 optionsarea=$(places).filter("optgroup[label="+area+"]").html()
 
 
 if (optionsarea) {
-  $("#place_id").prepend("<option value='' selected>select place</option>")
-  $("#city_id").prop("selectedIndex", 0);
     $("#place_id").parent().show()
     $("#place_id").html(optionsarea)    
     $(".ajax2").hide()
