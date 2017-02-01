@@ -1181,8 +1181,9 @@ $(document).ready(
 function(){
   $(".subscribe_success").hide()
 $(".subscribe_error").hide()
-$(this).css({border:"1px solid silver"})
+$("#subscription_email").css({border:"1px solid silver"})
 }
       )
   }
   )
+
