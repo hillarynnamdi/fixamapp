@@ -19,6 +19,15 @@ before_action :authenticate_admin!
 			end 
 	end
 
+	def create
+
+		@message = params[:feed][:message]
+		@subject = params[:feed][:subject]
+		@email = params[:feed][:email]
+		FeedbackMailer.send_mail(@email,@subject,@message).deliver
+	
+	end
+
 	def feedback
 		@feeds = Feed.all.order("id DESC")
 	end
