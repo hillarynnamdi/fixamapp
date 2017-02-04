@@ -1,0 +1,86 @@
+[33m6c6391e[m HEAD@{0}: commit: mailer
+[33m1d20389[m HEAD@{1}: pull fixam master: Merge made by the 'recursive' strategy.
+[33mefac436[m HEAD@{2}: commit: changes
+[33m7a0392e[m HEAD@{3}: commit: time
+[33m012fb43[m HEAD@{4}: commit: all
+[33m547663d[m HEAD@{5}: commit: term_edit
+[33mef19a03[m HEAD@{6}: commit (merge): fixams
+[33m48db9bd[m HEAD@{7}: pull update master: Merge made by the 'recursive' strategy.
+[33m699f1f8[m HEAD@{8}: commit: after_sign_up_path
+[33m2275aab[m HEAD@{9}: commit: fb
+[33m083ff6d[m HEAD@{10}: commit: images resized
+[33m479d7ec[m HEAD@{11}: commit: gitignore
+[33m8bdb750[m HEAD@{12}: commit: mail
+[33m846174e[m HEAD@{13}: pull github master: Merge made by the 'recursive' strategy.
+[33mb4c97ce[m HEAD@{14}: commit: mailer
+[33med21f7e[m HEAD@{15}: commit: git_ignore
+[33mb29dab3[m HEAD@{16}: commit: gitignore
+[33m04515cc[m HEAD@{17}: pull update master: Merge made by the 'recursive' strategy.
+[33mc394b4c[m HEAD@{18}: commit: gitignore
+[33m2271f69[m HEAD@{19}: commit: routes
+[33m110a10b[m HEAD@{20}: commit: sendgrid enabled
+[33mdd13c42[m HEAD@{21}: commit: mail sender
+[33m7e0311c[m HEAD@{22}: commit: env
+[33mafd0c47[m HEAD@{23}: commit: heroku added
+[33m3d0a775[m HEAD@{24}: commit: sendgrid gem
+[33mfdd7e05[m HEAD@{25}: commit: mailer
+[33mea9984b[m HEAD@{26}: commit: email stuff
+[33m17375ce[m HEAD@{27}: commit: sendgrid
+[33mb9af2a0[m HEAD@{28}: commit: twitter button
+[33m092a20f[m HEAD@{29}: commit: fb button
+[33mf82b429[m HEAD@{30}: commit: email
+[33md9fa5a8[m HEAD@{31}: commit: meta tag updates
+[33m290d1e9[m HEAD@{32}: commit: robo
+[33m21a52c1[m HEAD@{33}: pull update master: Merge made by the 'recursive' strategy.
+[33macea3f3[m HEAD@{34}: commit: robots
+[33md47a5f2[m HEAD@{35}: commit: image url
+[33m61a1a19[m HEAD@{36}: commit: meta
+[33me183969[m HEAD@{37}: commit: new
+[33m0104dd8[m HEAD@{38}: commit: robot.txt
+[33m95c9025[m HEAD@{39}: commit: sitemap
+[33m8927e38[m HEAD@{40}: commit: title of pages
+[33med10719[m HEAD@{41}: commit: title of pages
+[33m79fb706[m HEAD@{42}: pull update master: Merge made by the 'recursive' strategy.
+[33m9df14e8[m HEAD@{43}: commit: title of pages
+[33me1196b0[m HEAD@{44}: pull update master: Merge made by the 'recursive' strategy.
+[33mf2b5bbf[m HEAD@{45}: commit: meta tags
+[33mf5dfa47[m HEAD@{46}: commit: admin registerable
+[33m70ec07c[m HEAD@{47}: commit: errors
+[33mb1e9ec9[m HEAD@{48}: commit: error
+[33mb5ada5e[m HEAD@{49}: commit: errors
+[33mba571b1[m HEAD@{50}: pull update master: Merge made by the 'recursive' strategy.
+[33m81d8e79[m HEAD@{51}: commit: error fixed
+[33m6e8a83e[m HEAD@{52}: pull update master: Fast-forward
+[33m377cb8c[m HEAD@{53}: commit: sign up
+[33m74e0db3[m HEAD@{54}: commit: default url
+[33m0621e9b[m HEAD@{55}: commit (merge): conflict merged
+[33m667ffae[m HEAD@{56}: commit: mailer
+[33m0e9fcdf[m HEAD@{57}: commit: css error removed again
+[33m2003793[m HEAD@{58}: commit: css error removed
+[33m8bb4c2b[m HEAD@{59}: commit: gmail test
+[33mb1cbc2f[m HEAD@{60}: pull update master: Merge made by the 'recursive' strategy.
+[33mfb2c482[m HEAD@{61}: commit: fb like
+[33m3dc74c8[m HEAD@{62}: commit: ssl
+[33m443812b[m HEAD@{63}: commit: ssl issue
+[33m4524c80[m HEAD@{64}: pull update master: Merge made by the 'recursive' strategy.
+[33m5ba013d[m HEAD@{65}: commit: analytics
+[33mb8c6342[m HEAD@{66}: commit: admin sign_in
+[33md8f3360[m HEAD@{67}: pull update master: Fast-forward
+[33mfaead76[m HEAD@{68}: commit: latest
+[33ma4a1748[m HEAD@{69}: commit: newest updates
+[33mf2fea35[m HEAD@{70}: commit: newest update
+[33mb546a23[m HEAD@{71}: commit: new update
+[33m01c1eb7[m HEAD@{72}: commit: mixin removed
+[33m36f6274[m HEAD@{73}: commit: updates
+[33m5b1da6d[m HEAD@{74}: commit: update
+[33m5452019[m HEAD@{75}: commit: updates
+[33m5833c6a[m HEAD@{76}: commit: update
+[33m2d3dfa7[m HEAD@{77}: pull update master: Fast-forward
+[33meaac09a[m HEAD@{78}: pull update master: Fast-forward
+[33m6aa448a[m HEAD@{79}: commit: updates
+[33me77f7b2[m HEAD@{80}: pull update master: Merge made by the 'recursive' strategy.
+[33md571c6a[m HEAD@{81}: commit: update
+[33m93a6d46[m HEAD@{82}: commit (merge): conflicts fixed
+[33ma89da35[m HEAD@{83}: commit: admin update
+[33m26c7278[m HEAD@{84}: commit: admin authentication
+[33m7fa4632[m HEAD@{85}: commit (initial): first push

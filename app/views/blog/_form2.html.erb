@@ -14,7 +14,7 @@
   <% end %>
 
 
-<%= form_for :post, url: blog_index_path(@post) do |f| %>
+<%= form_for :post, url: blog_path(@post.url),method: :patch do |f| %>
 
   <div class="form-inputs">
 

@@ -6,5 +6,7 @@ class Blog < ActiveRecord::Base
 	   validates :title,presence:true
 	   validates :category,presence:true
 	   validates :url, uniqueness: {message: "already exist"},if: "url.present?" 
+
+	  is_impressionable
 	   
 end

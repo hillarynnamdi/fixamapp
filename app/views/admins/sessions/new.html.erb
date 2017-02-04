@@ -1,4 +1,5 @@
-<% meta title: "Admin Login | Gofixam" %>
+<% provide(:title, 'Admin Login | Gofixam')%>
+
   <div class="login_wrapper">
   <div class="logo_icon">
 <%=link_to  home_index_path do  %>
@@ -34,11 +35,7 @@
 </div>
 
 
-<div id="footer">
-  <div class="container">
-    <p class="text-muted">Copyright ©2016 KliqITal, Inc.</p>
-  </div>
-</div>
+<%= render 'shared/footer_scroll2'%>
 
 
 

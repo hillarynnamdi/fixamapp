@@ -1531,6 +1531,11 @@ border-radius: 5px;
 /* responsive text queries */
 @media screen and (max-width: 768px) {
 
+  .blog_main_div{
+
+  border-left: 0px solid #66b5ff !important;
+}
+
   .blog_left{
   padding: 0px !important
   }
@@ -1846,6 +1851,7 @@ a.read.fourth:hover{
   background-image: url("<%= asset_path 'login.png' %>");
   height: 60px;
   background-position: center;
+  background-size: 80%;
   margin: auto;
   width: 80%;
   background-repeat: no-repeat;
@@ -2159,9 +2165,10 @@ text-decoration: none;
 
 .blog_main_div{
   padding-top: 15px;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
   padding-right: 15px;
-  border-bottom: 1px solid #e6e6e6
+  border-bottom: 1px solid #e6e6e6;
+  border-left: 3px solid #66b5ff ;
 }
 
 
@@ -2234,6 +2241,44 @@ text-decoration: none;
 
 
 .blogbodyfull img{
-  width:60%;
-  margin: auto
+  width:100%;
+  margin: auto;
+  height: 400px
 }
+
+.admin_auth_menu span{
+  margin-top: 10px;
+  color:silver;
+}
+
+.admin_auth_menu span a{
+  margin-left: 10px;
+  color:silver;
+  text-transform: none;
+}
+
+.admin_auth_menu .glyphicon-trash{
+  color: red;
+}
+
+.admin_auth_menu .glyphicon-edit{
+  color: blue;
+}
+
+.fb-share-button,.twitter-share-button{
+  margin-top: 5px
+}
+
+.post_count_span{
+  color: silver;
+  padding: 0px !important;
+  margin-right: 10px !important
+
+}
+
+.post_count_div{
+
+margin-top: 10px;
+  }
+
+ 

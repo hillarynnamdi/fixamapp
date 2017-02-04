@@ -67,6 +67,8 @@
 					<li><%= link_to "Add Admin", new_admin_invitation_path  %></li>
 					<li><%= link_to "Add State", states_path  %></li>
 					<li><%= link_to "Add Partner", partners_path  %></li>
+					<li><%= link_to "Add Post", new_blog_path  %></li>
+					<li><%= link_to "Manage Blog", blog_index_path  %></li>
 					<li>
 					<%= link_to  destroy_admin_session_path  do %>
             Logout (<%= current_admin.email.split('@')[0] %>)

@@ -31,9 +31,21 @@
 	Gofixam Staff, <%=@post.created_at.strftime('%d %B %Y') %>
 </div>
 
-<div>
+<div class="share_btns">
 
 <div class="fb-share-button" data-href="http://www.gofixam.com/blog/<%=@post.url%>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.gofixam.com%2Fblog%2F<%=@post.url%>&amp;src=sdkpreparse">Share</a></div>
+
+<div>
+<a class="twitter-share-button"
+  href="http://www.gofixam.com/blog/<%=@post.url%>"
+  data-size="large">
+Tweet</a>
+</div>
+
+
+<span class="glyphicon glyphicon-eye-open"></span> <%= pluralize(@all_track_for_post, "view") %>
+
+
 
 </div>
 

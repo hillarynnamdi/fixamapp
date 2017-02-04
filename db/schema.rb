@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121025920) do
+ActiveRecord::Schema.define(version: 20170131014833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,33 @@ ActiveRecord::Schema.define(version: 20170121025920) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "impressions", force: :cascade do |t|
+    t.string   "impressionable_type"
+    t.integer  "impressionable_id"
+    t.integer  "user_id"
+    t.string   "controller_name"
+    t.string   "action_name"
+    t.string   "view_name"
+    t.string   "request_hash"
+    t.string   "ip_address"
+    t.string   "session_hash"
+    t.text     "message"
+    t.text     "referrer"
+    t.text     "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
+
   create_table "orders", force: :cascade do |t|
     t.string   "state"
     t.string   "city"
@@ -140,6 +167,15 @@ ActiveRecord::Schema.define(version: 20170121025920) do
   add_index "places", ["area_id"], name: "index_places_on_area_id", using: :btree
   add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree
   add_index "places", ["state_id"], name: "index_places_on_state_id", using: :btree
+
+  create_table "postcounters", force: :cascade do |t|
+    t.string   "ip_address"
+    t.integer  "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "postcounters", ["blog_id"], name: "index_postcounters_on_blog_id", using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "state"
@@ -193,4 +229,5 @@ ActiveRecord::Schema.define(version: 20170121025920) do
   add_foreign_key "places", "areas"
   add_foreign_key "places", "cities"
   add_foreign_key "places", "states"
+  add_foreign_key "postcounters", "blogs"
 end
