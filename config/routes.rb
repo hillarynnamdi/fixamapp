@@ -81,6 +81,11 @@ end
 
   resources :terms
 
+  resources :feed do
+    collection do
+      post 'send_feed'
+    end
+  end
 
 #  resources :admins do
  #   collection do

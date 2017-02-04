@@ -183,12 +183,6 @@ ActiveRecord::Schema.define(version: 20170131014833) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "subscribers", force: :cascade do |t|
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "subscriptions", force: :cascade do |t|
     t.string   "email"
     t.datetime "created_at", null: false
