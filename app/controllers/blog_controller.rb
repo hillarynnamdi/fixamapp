@@ -6,6 +6,7 @@ class BlogController < ApplicationController
 
   def index
   	@posts=pagination
+    @posts2=pagination2
   end
 
 
@@ -94,6 +95,8 @@ end
 
     end
 
+    @posts2=pagination2
+
 
 
 
@@ -128,6 +131,10 @@ end
 
 def pagination
 @pagination=Blog.order("id DESC").paginate(:page => params[:page], :per_page => 7)
+  end
+
+def pagination2
+@pagination=Blog.order("id DESC").offset(7).limit(5)
   end
  
 private

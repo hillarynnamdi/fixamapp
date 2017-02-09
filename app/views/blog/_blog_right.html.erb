@@ -23,4 +23,35 @@
 
 </p>
 
+<div class="dont_miss">
+	<span class="glyphicon glyphicon-pushpin"></span> DON'T MISS WHAT'S TRENDING
+</div>
+
+<% @posts2.each do |post|%>
+
+<div class="row blog_smain_div">
+ <div class="col-sm-12 ">
+
+ <%=image_tag post.image,class:'img-thumbnail' %>
+
+
+<div>
+
+<%=link_to post.title,blog_path(post.url),class:'blogurl2' %>
+
+</div>
+
+
+
+ </div>
+
+ </div>
+                      
+                                                                                               
+ <%end%>
+
+
+
+
+
 </div>
