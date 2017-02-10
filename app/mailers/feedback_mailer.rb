@@ -1,6 +1,6 @@
 class FeedbackMailer < ApplicationMailer
 	
-	 default from: 'Team-Gofixam@gofixam.com'
+	 default from: 'Feed_response@gofixam.com-noreply'
 
 	def send_mail(email,subject,message)
 		@body = message
