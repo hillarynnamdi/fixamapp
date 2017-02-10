@@ -46,6 +46,7 @@
 					<ul class="dropdown-menu">
 					<li class="countings">Total Users (<%=User.all.count%>)</li>
 					<li class="countings">New Requests (<%=Order.where("order_status='pending'").count%>)</li>
+					<li class="countings">Subscribers (<%=Subscription.all.count%>)</li>
 					
 					</ul>
 					</li>
