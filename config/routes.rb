@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'science'
       get 'audio_videos'
       get 'telecom'
+      patch 'unsubscribe'
 
     end
 

@@ -122,12 +122,23 @@ end
 def create
   @post = Blog.new(post_params)
  
-  if @post.save
+  if @post.save 
+    if params[:send_email]=="yes"
+    NewsletterMailer.newsletter(@post).deliver_now
+    end
     redirect_to blog_index_path 
   else
     render 'new'
   end
 end
+
+def unsubscribe
+
+
+end
+
+
+
 
 def pagination
 @pagination=Blog.order("id DESC").paginate(:page => params[:page], :per_page => 7)
@@ -137,6 +148,7 @@ def pagination2
 @pagination=Blog.order("id DESC").offset(7).limit(5)
   end
  
+
 private
   def post_params
     params.require(:post).permit(:url, :image,:post,:title,:category)

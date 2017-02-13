@@ -1,0 +1,24 @@
+<div class="newsheader">
+<h2 style="color:#66b5ff;border-bottom:1px solid #eeeeee"> Gofixam Tech News </h2>
+
+
+<p><%=link_to @post.title,blog_url(@post.url),style:'font-size:20px' %></p>
+<div>
+	Posted: <%=@post.created_at.strftime('%d %B %Y') %>
+</div>
+
+<p><%= strip_tags(@post.post).truncate(200, separator: ' ') %>
+<%=link_to "Continue reading",blog_url(@post.url),style:'font-size:16px' %>
+ </p>
+</div>
+
+<div style="margin-top:60px;border-top:1px solid #eeeeee">
+
+<p>You are subscribed to email updates from <%=link_to "Gofixam",blog_index_url,style:'font-size:15px' %></p>
+
+
+
+
+
+
+</div>
