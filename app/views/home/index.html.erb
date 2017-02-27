@@ -32,11 +32,27 @@ meta og: {
 <div id='body'>
 <div class="divider" id="home"></div>
 <div class='wrapper'>
-<nav class="navbar navbar-default  navbar-fixed-top" id='navigatn' >
-<div class='credentials'>
 
 
-<% if user_signed_in? %>
+ <nav class="navbar navbar-default navbar-fixed-top" id='navigatn'>
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="menu_home">Menu</span>
+      </button>
+      <%=link_to  root_path do  %>
+  <%=image_tag 'gopng.png', class:"img-thumbnail home_logo",id:"nav-icon",alt:'gofixam-logo'%>
+<%end%>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+      
+  <li>
+    <a href='#howwework' class='creden howitworks'>How it works</a>
+  </li>
+
+    <% if user_signed_in? %>
 
 
   <span data-toggle="popover" data-placement="bottom" 
@@ -48,80 +64,25 @@ meta og: {
 
   <%else%>
 
-  <%=link_to user_session_path,class:'creden' do  %>
-<span class="glyphicon glyphicon-log-in"></span> Log in
-<%end%>
+  <li><%=link_to user_session_path,class:'creden' do  %>
+ Log in
+<%end%></li>
 
-<%=link_to new_user_registration_path,class:'creden' do  %>
+<li><%=link_to new_user_registration_path,class:'creden' do  %>
 
-<span class="glyphicon glyphicon-user"></span> Register  
-<%end%>
+ Want to fix something?
+<%end%></li>
 
 <% end -%>
 
-<div class="socialtop" id='mobilesocial'>
-<div class="row" >
-    <a href="https://www.facebook.com/GofixamNigeria/"><div class="col-sm-4 fbsocial"></div></a>
 
-    <a href="https://twitter.com/gofixam"><div class="col-sm-4 twittersocial"></div></a>
-        
-    <a href="https://www.instagram.com/gofixam"><div class="col-sm-4 instagramsocial"></div></a>
+    </ul>
 
 </div>
-</div>
 
-
-
-
-
-
-
-
-</div>
-<div id='section_content'>
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
-
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-
-<%=link_to  root_path do  %>
-  <%=image_tag 'gopng.png', class:"img-thumbnail home_logo",id:"nav-icon",alt:'gofixam-logo'%>
-<%end%>
-    
-
-    </div>
-
-
-    <div class="collapse navbar-collapse" id="myNavbar">
-    <div id="mobilemenu">
-        <ul class="nav navbar-nav navbar-right scroll_links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#plan">OUR PLANS</a></li>
-        <li><a href="#track">TRACK</a></li>
-        <li><a href="#contact"> CONTACT US</a></li>
-        <li><a href="/blog"> BLOG</a></li> 
-        </ul>
-    </div>
-    <div id="desktopmenu">
-        <ul class="nav navbar-nav navbar-right scroll_links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#plan">OUR PLANS</a></li>
-        <li><a href="#track">TRACK ORDER</a></li>
-        <li><a href="#contact"> CONTACT US</a></li>
-        <li><a href="/blog" target="_blank"> BLOG</a></li>
-        </ul>
-    </div>
-
-    </div>
-
-
-  </div>
   </div>
 </nav>
+
 
 
 
@@ -186,7 +147,7 @@ meta og: {
       <div class='easy_to_use2'>Easy To Use & Reliable.</div>
       
       
-<div class="container">
+<div>
     <%= render "forms" %>
 </div>
 
@@ -199,7 +160,7 @@ meta og: {
 
 
     <div class="container" id='section_content3'>
-
+ <div class="divider" id="howwework"></div>
   <div class="row" >
     <div class="col-sm-12">
       <h2 class='sect1' >Introducing the four step process</h2>
@@ -211,8 +172,10 @@ meta og: {
   <div class="container" id='section_content2'>
 
   <div class="row" >
-    <div class="col-sm-3" >
-      <h3>1.Register your device</h3>
+
+     <div class="col-sm-4" >
+        <div>
+      <h3>1.Register Your Device</h3>
       <p>
       <ul>
       <li>
@@ -220,33 +183,78 @@ meta og: {
       </li>
       </ul>
       </p>
+
+      <p>
+      <ul>
+      <li>
+      You can Log into your account and register all your device with us .
+      </li>
+      </ul>
+      </p>
+
     </div>
 
-      <div class="col-sm-3">
+      <div>
       <h3>2.Schedule a Pickup</h3>
       <p><ul>
       <li>
       You can schedule a pickup, schedule an onsite visit or schedule an online support.</li></ul>
       </p>
+
+      <p><ul>
+      <li>
+      You can login to our application and Book-a-call for any one of your registered devices. </li></ul>
+      </p>
+
+
+      
     </div>
 
-    <div class="col-sm-3">
+     </div>
+
+<div class="col-sm-4 howwework" >
+<%=image_tag 'howwework.png'%>
+</div>
+
+
+<div class="col-sm-4" >
+
+    <div>
       <h3>3.Repair & Services</h3>
       <p><ul><li>
        Devices are repaired in our state of art repair factory under the supervision of trained experts.</li></ul>
       </p>
 
+      <p><ul><li>
+       You can track repair and get status updates while the device is in our possession.
+       </li></ul>
+      </p>
+       
+
     </div>
 
-    <div class="col-sm-3">
+    <div >
       <h3>4.Delivery & Payment</h3> 
       <p><ul><li>
        You can avail our easy pay prepaid or postpaid options and take delivery of the device.
        </li></ul>
       </p>
+
+       <p><ul><li>
+       You can call to re-schedule delivery date or time.
+       </li></ul>
+      </p>
+
     </div>
     <div class="divider" id="plan"></div>
   </div>
+
+</div>
+
+
+
+
+
 
 </div>
 

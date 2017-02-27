@@ -9,7 +9,7 @@ $(document).ready(
 )
 $(document).ready(
   function(){
-  $('#desktopmenu a').click(function(){
+  $('.howitworks').click(function(){
   var link = $(this).attr('href');
   var posi = $(link).offset().top;
   $('body,html').animate({scrollTop:posi},700);
