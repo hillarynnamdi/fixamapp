@@ -20,12 +20,17 @@ $(document).ready(
 
 $(document).ready(
   function(){
+
 $('#navigatn').affix({
+
       offset: {
+
         top: $('#myCarousel,#account_right').height()-$('#navigatn').height()
 
         
       }
+
+      
 }); 
 
 }
