@@ -57,7 +57,7 @@ meta og: {
 
   <span data-toggle="popover" data-placement="bottom" 
   data-content="<%=render_content%>" id='popover2' >
-    <i class='glyphicon glyphicon-user' style="color:<%=current_user.profile_icon%> !important" ></i> <span class='logout_welcome'>Hello <%= current_user.first_name %></span>
+    <li> <span class='logout_welcome'>Hello <%= current_user.first_name %></span></li>
 
   </span>
 
@@ -213,7 +213,7 @@ meta og: {
      </div>
 
 <div class="col-sm-4 howwework" >
-<%=image_tag 'howwework.png'%>
+<%=image_tag 'howwework.png',class:"img-responsive"%>
 </div>
 
 
