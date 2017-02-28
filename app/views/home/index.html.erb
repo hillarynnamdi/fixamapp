@@ -55,11 +55,9 @@ meta og: {
     <% if user_signed_in? %>
 
 
-  <li><span data-toggle="popover" data-placement="bottom" 
-  data-content="<%=render_content%>" id='popover2' >
-     <span class='logout_welcome'>Hello <%= current_user.first_name %></span>
-
-  </span></li>
+  <li><%=link_to orders_path,class:'creden' do  %>
+ My Orders
+<%end%></li>
 
 
   <%else%>
