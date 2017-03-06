@@ -29,7 +29,7 @@
 
 				<div class='header-left'>
 						<%=link_to  orders_path do  %>
-						  <%=image_tag 'gopng.png', class:"img-thumbnail",id:"nav-icon",alt:'gofixam-logo'%>
+						  <%=image_tag 'gopng.png', class:"img-thumbnail order_logo",id:"nav-icon",alt:'gofixam-logo'%>
 						<%end%>
 
 
@@ -124,7 +124,7 @@
 	<% end -%>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right order_menu"> 
         <li class="active"><a href="/account/info"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
         <li><a href="/orders"><span class="glyphicon glyphicon-list"></span> My Orders</a></li>
         <li><%= link_to  destroy_user_session_path  do %>
