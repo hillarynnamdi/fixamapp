@@ -47,7 +47,9 @@ meta og: {
 
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      
+      <li>
+      <%=link_to "Home", root_path,class:'creden'  %>
+  </li>
   <li>
     <a href='#howwework' class='creden howitworks'>How it works</a>
   </li>
@@ -55,9 +57,17 @@ meta og: {
     <% if user_signed_in? %>
 
 
-  <li><%=link_to orders_path,class:'creden' do  %>
- My Orders
-<%end%></li>
+<li class="dropdown">
+        <a class="dropdown-toggle creden" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span> <%=current_user.first_name%> <%=current_user.last_name%>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/orders">My Orders</a></li>
+          <li><a href="/account/info">My Profile</a></li>
+          <li><a href="/users/logout">Log out</a></li>
+        </ul>
+      </li>
+
+
 
 
   <%else%>
