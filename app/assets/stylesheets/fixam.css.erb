@@ -361,7 +361,7 @@ border:0px solid grey;
 #section_content2 div ul li{
   font-size: 17px !important;
   font-weight: normal;
-    list-style-image: url("<%= asset_path 'tick.png' %>");
+    list-style-image: url("<%= asset_path 'mark.png' %>");
     list-style-position: outside;
     padding-left: 0px !important;
     text-align: left;
@@ -1604,7 +1604,7 @@ border-radius: 5px;
   #section_content2 div ul li{
   font-size: 17px !important;
   font-weight: normal;
-    list-style-image: url("<%= asset_path 'tick.png' %>");
+    list-style-image: url("<%= asset_path 'mark.png' %>");
     list-style-position: outside;
     padding-left: 0px !important;
     text-align: left;
@@ -1703,7 +1703,7 @@ text-align: center;
 }
 
 
-  .sect1,.sect2,.sect_track2 {
+  .sect1,.sect2,.sect_track2,.sect7 {
     font-size: 20px !important;
     border-bottom: 1px dotted silver;
     padding-bottom: 10px !important
@@ -1719,7 +1719,7 @@ text-align: center;
     border:0px dotted silver;
 }
 
-.sect2::after{
+.sect2::after,.sect7:after{
   display: inline-block;
     content: none;
     width: 0px;
@@ -2563,6 +2563,14 @@ padding: 10px
 
 .feature_apps{
   margin: auto
+}
+
+
+.howweworkicons{
+  width:60px;
+  height: 60px;
+  margin:auto;
+  margin-bottom: 20px
 }
 
 
