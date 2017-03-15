@@ -288,6 +288,8 @@ color: white;
 border:0px solid grey;
 }
 
+.
+
 
 
 .easy_to_use{
@@ -678,8 +680,8 @@ body {
 	display: none;
 }
 
-.sign_up_complete,.information_div{
-	display: none
+.information_div{
+	display: none;
 }
 
 
@@ -703,9 +705,8 @@ body {
 
 
 .information_div{
-	background-color: white;
-	color:black !important;
-	padding-top: 10px
+	padding-top: 10px;
+  color: white;
 }
 
 .information_div div{
@@ -718,14 +719,18 @@ body {
 }
 
 .sign_up_complete,.login_complete{
-margin-top: 30px;
 background-color:#66b5ff;
-padding: 5px 20px 5px 20px;
 width:100px;
 font-weight: bold;
-font-size: 17px !important;
+font-size: 16px !important;
 color: white;
 border:0px solid grey;
+padding:0px 5px;
+}
+
+.sign_up_complete:hover,.login_complete:hover{
+text-decoration: none;
+color: #eeeeee
 }
 
 .third_form{
@@ -1590,6 +1595,16 @@ border-radius: 5px;
 
 /* responsive text queries */
 @media screen and (max-width: 768px) {
+
+  .please_complete{
+  color: black !important;
+}
+
+.information_div{
+  padding-top: 10px;
+  color: black;
+  background-color: white;
+}
 
 #jumbotron-index{
 background-image: url("<%= asset_path 'banner2.jpg' %>");
@@ -2507,4 +2522,10 @@ padding: 10px
   color: #66b5ff;
   text-decoration: underline;
   font-weight: bold;
+}
+
+.please_complete{
+  color: black;
+  background-color: white;
+  opacity: 0.9
 }

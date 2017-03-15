@@ -33,7 +33,7 @@
 
 
 
-
+<div id="#formscrollup"></div>
 <%=form_tag(second_form_orders_path,remote:'true' ,class:'second_form') do %>
 <div class="row">
   <div class="col-sm-6">
@@ -109,20 +109,25 @@
 
 <%=form_tag(fourth_form_orders_path,remote:'true' ,class:'fourth_form') do %>
 
-<div style='background-color:#eeeeee;padding:3px'>
-Sign up and Get <i><u>GoFixam</u></i> LITE plan for free:
-<%= radio_button_tag(:credential,"sign_up",class:'sign_up') %></div>
-
-
-<div>I Have a <i><u>GoFixam</u></i> Account:
-<%= radio_button_tag(:credential,"sign_in",class:'sign_in') %></div>
+<div class="please_complete">Please complete your booking by either logging in or signing up!</div>
 
 <p>
-<button type='button' class='previous' position='fourth_form'>Previous</button>
 
-<%=link_to "Log in to continue",user_session_path,class:'login_complete' %>
+<div class="row">
+    <div class="col-sm-6">
+<%=link_to "Already a user?",user_session_path,class:'login_complete' %>
+</div>
 
-<%=link_to "Sign up to continue", new_user_registration_path,class:'sign_up_complete' %>
+<div class="col-sm-6">
+<%=link_to "New User?", new_user_registration_path,class:'sign_up_complete' %>
+</div>
+</div>
+
+    <div>
+<button type='button' class='previous' >Previous</button>
+</div>
+
+
 
 </p>
 <% end %>
