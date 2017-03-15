@@ -14,7 +14,7 @@ meta og: {
 
 
 <div id="container">
-<% provide(:title, 'Gadget Repairs | Phones | Laptops | Tvs | ACs | Electronics | Gofixam')%>
+<% provide(:title, 'Gofixam.com | Book a Repair Service')%>
 
 
 
@@ -48,11 +48,18 @@ meta og: {
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
       <li>
-      <%=link_to "Home", root_path,class:'creden'  %>
+      <%=link_to "HOME", root_path,class:'creden'  %>
   </li>
+
+    <li>
+    <a href='#whoweare' class='creden howitworks'>WHY US?</a>
+  </li>
+
   <li>
-    <a href='#howwework' class='creden howitworks'>How it works</a>
+    <a href='#howwework' class='creden howitworks'>HOW IT WORKS</a>
   </li>
+
+
 
     <% if user_signed_in? %>
 
@@ -73,12 +80,11 @@ meta og: {
   <%else%>
 
   <li><%=link_to user_session_path,class:'creden' do  %>
- Log in
+ LOG IN
 <%end%></li>
 
-<li><%=link_to new_user_registration_path,class:'creden' do  %>
-
- Want to fix something?
+<li><%=link_to new_user_registration_path,class:'creden want_to_repair' do  %>
+REPAIR DEVICE
 <%end%></li>
 
 <% end -%>
@@ -97,56 +103,8 @@ meta og: {
   <div class="jumbotron" id='jumbotron-index'>
 <div class="row">
 <div class="container">
-    <div class="col-sm-6">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-    
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox" style="background-color:#66b3ff">
-    <div class="item active">
-      <%=image_tag 'o.png', alt:'slider1'%>
-       
-    </div>
-
-    <div class="item">
-      <%=image_tag 'first.png', alt:'slider1'%>
-
-    </div>
-
-
-    <div class="item">
-      <%=image_tag 'fif.png', alt:'slider1'%>
-    </div>
-
-    <div class="item">
-      <%=image_tag 'third.png', alt:'slider1'%>
-    </div>
-
-
-
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-</div>
-
-<div class="col-sm-6">
+<div class="col-sm-12">
 
 
       <div class='book_form'>
@@ -158,27 +116,47 @@ meta og: {
     <%= render "forms" %>
 </div>
 
+
       </div>
 </div>
+
+
+
+
 </div>
 
   </div>
 
+
+
+
+<div class="divider" id="whoweare"></div>
+
+  </div>
+
+    <div class="container" id='section_content3'>
+ 
+  <div class="row" >
+    <div class="col-sm-12">
+      <h2 class='sect1' >Who Are We?</h2>
+
+    </div>
+  </div>
+</div>
 <div class="divider" id="howwework"></div>
+<div class="container" id='section_content9'>
 
-<div id="bubbles">
-        <div class="bubble x1"></div>
-        <div class="bubble x2"></div>
-        <div class="bubble x3"></div>
-        <div class="bubble x4"></div>
-        <div class="bubble x5"></div>
+Gofixam is the easiest, most professional & safest way to have your device repaired at your preferred time & location. All repairs are backed by our lifetime warranty and high rated customer service. We specialize in Mobile,Tablet and Laptop repairs. Changing the way electronics are repaired is a statement we make everyday. We are ditching the old school shop mentality of expensive hourly rates for low cost flat fixed rates while all repairs are done at your preferred time & location. Book your repair today and thank you for using gofixam.
+
 </div>
 
 
+
+
+
+
+
   </div>
-
-
-
 
     <div class="container" id='section_content3'>
  
